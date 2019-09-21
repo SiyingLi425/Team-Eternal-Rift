@@ -11,6 +11,7 @@ public abstract class PlayerController : MonoBehaviour
     private Rigidbody2D rbody;
     private int[] abilityCooldownReset;
     private CapsuleCollider2D basicAttackRange;
+    private BoxCollider2D playerCollider;
     #endregion
 
     //Private Variables
@@ -24,12 +25,17 @@ public abstract class PlayerController : MonoBehaviour
     #endregion
 
     //Properties
+    #region Protected Properties
     protected int Instance { get { return instance; } }
     protected string AxisX { get { return axisX; } }
     protected string AxisY { get { return axisY; } }
     protected Rigidbody2D rBody { get { return rbody; } }
     protected int[] AbilityCooldownReset { get { return abilityCooldownReset; } }
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
+    #endregion
+    #region Public Properties
+    public BoxCollider2D PlayerCollider { get { return playerCollider; } }
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -92,3 +98,12 @@ public abstract class PlayerController : MonoBehaviour
     protected abstract void Attack3();
     #endregion
 }
+
+/*
+Player Controls:
+WASD - Movement (done)
+ZXCV - Attacks (incomplete)
+Collisions - Not to be included unless necessary
+    Enemy Collisions - Each enemy should have their own collision, in case they don't outright kill the player
+    Item Collisions - Each item should be responsible for the benifits it provides
+*/

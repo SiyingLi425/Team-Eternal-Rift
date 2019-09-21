@@ -13,7 +13,11 @@ public static class ExtensionMethods
     }
 
     public static Collider2D PrimaryCollider(this GameObject g) {
-        //Add type conversion and a switch statement
+        switch (g.tag) {
+            case "Player":
+                return g.GetComponent<PlayerController>().PlayerCollider;
+        }
+
         return new Collider2D() { enabled = false};
     }
 }
