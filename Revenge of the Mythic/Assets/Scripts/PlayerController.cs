@@ -58,15 +58,15 @@ public abstract class PlayerController : MonoBehaviour
         basicAttackRange = GetComponent<CapsuleCollider2D>();
         #endregion
         rbody = GetComponent<Rigidbody2D>();
-
+        //Set Damagable over here... once there's a list of things that can be damaged
     }
 
     // Update is called once per frame
     void Update()
     {
         #region Move Player
-        float horiz = Input.GetAxis(axisX);
-        float vert = Input.GetAxis(axisY);
+        float horiz = Input.GetAxis(axisX)*speed;
+        float vert = Input.GetAxis(axisY)*speed;
         rBody.velocity *= new Vector2(horiz, vert);
         #endregion
         #region Attack
