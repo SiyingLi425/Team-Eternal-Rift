@@ -10,10 +10,12 @@ public abstract class PlayerController : MonoBehaviour
     private string axisX, axisY;
     private Rigidbody2D rbody;
     private int[] abilityCooldownReset;
+    private CapsuleCollider2D basicAttackRange;
     #endregion
 
     //Private Variables
     private int speed = 10;
+    private readonly string[] damagable;
 
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
@@ -27,6 +29,7 @@ public abstract class PlayerController : MonoBehaviour
     protected string AxisY { get { return axisY; } }
     protected Rigidbody2D rBody { get { return rbody; } }
     protected int[] AbilityCooldownReset { get { return abilityCooldownReset; } }
+    protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +39,9 @@ public abstract class PlayerController : MonoBehaviour
         axisX = "Horizontal" + instance;
         axisY = "Vertical" + instance;
         #endregion
+        //TODO: Make other Axises work
         rbody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -45,7 +50,7 @@ public abstract class PlayerController : MonoBehaviour
         #region Move Player
         float horiz = Input.GetAxis(axisX);
         float vert = Input.GetAxis(axisY);
-        rBody.Velocity *= new Vector2(horiz, vert);
+        rBody.velocity *= new Vector2(horiz, vert);
         #endregion
     }
 
@@ -74,12 +79,12 @@ public abstract class PlayerController : MonoBehaviour
     }
     private void BasicAttack()
     {
-        foreach(GameObject g in /*[Game Objects in Area]*/){
-            try
-            {
-                g.damage(2);
+        foreach (string s in damagable) {
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag(s)) {
+                if (g.PrimaryCollider().enabled && basicAttackRange.IsTouching(g.PrimaryCollider())) {
+                    g.Damage(2);
+                }
             }
-            catch (/*MethodNotFoundException e*/) { };
         }
     }
     protected abstract void Attack1();
