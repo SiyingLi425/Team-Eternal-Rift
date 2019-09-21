@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Phoenix : PlayerController
 {
+    //Ability Cooldown Variables
     private int[] abilityCooldownReset = { 0, 0, 0 };
+    protected override int[] AbilityCooldownReset { get { return abilityCooldownReset; } }
 
     // Start is called before the first frame update
     void Start()

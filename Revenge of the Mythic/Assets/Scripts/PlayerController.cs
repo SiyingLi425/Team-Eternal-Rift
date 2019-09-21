@@ -32,7 +32,7 @@ public abstract class PlayerController : MonoBehaviour
     protected string AxisX { get { return axisX; } }
     protected string AxisY { get { return axisY; } }
     protected Rigidbody2D rBody { get { return rbody; } }
-    protected int[] AbilityCooldownReset { get { return abilityCooldownReset; } }
+    protected abstract int[] AbilityCooldownReset { get; }
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
     protected string[] AttackAxis { get { return attackAxis; } }
     #endregion
