@@ -27,6 +27,7 @@ public abstract class PlayerController : MonoBehaviour
 
     //Properties
     #region Protected Properties
+    //Change to public as needed
     protected int Instance { get { return instance; } }
     protected string AxisX { get { return axisX; } }
     protected string AxisY { get { return axisY; } }
@@ -51,6 +52,10 @@ public abstract class PlayerController : MonoBehaviour
         for (int z = 1; z < 4; ++z) {
             attackAxis[z] = "P" + instance + "Ability" + z;
         }
+        #endregion
+        #region Colliders
+        playerCollider = GetComponent<BoxCollider2D>();
+        basicAttackRange = GetComponent<CapsuleCollider2D>();
         #endregion
         rbody = GetComponent<Rigidbody2D>();
 
