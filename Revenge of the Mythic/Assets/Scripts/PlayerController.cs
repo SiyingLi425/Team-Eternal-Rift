@@ -67,7 +67,7 @@ public abstract class PlayerController : MonoBehaviour
         #region Move Player
         float horiz = Input.GetAxis(axisX)*speed;
         float vert = Input.GetAxis(axisY)*speed;
-        rBody.velocity *= new Vector2(horiz, vert);
+        rbody.velocity *= new Vector2(horiz, vert);
         #endregion
         #region Attack
         if (globalCooldown == 0)
