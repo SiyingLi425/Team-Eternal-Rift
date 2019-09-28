@@ -17,7 +17,9 @@ public abstract class PlayerController : MonoBehaviour
 
     //Private Variables
     private int speed = 10;
-    private readonly string[] damagable;
+
+    //Protected Variables
+    protected readonly string[] damagable;
 
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
@@ -81,6 +83,20 @@ public abstract class PlayerController : MonoBehaviour
         #endregion
     }
 
+    #region Cooldown Timers
+    void FixedUpdate() {
+        if (globalCooldown > 0)
+        {
+            --globalCooldown;
+        }
+        for (int z=0; z<abilityCooldown.Length; ++z) {
+            if (abilityCooldown[z] > 0)
+            {
+                --abilityCooldown[z];
+            }
+        }
+    }
+    #endregion
     #region Attacks
     private void attack(int i)
     {
