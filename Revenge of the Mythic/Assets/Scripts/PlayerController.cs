@@ -125,7 +125,7 @@ public abstract class PlayerController : MonoBehaviour
         foreach (string s in damagable) {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s)) {
                 if (g.PrimaryCollider().enabled && basicAttackRange.IsTouching(g.PrimaryCollider())) {
-                    g.Damage(2);
+                    g.PrimaryController().Damage(2);
                 }
             }
         }
