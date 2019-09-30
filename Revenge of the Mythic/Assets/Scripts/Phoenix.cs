@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Phoenix : PlayerController
 {
-    public GameObject Fireball, Erupt;
-    public Transform FireballSpawn, EruptSpawn;
+    #region Serializable Private Variables
+    [SerializeField]
+    private GameObject Fireball, Erupt;
+    [SerializeField]
+    private Transform FireballSpawn, EruptSpawn;
+    [SerializeField]
+    private CircleCollider2D EruptRange;
+    #endregion
     #region Ability Cooldown Variables
     private int[] abilityCooldownReset = { 0, 0, 0 };
     protected override int[] AbilityCooldownReset { get { return abilityCooldownReset; } }
@@ -29,7 +35,7 @@ public class Phoenix : PlayerController
     }
     protected override void Attack2() {
         //Ability 2 [Erupt] - Ranged AoE.Does damage and applies burning DoT(same as DoT mentioned above). 6 second cooldown.
-        Instantiate(Erupt, EruptSpawn.position, EruptSpawn.rotation);
+        Instantiate(Erupt, Erupt.GetComponent<RangedAoE>().OptimalSpawnPoint(EruptRange), EruptSpawn.rotation);
     }
     protected override void Attack3() { }
 }

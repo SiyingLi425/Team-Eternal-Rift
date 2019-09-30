@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangedAttack : MonoBehaviour
 {
-    #region Fields that need to be set inside Unity Editor
+    #region Private/Protected Serializable Fields
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -14,7 +14,7 @@ public class RangedAttack : MonoBehaviour
     [SerializeField]
     private bool destroyOnHit;
     [SerializeField]
-    private string[] targets;
+    protected static string[] targets;
     [SerializeField]
     private Collider2D Collider;
     #endregion
