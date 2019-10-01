@@ -22,7 +22,32 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
 
     public Vector3 OptimalSpawnPoint(Collider2D col)
     {
-        //Do 2 for-loops to check the entire screen - NOTE: Requires Game Controller
+        GameController c = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        Vector2 point = new Vector3(0,0);
+        for (int x=0; x<c.GameWidth; ++x)
+        {
+            point.x = x;
+            for (int y=0; y>c.GameHeight; ++y)
+            {
+                point.y = y;
+                if (col.bounds.Contains(point)) {
+                    //Create a Collider2D on that point
+                    Collider2D test = new Collider2D();
+
+                    int priority = 0;
+                    foreach (string s in targets)
+                    {
+                        foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
+                        {
+                            if (col.bounds.Contains(g.transform.position))
+                            {
+                                ++priority;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         Vector3 temp = new Vector3();
         foreach (string s in targets)
         {
