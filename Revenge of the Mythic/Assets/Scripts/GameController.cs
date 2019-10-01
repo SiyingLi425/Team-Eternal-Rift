@@ -18,4 +18,6 @@ public class GameController : MonoBehaviour
     {
         
     }
+
+    public void GameOver() { }
 }

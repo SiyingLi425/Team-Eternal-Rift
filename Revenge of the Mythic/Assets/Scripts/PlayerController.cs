@@ -13,10 +13,15 @@ public abstract class PlayerController : MonoBehaviour
     private CapsuleCollider2D basicAttackRange;
     private BoxCollider2D playerCollider;
     private string[] attackAxis;
+    private bool dead;
     #endregion
 
-    //Private Variables
+    #region Private Variables
+    [SerializeField]
+    private int health;
     private int speed = 10;
+    private int maximumHealth;
+    #endregion
 
     //Protected Variables
     protected readonly string[] damagable;
@@ -40,6 +45,7 @@ public abstract class PlayerController : MonoBehaviour
     #endregion
     #region Public Properties
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }
+    public bool Dead { get { return dead; } }
     #endregion
 
     // Start is called before the first frame update
@@ -60,27 +66,48 @@ public abstract class PlayerController : MonoBehaviour
         basicAttackRange = GetComponent<CapsuleCollider2D>();
         #endregion
         rbody = GetComponent<Rigidbody2D>();
+        maximumHealth = health;
         //Set Damagable over here... once there's a list of things that can be damaged
     }
 
     // Update is called once per frame
     void Update()
     {
-        #region Move Player
-        float horiz = Input.GetAxis(axisX)*speed;
-        float vert = Input.GetAxis(axisY)*speed;
-        rbody.velocity *= new Vector2(horiz, vert);
-        #endregion
-        #region Attack
-        if (globalCooldown == 0)
+        #region Input Actions
+        if (dead == false)
         {
-            for (int z = 0; z < attackAxis.Length; ++z) {
-                if (Input.GetAxis(attackAxis[z]) > 0) {
-                    attack(z);
+            #region Move Player
+            float horiz = Input.GetAxis(axisX) * speed;
+            float vert = Input.GetAxis(axisY) * speed;
+            rbody.velocity *= new Vector2(horiz, vert);
+            #endregion
+            #region Attack
+            if (globalCooldown == 0)
+            {
+                for (int z = 0; z < attackAxis.Length; ++z)
+                {
+                    if (Input.GetAxis(attackAxis[z]) > 0)
+                    {
+                        attack(z);
+                    }
+                }
+            }
+            #endregion
+        }
+        #endregion
+        else if (GameObject.FindGameObjectsWithTag("Player").Length == 2)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            GameObject otherPlayer = players[0] = gameObject ? players[1] : players[0];
+            if (otherPlayer.PrimaryCollider().IsTouching(gameObject.PrimaryCollider())){
+                ++health;
+                if (health >= maximumHealth)
+                {
+                    dead = false;
+                    health = maximumHealth;
                 }
             }
         }
-        #endregion
     }
 
     #region Cooldown Timers
@@ -134,6 +161,34 @@ public abstract class PlayerController : MonoBehaviour
     protected abstract void Attack2();
     protected abstract void Attack3();
     #endregion
+    public void Damage (int d)
+    {
+        health -= d;
+        #region Death Commands
+        if (d <= 0)
+        {
+            dead = true;
+            health = 0;
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            bool allDead = false;
+            if (players.Length == 2)
+            {
+                if (players[0].GetComponent<PlayerController>().Dead && players[1].GetComponent<PlayerController>().Dead)
+                {
+                    allDead = true;
+                }
+            }
+            if (players.Length == 1 || allDead)
+            {
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
+            }
+        }
+        #endregion
+    }
+    public void Damage(int d, string dot)
+    {
+        //If any script calls this method, add DoT handling to this method
+    }
 }
 
 /*
