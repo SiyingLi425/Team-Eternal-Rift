@@ -35,4 +35,33 @@ public static class ExtensionMethods
 
         return new Collider2D() { enabled = false};
     }
+
+    public static int[] Expand(this int[] o, int value) {
+        int[] temp = o;
+        o = new int[temp.Length + 1];
+        for (int z=0; z<temp.Length; ++z)
+        {
+            o[z] = temp[z];
+        }
+        o[temp.Length] = value;
+        return o;
+    }
+
+    public static int[,] Expand(this int[,] o, int[] value, int i)
+    {
+        int[,] temp = o;
+        o = new int[temp.Length + 1, i];
+        for (int z = 0; z < temp.Length; ++z)
+        {
+            for (int y=0; y<i; ++y)
+            {
+                o[z,y] = temp[z,y];
+            }
+        }
+        for (int z=0;z<i; ++z)
+        {
+            o[temp.Length,z] = value[z];
+        }
+        return o;
+    }
 }
