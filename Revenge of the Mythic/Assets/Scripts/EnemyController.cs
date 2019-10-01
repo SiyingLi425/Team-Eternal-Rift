@@ -2,56 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public abstract class EnemyController : MonoBehaviour
 {
 
     //Public Variables
     public int health;
     public float walkSpeed;
     public int attackSpeed, attackDamage;
-
     
+
+
+
 
     //Private Variables
     private Collider2D aggroRange, hitBox, playerCollider;
     private GameObject player;
-    private Vector2 target, playerPosition;
-    private int attackCoolDown;
-    
+    protected Vector2 target, playerPosition;
+    protected int attackCoolDown;
+    private Transform enemyTransform;
+    private Transform playerTransform;
+
+
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
-        playerPosition = player.GetComponent<Transform>().position;
+        enemyTransform = GetComponent<Transform>();
+        playerTransform = player.GetComponent<Transform>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        Debug.Log("Update");
-        if(health <= 0)
+        
+        playerPosition = player.GetComponent<Transform>().position;
+
+
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
 
         if (playerCollider.IsTouching(hitBox) && attackCoolDown == 0)
         {
-            
+
             attack();
         }
 
-        if (playerCollider.IsTouching(aggroRange) )
+        if (playerCollider.IsTouching(aggroRange))
         {
-            Debug.Log("Aggro");
             target = playerPosition;
-             moveEnemy();
+            moveEnemy();
         }
 
-        if(attackCoolDown > 0)
+        if (attackCoolDown > 0)
         {
             attackCoolDown--;
         }
@@ -59,9 +67,9 @@ public class EnemyController : MonoBehaviour
 
 
     }
-    protected void moveEnemy()
+    protected virtual void  moveEnemy()
     {
-        Debug.Log("Moving");
+ 
         float speedX = 0, speedY = 0;
         Vector2 pos = GetComponent<Transform>().position;
         float xDistance = Mathf.Abs(Mathf.Abs(pos.x) - Mathf.Abs(target.x));
@@ -87,20 +95,31 @@ public class EnemyController : MonoBehaviour
         {
             speedY = -speedY;
         }
+
         GetComponent<Rigidbody2D>().position += new Vector2(speedX, speedY);
-      
+        rotateEnemy();
+
+    }
+
+    protected void rotateEnemy()
+    {
+        float offset = 90f;
+        Vector2 direction = target - (Vector2)enemyTransform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        enemyTransform.rotation = Quaternion.Euler(Vector3.forward * ((angle + 180) + offset));
     }
     public int healthE = 20;
-     protected void attack()
+    protected virtual void attack()
     {
-         //temp
+        //temp
         //player needs to have health variable
         //player.health = player.health - attackDamage;
         healthE = healthE - attackDamage;
         attackCoolDown = attackSpeed;
-        Debug.Log("Attack");
         //where do we put about player death? would the player be able to check for 0 hp? 
     }
 
 
 }
+

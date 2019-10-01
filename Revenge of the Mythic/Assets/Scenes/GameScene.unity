@@ -120,6 +120,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9205483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9205484}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &9205484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9205483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07, y: 0.58, z: -7.8151903}
+  m_LocalScale: {x: 1.0436016, y: 1.0436016, z: 1.0436016}
+  m_Children: []
+  m_Father: {fileID: 1373337552}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,15 +479,15 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373337548}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06719944, y: 0.23509541}
+  m_Offset: {x: -0.035644103, y: 0.11414044}
   serializedVersion: 2
-  m_Radius: 2.4028752
+  m_Radius: 6.1785617
 --- !u!212 &1373337551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -516,9 +546,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373337548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.92, y: -0.56, z: 0}
+  m_LocalPosition: {x: 0.62, y: -4.1, z: 0}
   m_LocalScale: {x: 0.95822, y: 0.95822, z: 0.95822}
-  m_Children: []
+  m_Children:
+  - {fileID: 9205484}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -534,13 +565,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6c41503a06ffc4695adbd93c2dbad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
   health: 30
   walkSpeed: 0.03
-  attackSpeed: 5
+  attackSpeed: 200
   attackDamage: 1
   healthE: 20
+  minDistanceAway: 3
+  bullet: {fileID: 4971281673404616763, guid: b401a5cc2759b9643b6d391183ff1320, type: 3}
+  bulletSpawn: {fileID: 9205484}
 --- !u!50 &1373337554
 Rigidbody2D:
   serializedVersion: 4
@@ -721,7 +753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869842731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -1.49, z: 0}
+  m_LocalPosition: {x: -7.5, y: -4.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
