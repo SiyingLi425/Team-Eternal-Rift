@@ -5,19 +5,26 @@ using UnityEngine;
 public class RangedAoE : RangedAttack //Because this inherits from RangedAttack, it's possible to create moving AoEs
 {
     [SerializeField]
-    private int[] attackPriority;
-    [SerializeField]
     private Collider2D size;
+    [SerializeField]
+    private string dots = "";
+    [SerializeField]
+    private int globalCooldownReset;
+    private int globalCooldown = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Tick();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        --globalCooldown;
+        if (globalCooldown <= 0)
+        {
+            Tick();
+        }
     }
 
     public Vector3 OptimalSpawnPoint(Collider2D col)
@@ -113,5 +120,24 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
             }
         }
         return comparePoints[index];
+    }
+
+    private void Tick()
+    {
+        globalCooldown = globalCooldownReset;
+        foreach (string s in targets)
+        {
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
+            {
+                if (dots == "")
+                {
+                    g.PrimaryController().Damage(damage);
+                }
+                else
+                {
+                    g.PrimaryController().Damage(damage, dots);
+                }
+            }
+        }
     }
 }

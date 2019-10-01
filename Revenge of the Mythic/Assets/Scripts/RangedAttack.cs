@@ -8,9 +8,9 @@ public class RangedAttack : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private int time;
+    protected int time;
     [SerializeField]
-    private int damage;
+    protected int damage;
     [SerializeField]
     private bool destroyOnHit;
     [SerializeField]

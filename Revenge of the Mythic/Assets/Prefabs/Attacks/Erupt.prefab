@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7541204883019173752
+--- !u!1 &1183906346097244795
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2624668538406548394}
-  - component: {fileID: 8773103878167438449}
-  - component: {fileID: 5151573578151815736}
+  - component: {fileID: 8620584504663105106}
+  - component: {fileID: 4152379827938985368}
+  - component: {fileID: 4052519723650240918}
   m_Layer: 0
-  m_Name: Phoenix
-  m_TagString: Player
+  m_Name: Erupt
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2624668538406548394
+--- !u!4 &8620584504663105106
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541204883019173752}
+  m_GameObject: {fileID: 1183906346097244795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,32 +32,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8773103878167438449
+--- !u!114 &4152379827938985368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541204883019173752}
+  m_GameObject: {fileID: 1183906346097244795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3f8f3eebc30da4a89760c34a62b638, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e03a70b710657f439ffe23ba3bc88ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fireball: {fileID: 1668453768661694534, guid: 899143f8235585843914210744458731,
-    type: 3}
-  Erupt: {fileID: 1183906346097244795, guid: 936bc59f89302b847ae7007767e8557e, type: 3}
-  FireballSpawn: {fileID: 0}
-  EruptSpawn: {fileID: 0}
-  EruptRange: {fileID: 0}
---- !u!50 &5151573578151815736
+  speed: 0
+  time: 0
+  damage: 2
+  destroyOnHit: 1
+  Collider: {fileID: 0}
+  size: {fileID: 0}
+  dots: Burn
+  globalCooldownReset: 25
+--- !u!50 &4052519723650240918
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541204883019173752}
+  m_GameObject: {fileID: 1183906346097244795}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
