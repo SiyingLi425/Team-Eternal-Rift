@@ -15,8 +15,9 @@ public abstract class EnemyController : MonoBehaviour
 
 
     //Private Variables
-    private Collider2D aggroRange, hitBox, playerCollider;
+    protected Collider2D aggroRange, hitBox, playerCollider;
     private GameObject player;
+    private PlayerController playerController;
     protected Vector2 target, playerPosition;
     protected int attackCoolDown;
     private Transform enemyTransform;
@@ -27,9 +28,10 @@ public abstract class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
-        player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
         playerTransform = player.GetComponent<Transform>();
@@ -112,12 +114,9 @@ public abstract class EnemyController : MonoBehaviour
     public int healthE = 20;
     protected virtual void attack()
     {
-        //temp
-        //player needs to have health variable
-        //player.health = player.health - attackDamage;
-        healthE = healthE - attackDamage;
+
+        playerController.Damage(attackDamage);
         attackCoolDown = attackSpeed;
-        //where do we put about player death? would the player be able to check for 0 hp? 
     }
 
 
