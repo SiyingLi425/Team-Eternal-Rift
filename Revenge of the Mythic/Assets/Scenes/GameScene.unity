@@ -582,9 +582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   walkSpeed: 0.03
-  attackSpeed: 200
+  attackSpeed: 20
   attackDamage: 1
-  healthE: 20
   minDistanceAway: 3
   bullet: {fileID: 4971281673404616763, guid: b401a5cc2759b9643b6d391183ff1320, type: 3}
   bulletSpawn: {fileID: 9205484}
@@ -663,7 +662,6 @@ MonoBehaviour:
   walkSpeed: 0.02
   attackSpeed: 5
   attackDamage: 1
-  healthE: 20
 --- !u!58 &1869842734
 CircleCollider2D:
   m_ObjectHideFlags: 0
