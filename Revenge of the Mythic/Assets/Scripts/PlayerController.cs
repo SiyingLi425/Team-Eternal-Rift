@@ -23,6 +23,9 @@ public abstract class PlayerController : MonoBehaviour
     private int maximumHealth;
     [SerializeField]
     private Sprite[,] playerImages = new Sprite[4, 3];
+    private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
+    private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
+    private SpriteRenderer sr;
     #endregion
 
     //Protected Variables
@@ -70,6 +73,7 @@ public abstract class PlayerController : MonoBehaviour
         basicAttackRange = GetComponent<CapsuleCollider2D>();
         #endregion
         rbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         maximumHealth = health;
         //Set Damagable over here... once there's a list of things that can be damaged
     }
@@ -84,6 +88,24 @@ public abstract class PlayerController : MonoBehaviour
             float horiz = Input.GetAxis(axisX) * speed;
             float vert = Input.GetAxis(axisY) * speed;
             rbody.velocity *= new Vector2(horiz, vert);
+            #region Direction Handling
+            if (horiz<0 && vert == 0)
+            {
+                direction = 3;
+            }
+            else if (horiz>0 && vert == 0)
+            {
+                direction = 1;
+            }
+            else if (vert > 0)
+            {
+                direction = 2;
+            }
+            else
+            {
+                direction = 0;
+            }
+            #endregion
             #endregion
             #region Attack
             if (globalCooldown == 0)
@@ -97,8 +119,19 @@ public abstract class PlayerController : MonoBehaviour
                 }
             }
             #endregion
+            #region Animate Player
+            --animateTimer;
+            if (animateTimer <= 0)
+            {
+                animateTimer = animateTimerReset;
+                animationStage = animationStage == 3 ? ++animationStage : 0;
+                int i = animationStage == 3 ? 1 : animationStage;
+                sr.sprite = playerImages[direction, i];
+            }
+            #endregion
         }
         #endregion
+        #region Dead Actions
         else if (GameObject.FindGameObjectsWithTag("Player").Length == 2)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -112,6 +145,7 @@ public abstract class PlayerController : MonoBehaviour
                 }
             }
         }
+        #endregion
     }
 
     #region Cooldown Timers
