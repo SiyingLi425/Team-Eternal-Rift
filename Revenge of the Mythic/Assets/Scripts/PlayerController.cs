@@ -21,9 +21,12 @@ public abstract class PlayerController : MonoBehaviour
     private int health;
     private int speed = 10;
     private int maximumHealth;
+    [SerializeField]
+    private Sprite[,] playerImages = new Sprite[4, 3];
     #endregion
 
     //Protected Variables
+    [SerializeField]
     protected readonly string[] damagable;
 
     #region Cooldowns
@@ -46,6 +49,7 @@ public abstract class PlayerController : MonoBehaviour
     #region Public Properties
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }
     public bool Dead { get { return dead; } }
+    public int MaximumHealth { get { return maximumHealth; } }
     #endregion
 
     // Start is called before the first frame update
@@ -188,6 +192,14 @@ public abstract class PlayerController : MonoBehaviour
     public void Damage(int d, string dot)
     {
         //If any script calls this method, add DoT handling to this method
+    }
+    public void Heal(int percent)
+    {
+        health += maximumHealth * percent;
+        if (health >= maximumHealth)
+        {
+            health = maximumHealth;
+        }
     }
 }
 
