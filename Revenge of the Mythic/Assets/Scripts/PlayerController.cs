@@ -9,7 +9,6 @@ public abstract class PlayerController : MonoBehaviour
     private int instance;
     private string axisX, axisY;
     private Rigidbody2D rbody;
-    private int[] abilityCooldownReset;
     private CapsuleCollider2D basicAttackRange;
     private BoxCollider2D playerCollider;
     private string[] attackAxis;
@@ -21,15 +20,24 @@ public abstract class PlayerController : MonoBehaviour
     private int health;
     private int speed = 10;
     private int maximumHealth;
+    [SerializeField]
+    private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
+    private Sprite[,] playerImages = new Sprite[4, 3];
+    private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
+    private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
+    private SpriteRenderer sr;
     #endregion
 
     //Protected Variables
+    [SerializeField]
     protected readonly string[] damagable;
 
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
     private int globalCooldown = 0;
     private int[] abilityCooldown = new int[3];
+    [SerializeField]
+    private int[] abilityCooldownReset = new int[3];
     #endregion
 
     //Properties
@@ -39,13 +47,13 @@ public abstract class PlayerController : MonoBehaviour
     protected string AxisX { get { return axisX; } }
     protected string AxisY { get { return axisY; } }
     protected Rigidbody2D rBody { get { return rbody; } }
-    protected abstract int[] AbilityCooldownReset { get; }
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
     protected string[] AttackAxis { get { return attackAxis; } }
     #endregion
     #region Public Properties
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }
     public bool Dead { get { return dead; } }
+    public int MaximumHealth { get { return maximumHealth; } }
     #endregion
 
     // Start is called before the first frame update
@@ -65,7 +73,17 @@ public abstract class PlayerController : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         basicAttackRange = GetComponent<CapsuleCollider2D>();
         #endregion
+        #region Set Sprites
+        for (int z=0; z<3; ++z)
+        {
+            playerImages[0, z] = north[z];
+            playerImages[1, z] = east[z];
+            playerImages[2, z] = south[z];
+            playerImages[3, z] = west[z];
+        }
+        #endregion
         rbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         maximumHealth = health;
         //Set Damagable over here... once there's a list of things that can be damaged
     }
@@ -80,6 +98,33 @@ public abstract class PlayerController : MonoBehaviour
             float horiz = Input.GetAxis(axisX) * speed;
             float vert = Input.GetAxis(axisY) * speed;
             rbody.velocity *= new Vector2(horiz, vert);
+            #region Direction Handling
+            if (vert != 0 || horiz != 0)
+            {
+                basicAttackRange.size = vert == 0 ? new Vector2(0.25f, 0.4f) : new Vector2(0.4f, 0.25f);
+                basicAttackRange.direction = vert == 0 ? CapsuleDirection2D.Horizontal : CapsuleDirection2D.Vertical;
+                if (horiz < 0 && vert == 0)
+                {
+                    direction = 3;
+                    basicAttackRange.offset = new Vector2(-0.225f, 0);
+                }
+                else if (horiz > 0 && vert == 0)
+                {
+                    direction = 1;
+                    basicAttackRange.offset = new Vector2(0.225f, 0);
+                }
+                else if (vert > 0)
+                {
+                    direction = 2;
+                    basicAttackRange.offset = new Vector2(0, -0.225f);
+                }
+                else
+                {
+                    direction = 0;
+                    basicAttackRange.offset = new Vector2(0, 0.225f);
+                }
+            }
+            #endregion
             #endregion
             #region Attack
             if (globalCooldown == 0)
@@ -93,8 +138,19 @@ public abstract class PlayerController : MonoBehaviour
                 }
             }
             #endregion
+            #region Animate Player
+            --animateTimer;
+            if (animateTimer <= 0)
+            {
+                animateTimer = animateTimerReset;
+                animationStage = animationStage == 3 ? ++animationStage : 0;
+                int i = animationStage == 3 ? 1 : animationStage;
+                sr.sprite = playerImages[direction, i];
+            }
+            #endregion
         }
         #endregion
+        #region Dead Actions
         else if (GameObject.FindGameObjectsWithTag("Player").Length == 2)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -108,6 +164,7 @@ public abstract class PlayerController : MonoBehaviour
                 }
             }
         }
+        #endregion
     }
 
     #region Cooldown Timers
@@ -188,6 +245,14 @@ public abstract class PlayerController : MonoBehaviour
     public void Damage(int d, string dot)
     {
         //If any script calls this method, add DoT handling to this method
+    }
+    public void Heal(int percent)
+    {
+        health += maximumHealth * percent;
+        if (health >= maximumHealth)
+        {
+            health = maximumHealth;
+        }
     }
 }
 

@@ -111,12 +111,17 @@ public abstract class EnemyController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         enemyTransform.rotation = Quaternion.Euler(Vector3.forward * ((angle + 180) + offset));
     }
-    public int healthE = 20;
+
     protected virtual void attack()
     {
 
         playerController.Damage(attackDamage);
         attackCoolDown = attackSpeed;
+    }
+
+    public virtual void damage(int attackDamage)
+    {
+        health -= attackDamage;
     }
 
 
