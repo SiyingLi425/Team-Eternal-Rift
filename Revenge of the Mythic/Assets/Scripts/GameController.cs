@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     //Public variables
-    public TextAsset tutorial, lab1, lab2, hallway, bonus;
+    public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, player, door;
     public float gridSize = 1.8f;
 
@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadRoom(tutorial);
+        LoadRoom(map);
     }
 
     // Update is called once per frame
@@ -48,14 +48,12 @@ public class GameController : MonoBehaviour
                         break;
                     default:
                         Instantiate(floor, new Vector2(xAxis, yAxis), transform.rotation);
-                        Debug.Log("F");
                         break;
                 }
                 switch (doubleTemp[y].ToUpper())
                 {
                     case "W":
                         Instantiate(wall, new Vector2(xAxis, yAxis), transform.rotation);
-                        Debug.Log("W");
                         break;
                     case "P":
                         Instantiate(player, new Vector2(xAxis, yAxis), transform.rotation);
