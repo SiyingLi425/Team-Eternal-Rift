@@ -9,7 +9,6 @@ public abstract class PlayerController : MonoBehaviour
     private int instance;
     private string axisX, axisY;
     private Rigidbody2D rbody;
-    private int[] abilityCooldownReset;
     private CapsuleCollider2D basicAttackRange;
     private BoxCollider2D playerCollider;
     private string[] attackAxis;
@@ -37,6 +36,8 @@ public abstract class PlayerController : MonoBehaviour
     private readonly int globalCooldownReset = 25;
     private int globalCooldown = 0;
     private int[] abilityCooldown = new int[3];
+    [SerializeField]
+    private int[] abilityCooldownReset = new int[3];
     #endregion
 
     //Properties
@@ -46,7 +47,6 @@ public abstract class PlayerController : MonoBehaviour
     protected string AxisX { get { return axisX; } }
     protected string AxisY { get { return axisY; } }
     protected Rigidbody2D rBody { get { return rbody; } }
-    protected abstract int[] AbilityCooldownReset { get; }
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
     protected string[] AttackAxis { get { return attackAxis; } }
     #endregion
@@ -99,21 +99,30 @@ public abstract class PlayerController : MonoBehaviour
             float vert = Input.GetAxis(axisY) * speed;
             rbody.velocity *= new Vector2(horiz, vert);
             #region Direction Handling
-            if (horiz<0 && vert == 0)
+            if (vert != 0 || horiz != 0)
             {
-                direction = 3;
-            }
-            else if (horiz>0 && vert == 0)
-            {
-                direction = 1;
-            }
-            else if (vert > 0)
-            {
-                direction = 2;
-            }
-            else
-            {
-                direction = 0;
+                basicAttackRange.size = vert == 0 ? new Vector2(0.25f, 0.4f) : new Vector2(0.4f, 0.25f);
+                basicAttackRange.direction = vert == 0 ? CapsuleDirection2D.Horizontal : CapsuleDirection2D.Vertical;
+                if (horiz < 0 && vert == 0)
+                {
+                    direction = 3;
+                    basicAttackRange.offset = new Vector2(-0.225f, 0);
+                }
+                else if (horiz > 0 && vert == 0)
+                {
+                    direction = 1;
+                    basicAttackRange.offset = new Vector2(0.225f, 0);
+                }
+                else if (vert > 0)
+                {
+                    direction = 2;
+                    basicAttackRange.offset = new Vector2(0, -0.225f);
+                }
+                else
+                {
+                    direction = 0;
+                    basicAttackRange.offset = new Vector2(0, 0.225f);
+                }
             }
             #endregion
             #endregion
