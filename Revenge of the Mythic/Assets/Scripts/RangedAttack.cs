@@ -16,7 +16,7 @@ public class RangedAttack : MonoBehaviour
     [SerializeField]
     protected static string[] targets;
     [SerializeField]
-    private Collider2D Collider;
+    protected Collider2D Collider;
     #endregion
     #region Private Variables
     private Rigidbody2D rBody;

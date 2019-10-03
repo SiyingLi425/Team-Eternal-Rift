@@ -5,8 +5,6 @@ using UnityEngine;
 public class RangedAoE : RangedAttack //Because this inherits from RangedAttack, it's possible to create moving AoEs
 {
     [SerializeField]
-    private Collider2D size;
-    [SerializeField]
     private string dots = "";
     [SerializeField]
     private int globalCooldownReset;
@@ -45,7 +43,7 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
                 if (col.bounds.Contains(point)) //If the current point is within the provided range
                 {
                     #region Initialize Variables
-                    Collider2D testCol = size;
+                    Collider2D testCol = Collider;
                     testCol.transform.position = point;
                     int priority = 0;
                     #endregion
