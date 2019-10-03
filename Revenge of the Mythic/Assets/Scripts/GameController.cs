@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    //Public variables
+    public TextAsset tutorial, lab1, lab2, hallway, bonus;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, player, door;
+    public float gridSize = 1.8f;
+
     private int gameWidth, gameHeight; //Size of the playable area on the screen, in pixels. If this is no longer the case, please fix OptimalSpawnPoint in RangedAoE
     public int GameWidth { get; }
     public int GameHeight { get; }
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoadRoom(tutorial);
     }
 
     // Update is called once per frame
@@ -20,4 +25,70 @@ public class GameController : MonoBehaviour
     }
 
     public void GameOver() { }
+
+    //This function makes the map according to the textfile that has been assigned
+    public void LoadRoom(TextAsset map)
+    {
+        string[] temp = map.text.Split('\n');
+        string[] tempReverse = new string[temp.Length];
+        for (int z = 0; z < temp.Length; ++z)
+        {
+            tempReverse[z] = temp[z];
+        }
+        temp = tempReverse;
+        for (int z = 0; z < temp.Length; ++z)
+        {
+            string[] doubleTemp = temp[z].Split('-');
+            for (int y = 0; y < doubleTemp.Length; ++y)
+            {
+                float xAxis = y * gridSize, yAxis = (temp.Length - 1 - z) * gridSize;
+                switch (doubleTemp[y].ToUpper())
+                {
+                    case "W":
+                        break;
+                    default:
+                        Instantiate(floor, new Vector2(xAxis, yAxis), transform.rotation);
+                        Debug.Log("F");
+                        break;
+                }
+                switch (doubleTemp[y].ToUpper())
+                {
+                    case "W":
+                        Instantiate(wall, new Vector2(xAxis, yAxis), transform.rotation);
+                        Debug.Log("W");
+                        break;
+                    case "P":
+                        Instantiate(player, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "B":
+                        Instantiate(destroyableObj, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "U":
+                        Instantiate(undestroyableObj, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "M":
+                        Instantiate(meleeEnemy, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "R":
+                        Instantiate(rangedEnemy, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "G":
+                        Instantiate(gas, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "H":
+                        Instantiate(bonusRabbit, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "D":
+                        Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
+                        /*
+                        if (textAsset != levelTxt)
+                        {
+                            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2(xAxis, yAxis);
+                        }
+                        */
+                        break;
+                }
+            }
+        }
+    }
 }
