@@ -22,6 +22,7 @@ public abstract class PlayerController : MonoBehaviour
     private int speed = 10;
     private int maximumHealth;
     [SerializeField]
+    private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
     private Sprite[,] playerImages = new Sprite[4, 3];
     private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
     private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
@@ -71,6 +72,15 @@ public abstract class PlayerController : MonoBehaviour
         #region Colliders
         playerCollider = GetComponent<BoxCollider2D>();
         basicAttackRange = GetComponent<CapsuleCollider2D>();
+        #endregion
+        #region Set Sprites
+        for (int z=0; z<3; ++z)
+        {
+            playerImages[0, z] = north[z];
+            playerImages[1, z] = east[z];
+            playerImages[2, z] = south[z];
+            playerImages[3, z] = west[z];
+        }
         #endregion
         rbody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();

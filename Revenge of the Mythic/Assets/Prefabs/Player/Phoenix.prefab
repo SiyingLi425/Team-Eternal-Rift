@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2624668538406548394}
   - component: {fileID: 8773103878167438449}
   - component: {fileID: 5151573578151815736}
+  - component: {fileID: 1389233594341552740}
   m_Layer: 0
   m_Name: Phoenix
   m_TagString: Player
@@ -44,6 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3f8f3eebc30da4a89760c34a62b638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  north:
+  - {fileID: -4683884945944043696, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: -995161341181351066, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: -1524071442673626182, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  east:
+  - {fileID: 1041380993228145994, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: -6729754688978202746, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: 1800069533549871, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  south:
+  - {fileID: -4453784588268070965, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: 2774680632780850282, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: -7162847911029854707, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  west:
+  - {fileID: -9044002482298871080, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: -2116434511981202434, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
+  - {fileID: -2516983635409943500, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
   Fireball: {fileID: 1668453768661694534, guid: 899143f8235585843914210744458731,
     type: 3}
   Erupt: {fileID: 1183906346097244795, guid: 936bc59f89302b847ae7007767e8557e, type: 3}
@@ -71,3 +89,53 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!212 &1389233594341552740
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541204883019173752}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -4683884945944043696, guid: 509201b6e5e967f4c882bdbade836511,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.91, y: 0.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
