@@ -13,18 +13,19 @@ public abstract class PlayerController : MonoBehaviour
     private BoxCollider2D playerCollider;
     private string[] attackAxis;
     private bool dead;
+    private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
     #endregion
 
     #region Private Variables
     [SerializeField]
     private int health;
     private int speed = 10;
+    [SerializeField]
     private int maximumHealth;
     [SerializeField]
     private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
     private Sprite[,] playerImages = new Sprite[4, 3];
     private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
-    private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
     private SpriteRenderer sr;
     #endregion
 
@@ -49,6 +50,7 @@ public abstract class PlayerController : MonoBehaviour
     protected Rigidbody2D rBody { get { return rbody; } }
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
     protected string[] AttackAxis { get { return attackAxis; } }
+    protected int Direction { get { return direction; } }
     #endregion
     #region Public Properties
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }

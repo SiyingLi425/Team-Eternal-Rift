@@ -27,6 +27,25 @@ public class Phoenix : PlayerController
 
     protected override void Attack1() {
         //Ability 1 [Fireball] - Fireball. Does more damage if it passes through ‘Inferno Barrier’. 2 seconds cooldown.
+        FireballSpawn.rotation = Quaternion.identity;
+        switch (Direction)
+        {
+            case 0:
+                FireballSpawn.position = new Vector2(0, 0.2f);
+                break;
+            case 1:
+                FireballSpawn.position = new Vector2(0.2f, 0);
+                FireballSpawn.Rotate(0,0,90);
+                break;
+            case 2:
+                FireballSpawn.position = new Vector2(0, -0.2f);
+                FireballSpawn.Rotate(0, 0, 180);
+                break;
+            case 3:
+                FireballSpawn.position = new Vector2(-0.2f, 0);
+                FireballSpawn.Rotate(0, 0, 270);
+                break;
+        }
         Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
     }
     protected override void Attack2() {
