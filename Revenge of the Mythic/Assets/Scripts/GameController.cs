@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     //Public variables
     public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, player, door;
-    public float gridSize = 1.8f;
+    public float gridSize = 1;
 
     private int gameWidth, gameHeight; //Size of the playable area on the screen, in pixels. If this is no longer the case, please fix OptimalSpawnPoint in RangedAoE
     public int GameWidth { get; }
@@ -78,12 +78,6 @@ public class GameController : MonoBehaviour
                         break;
                     case "D":
                         Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
-                        /*
-                        if (textAsset != levelTxt)
-                        {
-                            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2(xAxis, yAxis);
-                        }
-                        */
                         break;
                 }
             }
