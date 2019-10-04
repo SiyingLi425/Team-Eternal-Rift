@@ -6,6 +6,6 @@ public class LifeGem : ItemController
 {
     protected override void effect()
     {
-        
+        playerController.Heal(100);
     }
 }
