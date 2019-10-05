@@ -13,11 +13,13 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
     void Start()
     {
         Tick();
+        rBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateCopy();
         --globalCooldown;
         if (globalCooldown <= 0)
         {
