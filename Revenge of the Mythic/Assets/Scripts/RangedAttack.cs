@@ -50,7 +50,7 @@ public class RangedAttack : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         bool hit = false;
         foreach (string tar in targets)
@@ -59,6 +59,7 @@ public class RangedAttack : MonoBehaviour
             {
                 if (Collider.IsTouching(g.PrimaryCollider()))
                 {
+                    Debug.Log(tar);
                     if (tar == "Wall")
                     {
                         Destroy(gameObject);
