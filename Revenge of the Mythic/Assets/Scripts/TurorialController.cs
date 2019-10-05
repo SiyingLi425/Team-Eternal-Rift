@@ -17,7 +17,9 @@ public class TurorialController : MonoBehaviour
     private Collider2D interactArea, playerCollider;
 
     public Queue<string> sentencesQueve;
-   
+    private string sentence;
+    private bool started = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +28,18 @@ public class TurorialController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         interactArea = GetComponent<Collider2D>();
         playerCollider = player.GetComponent<Collider2D>();
+        npcBox = GameObject.FindGameObjectWithTag("NPC");
+        nameHolder = GameObject.FindGameObjectWithTag("SpeakerName").GetComponent<Text>();
+        dialogueTextHolder =GameObject.FindGameObjectWithTag("DialogueTextHolder").GetComponent<Text>();
+        npcBox.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerCollider.IsTouching(interactArea)){
+        if (playerCollider.IsTouching(interactArea) && started == false){
             StartDialogue();
+            Debug.Log("Dialogue");
         }
     }
 
@@ -50,6 +57,7 @@ public class TurorialController : MonoBehaviour
     }
     public void StartDialogue()
     {
+        started = true;
         Debug.Log("Start");
         npcBox.SetActive(true);
         nameHolder.text = speakerName;
@@ -58,6 +66,7 @@ public class TurorialController : MonoBehaviour
         {
             sentencesQueve.Enqueue(sentence);
         }
+
 
         DisplayNextSentence();
     }
@@ -69,7 +78,7 @@ public class TurorialController : MonoBehaviour
             EndDialogue();
             return;
         }
-        string sentence = sentencesQueve.Dequeue();
+        sentence = sentencesQueve.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
