@@ -14,6 +14,8 @@ public abstract class PlayerController : MonoBehaviour
     private string[] attackAxis;
     private bool dead;
     private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
+    [SerializeField]
+    private string[] damagable;
     #endregion
 
     #region Private Variables
@@ -29,10 +31,6 @@ public abstract class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private bool animate = true;
     #endregion
-
-    //Protected Variables
-    [SerializeField]
-    protected readonly string[] damagable;
 
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
@@ -52,6 +50,7 @@ public abstract class PlayerController : MonoBehaviour
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
     protected string[] AttackAxis { get { return attackAxis; } }
     protected int Direction { get { return direction; } }
+    protected string[] Damagable { get { return damagable; } }
     #endregion
     #region Public Properties
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }
@@ -134,7 +133,7 @@ public abstract class PlayerController : MonoBehaviour
             {
                 for (int z = 0; z < attackAxis.Length; ++z)
                 {
-                    if (Input.GetAxis(attackAxis[z]) > 0)
+                    if (Input.GetAxis(attackAxis[z]) > 0 && abilityCooldown[z] == 0)
                     {
                         attack(z);
                     }
