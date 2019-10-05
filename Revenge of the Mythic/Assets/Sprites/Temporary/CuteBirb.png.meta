@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: e8c27ce97d58a354085c6ffe3e4b47da
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3459614869230542599
+    second: CuteBirb_0
+  - first:
+      213: 1386500959538165166
+    second: CuteBirb_1
+  - first:
+      213: 7638043974924002136
+    second: CuteBirb_2
+  - first:
+      213: -2026598894940144753
+    second: CuteBirb_3
+  - first:
+      213: 7494724687132814203
+    second: CuteBirb_4
+  - first:
+      213: -7018416426003565731
+    second: CuteBirb_5
+  - first:
+      213: 4257249684172812520
+    second: CuteBirb_6
+  - first:
+      213: -6274448626188488490
+    second: CuteBirb_7
+  - first:
+      213: 839818796203387138
+    second: CuteBirb_8
+  - first:
+      213: -7267677437492904502
+    second: CuteBirb_9
+  - first:
+      213: -7792145439391558572
+    second: CuteBirb_10
+  - first:
+      213: -6601355083709534516
+    second: CuteBirb_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +106,285 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CuteBirb_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 148
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b56cb641908f5942bc99a4e7b0d45c9
+      internalID: 3459614869230542599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 156
+        width: 47
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a0f9f81e4104d45bba07b2d20808ac
+      internalID: 1386500959538165166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 147
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d1a485098b2184ca1d1f58639ac5df
+      internalID: 7638043974924002136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 101
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0eaba0848b812646831267f70d46499
+      internalID: -2026598894940144753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 103
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8c1a362e2230d408d1d4053750161e
+      internalID: 7494724687132814203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 99
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8dcfc74089cf684fac8f5cbcf7e4425
+      internalID: -7018416426003565731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 53
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d221f72dae37b4ea82d39bfa53bf5a
+      internalID: 4257249684172812520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 55
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51102cef275260459da0bfb958637b9
+      internalID: -6274448626188488490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 51
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5cacd26d2a5c6439357a3861d203c4
+      internalID: 839818796203387138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 4
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596a1c2aaf6b8324b85958bf61b4846a
+      internalID: -7267677437492904502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 8
+        width: 47
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f36205c9c23ab4f84b2b19832555e5
+      internalID: -7792145439391558572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CuteBirb_11
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 3
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0765b87c4f74bc646b537d5913014efd
+      internalID: -6601355083709534516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
