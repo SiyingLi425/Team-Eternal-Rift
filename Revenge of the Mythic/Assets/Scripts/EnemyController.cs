@@ -29,12 +29,14 @@ public abstract class EnemyController : MonoBehaviour
 
   
 
-    private string status;
-
+    
+    public string status;
 
     [Header("Status Effects")]
     public float bleedTimer;
     public float bleedTime;
+    public float burnTimer;
+    public float burnTime;
     public float tauntTimer;
     public float tauntTime;
 
@@ -42,8 +44,6 @@ public abstract class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        player1 = GameObject.FindGameObjectsWithTag("Player")[0];
-        player2 = GameObject.FindGameObjectsWithTag("Player")[1];
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
@@ -53,6 +53,7 @@ public abstract class EnemyController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
         if (status != "Taunt")
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
@@ -101,10 +102,19 @@ public abstract class EnemyController : MonoBehaviour
         {
              bleedTimer--;
         }
+        if(burnTimer > 0)
+        {
+            burnTimer--;
+        }
 
         if(tauntTimer > 0)
         {
             tauntTime--;
+        }
+
+        if(tauntTimer <= 0)
+        {
+           
         }
        
       
@@ -170,12 +180,24 @@ public abstract class EnemyController : MonoBehaviour
         health -= attackDamage;
         status = s; 
 
-        if (status == "Bleed" || status == "Burn")
+        if (status == "Bleed")
         {
             bleedTimer = bleedTime;
         }
+        if(status == "Burn")
+        {
+            burnTimer = burnTime;
+        }
+
         if(status == "Taunt")
         {
+            foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                if (p.PrimaryCollider().IsTouching(hitBox))
+                {
+                    aggroedPlayer = p;
+                }
+            }
             target = aggroedPlayer.GetComponent<Transform>().position;
             tauntTimer = tauntTime;
         }
