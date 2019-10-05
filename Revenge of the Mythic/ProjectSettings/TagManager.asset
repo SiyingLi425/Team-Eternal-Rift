@@ -11,6 +11,7 @@ TagManager:
   - Item
   - Enemy
   - Destroyable
+  - Wall
   layers:
   - Default
   - TransparentFX

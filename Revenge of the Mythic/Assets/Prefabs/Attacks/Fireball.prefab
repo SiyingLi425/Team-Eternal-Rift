@@ -74,6 +74,7 @@ MonoBehaviour:
   targets:
   - Enemy
   - Destroyable
+  - Wall
   Collider: {fileID: 4259955483562851012}
 --- !u!212 &-9006255737034869495
 SpriteRenderer:
