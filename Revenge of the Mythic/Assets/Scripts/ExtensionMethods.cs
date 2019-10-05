@@ -38,6 +38,8 @@ public static class ExtensionMethods
                 return g.GetComponent<EnemyController>();
             case "Item":
                 return g.GetComponent<ItemController>();
+            case "Destroyable":
+                return g.GetComponent<DestroyableController>();
         }
         return null;
     }
@@ -51,6 +53,8 @@ public static class ExtensionMethods
                 return g.GetComponent<EnemyController>().HitBox;
             case "Item":
                 return g.GetComponent<ItemController>().collider;
+            case "Destroyable":
+                return g.GetComponent<Collider2D>();
         }
 
         return new Collider2D() { enabled = false};
