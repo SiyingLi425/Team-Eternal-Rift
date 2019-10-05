@@ -13,18 +13,6 @@ public class Phoenix : PlayerController
     private CircleCollider2D EruptRange;
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Leave this empty
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Leave this empty
-    }
-
     protected override void Attack1() {
         //Ability 1 [Fireball] - Fireball. Does more damage if it passes through ‘Inferno Barrier’. 2 seconds cooldown.
         FireballSpawn.rotation = Quaternion.identity;

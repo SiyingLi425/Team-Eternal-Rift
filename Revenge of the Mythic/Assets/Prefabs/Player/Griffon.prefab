@@ -67,6 +67,7 @@ MonoBehaviour:
   - {fileID: 5641869318666967415, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
   - {fileID: 196355874785145769, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
   abilityCooldownReset: 2c0100009001000000000000
+  TauntRange: {fileID: 5290100819264975846}
 --- !u!50 &8276424200015999158
 Rigidbody2D:
   serializedVersion: 4

@@ -4,20 +4,8 @@ using UnityEngine;
 
 public class Griffon : PlayerController
 {
+    [SerializeField]
     private CircleCollider2D TauntRange;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        TauntRange = GetComponent<CircleCollider2D>();
-        //Only use this to initialize variables
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Leave this Blank
-    }
 
     protected override void Attack1() {
         /*

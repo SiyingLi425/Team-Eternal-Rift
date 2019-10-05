@@ -19,13 +19,13 @@ public abstract class PlayerController : MonoBehaviour
     #region Private Variables
     [SerializeField]
     private int health;
-    private int speed = 10;
+    private float speed = 0.05f;
     [SerializeField]
     private int maximumHealth;
     [SerializeField]
     private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
     private Sprite[,] playerImages = new Sprite[4, 3];
-    private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
+    private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
     private SpriteRenderer sr;
     private bool animate = true;
     #endregion
@@ -64,7 +64,6 @@ public abstract class PlayerController : MonoBehaviour
     {
         #region Set Player-Based Axises
         instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayerNum;
-        Debug.Log(instance);
         axisX = "Horizontal" + instance;
         axisY = "Vertical" + instance;
         attackAxis = new string[4];
@@ -101,7 +100,7 @@ public abstract class PlayerController : MonoBehaviour
             #region Move Player
             float horiz = Input.GetAxis(axisX) * speed;
             float vert = Input.GetAxis(axisY) * speed;
-            rbody.velocity *= new Vector2(horiz, vert);
+            rbody.position += new Vector2(horiz, vert);
             #region Direction Handling
             if (vert != 0 || horiz != 0)
             {
@@ -119,12 +118,12 @@ public abstract class PlayerController : MonoBehaviour
                 }
                 else if (vert > 0)
                 {
-                    direction = 2;
+                    direction = 0;
                     basicAttackRange.offset = new Vector2(0, -0.225f);
                 }
                 else
                 {
-                    direction = 0;
+                    direction = 2;
                     basicAttackRange.offset = new Vector2(0, 0.225f);
                 }
             }
@@ -156,7 +155,7 @@ public abstract class PlayerController : MonoBehaviour
                 if (animateTimer <= 0)
                 {
                     animateTimer = animateTimerReset;
-                    animationStage = animationStage == 3 ? ++animationStage : 0;
+                    animationStage = animationStage == 3 ? 0 : ++animationStage;
                     int i = animationStage == 3 ? 1 : animationStage;
                     sr.sprite = playerImages[direction, i];
                 }
