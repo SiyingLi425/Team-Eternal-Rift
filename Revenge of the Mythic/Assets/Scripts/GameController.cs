@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
     public void AddPlayer(float x, float y)
     {
         ++playerNum;
-        GameObject player = playerNum == 1 ? griffon : phoenix;
+        GameObject player = playerNum == 1 ? phoenix  : griffon;
         Instantiate(player, new Vector2(x, y), transform.rotation);
     }
 }
