@@ -133,7 +133,7 @@ public abstract class PlayerController : MonoBehaviour
             {
                 for (int z = 0; z < attackAxis.Length; ++z)
                 {
-                    if (Input.GetAxis(attackAxis[z]) > 0 && abilityCooldown[z] == 0)
+                    if (Input.GetAxis(attackAxis[z]) > 0 && ((z > 0 && abilityCooldown[z - 1] == 0) || z == 0))
                     {
                         attack(z);
                     }
