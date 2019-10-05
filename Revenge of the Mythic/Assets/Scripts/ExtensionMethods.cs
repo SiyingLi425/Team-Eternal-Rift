@@ -23,12 +23,17 @@ public static class ExtensionMethods
         {
             case "Player":
                 return g.GetComponent<PlayerController>();
+            case "GameController":
+                return g.GetComponent<GameController>();
+            case "Enemy":
+                return g.GetComponent<EnemyController>();
         }
         return null;
     }
 
     public static Collider2D PrimaryCollider(this GameObject g) {
-        switch (g.tag) {
+        switch (g.tag)
+        {
             case "Player":
                 return g.GetComponent<PlayerController>().PlayerCollider;
         }

@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public float gridSize = 1;
 
     private int gameWidth, gameHeight; //Size of the playable area on the screen, in pixels. If this is no longer the case, please fix OptimalSpawnPoint in RangedAoE
-    private int playerNum = 1; //CHANGE TO 0 for playable
+    private int playerNum = 0;
     public int GameWidth { get { return gameWidth; } }
     public int GameHeight { get { return gameHeight; } }
     public int PlayerNum { get { return playerNum; } }
@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
                         Instantiate(wall, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "P":
-                        Instantiate(player, new Vector2(xAxis, yAxis), transform.rotation);
+                        AddPlayer(player, xAxis, yAxis);
                         break;
                     case "B":
                         Instantiate(destroyableObj, new Vector2(xAxis, yAxis), transform.rotation);
@@ -85,8 +85,9 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    public void AddPlayer()
+    public void AddPlayer(GameObject player, float x, float y)
     {
-        //instantiate player and up playerNum
+        ++playerNum;
+        Instantiate(player, new Vector2(x, y), transform.rotation);
     }
 }
