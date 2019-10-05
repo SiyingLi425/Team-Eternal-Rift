@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6328140015428245337}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,6 @@ MonoBehaviour:
   gas: {fileID: 8327816948575138475, guid: e8b9ded594957404f89b5488fb7f83a3, type: 3}
   bonusRabbit: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04,
     type: 3}
-  player: {fileID: 0}
   door: {fileID: 9147779268845948142, guid: 6faf5d07009884f4399f3e62e1abb5de, type: 3}
   griffon: {fileID: 4833405778416478741, guid: f499b99853452ec48b61b9c7598cc308, type: 3}
   phoenix: {fileID: 7541204883019173752, guid: e65d78811d476d54295bc2535a8e5bea, type: 3}

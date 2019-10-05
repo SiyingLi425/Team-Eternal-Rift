@@ -20,7 +20,6 @@ public abstract class ItemController : MonoBehaviour
             Debug.Log(p);
             if (p.PrimaryCollider().IsTouching(collider))
             {
-                
                 effect(p.GetComponent<PlayerController>());
                 Destroy(gameObject);
             }
