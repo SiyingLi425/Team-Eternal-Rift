@@ -17,7 +17,9 @@ public abstract class EnemyController : MonoBehaviour
     //Private Variables
     
     protected Collider2D aggroRange, hitBox, playerCollider;
-    private GameObject player;
+    private GameObject player1;
+    private GameObject player2;
+    private GameObject aggroedPlayer;
     private PlayerController playerController;
     protected Vector2 target, playerPosition;
     protected int attackCoolDown;
@@ -33,25 +35,38 @@ public abstract class EnemyController : MonoBehaviour
     [Header("Status Effects")]
     public float bleedTimer;
     public float bleedTime;
+    public float tauntTimer;
+    public float tauntTime;
 
     public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerController = player.GetComponent<PlayerController>();
+        player1 = GameObject.FindGameObjectsWithTag("Player")[0];
+        player2 = GameObject.FindGameObjectsWithTag("Player")[1];
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
-        playerCollider = player.GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
-        playerTransform = player.GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-
-        playerPosition = player.GetComponent<Transform>().position;
+        if (status != "Taunt")
+        {
+            foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                if (aggroRange.IsTouching(p.PrimaryCollider()))
+                {
+                    aggroedPlayer = p;
+                    playerController = p.GetComponent<PlayerController>();
+                }
+            }
+        }
+        playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
+        playerPosition = aggroedPlayer.GetComponent<Transform>().position;
+        playerTransform = aggroedPlayer.GetComponent<Transform>();
 
 
         if (health <= 0)
@@ -86,16 +101,13 @@ public abstract class EnemyController : MonoBehaviour
         {
              bleedTimer--;
         }
-       
 
-        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        if(tauntTimer > 0)
         {
-            if (p.PrimaryCollider().IsTouching(HitBox))
-            {
-                playerController = p.GetComponent<PlayerController>();
-
-            }
+            tauntTime--;
         }
+       
+      
     }
     protected virtual void  moveEnemy()
     {
@@ -148,16 +160,15 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void Damage(int attackDamage)
     {
+        Debug.Log("Getting Damaged 1");
         health -= attackDamage;
     }
 
     public virtual void Damage(int attackDamage, string s)
     {
+        Debug.Log("Getting Damaged 2");
         health -= attackDamage;
-        status = s;
-
-       
- 
+        status = s; 
 
         if (status == "Bleed" || status == "Burn")
         {
@@ -165,15 +176,8 @@ public abstract class EnemyController : MonoBehaviour
         }
         if(status == "Taunt")
         {
-            foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
-            {
-                if (p.GetComponent<CircleCollider2D>().IsTouching(HitBox))
-                {
-                    playerController = p.GetComponent<PlayerController>();
-
-                }
-            }
-            target = player.GetComponent<Transform>().position;
+            target = aggroedPlayer.GetComponent<Transform>().position;
+            tauntTimer = tauntTime;
         }
 
     }
