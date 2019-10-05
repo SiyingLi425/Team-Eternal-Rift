@@ -9,13 +9,18 @@ public abstract class EnemyController : MonoBehaviour
     public int health;
     public float walkSpeed;
     public int attackSpeed, attackDamage;
-    
 
-
+    [Header("Animations")]
+    [SerializeField]
+    private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
+    private Sprite[,] playerImages = new Sprite[4, 3];
+    private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
+    private SpriteRenderer sr;
+    private bool animate = true;
 
 
     //Private Variables
-    
+
     protected Collider2D aggroRange, hitBox, playerCollider;
     private GameObject player1;
     private GameObject player2;
@@ -47,7 +52,15 @@ public abstract class EnemyController : MonoBehaviour
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
-        
+        #region Set Sprites
+        for (int z = 0; z < 3; ++z)
+        {
+            playerImages[0, z] = north[z];
+            playerImages[1, z] = east[z];
+            playerImages[2, z] = south[z];
+            playerImages[3, z] = west[z];
+        }
+        #endregion
     }
 
     // Update is called once per frame
@@ -116,9 +129,28 @@ public abstract class EnemyController : MonoBehaviour
         {
            
         }
-       
-      
-    }
+        #region Animate Player
+        try
+        {
+            if (axisX != "" && axisY != "" && GetComponent<Griffon>())
+            {
+                animate = Input.GetAxis(AxisX) != 0 || Input.GetAxis(AxisY) != 0;
+            }
+        }
+        catch (System.NullReferenceException) { }
+        if (animate)
+        {
+            --animateTimer;
+            if (animateTimer <= 0)
+            {
+                animateTimer = animateTimerReset;
+                animationStage = animationStage == 3 ? 0 : ++animationStage;
+                int i = animationStage == 3 ? 1 : animationStage;
+                sr.sprite = playerImages[direction, i];
+            }
+            #endregion
+
+        }
     protected virtual void  moveEnemy()
     {
  
