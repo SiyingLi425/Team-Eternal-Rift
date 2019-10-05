@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9201770182400126594}
   m_Layer: 0
   m_Name: LifeGem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
-  playerCollider: {fileID: 0}
-  player: {fileID: 0}
-  playerController: {fileID: 0}
