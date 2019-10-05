@@ -13,6 +13,9 @@ public class TurorialController : MonoBehaviour
     public string[] sentences;
     public string speakerName;
 
+    private GameObject player;
+    private Collider2D interactArea, playerCollider;
+
     public Queue<string> sentencesQueve;
    
 
@@ -20,12 +23,22 @@ public class TurorialController : MonoBehaviour
     void Start()
     {
         sentencesQueve = new Queue<string>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        interactArea = GetComponent<Collider2D>();
+        playerCollider = player.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerCollider.IsTouching(interactArea)){
+            StartDialogue();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        EndDialogue();
     }
 
     void interact()
