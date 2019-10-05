@@ -8,6 +8,8 @@ TagManager:
   - DialogueTextHolder
   - SpeakerName
   - NPC
+  - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX

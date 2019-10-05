@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9201770182400126594}
   m_Layer: 0
   m_Name: LifeGem
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d81fb4d5a4458e74984bab994e19880a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,7 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4de28face69fa45b52e054c74e1a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
-  playerCollider: {fileID: 0}
-  player: {fileID: 0}
-  playerController: {fileID: 0}
+  collider: {fileID: 5448705335906515741}
