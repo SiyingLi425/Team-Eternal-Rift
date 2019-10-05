@@ -30,6 +30,7 @@ public abstract class PlayerController : MonoBehaviour
     private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
     private SpriteRenderer sr;
     private bool animate = true;
+    private int slowTimer = 0, slowTimerReset = 100;
     #endregion
 
     #region Cooldowns
@@ -97,8 +98,9 @@ public abstract class PlayerController : MonoBehaviour
         if (dead == false)
         {
             #region Move Player
-            float horiz = Input.GetAxis(axisX) * speed;
-            float vert = Input.GetAxis(axisY) * speed;
+            float s = slowTimer == 0 ? speed : speed / 2; 
+            float horiz = Input.GetAxis(axisX) * s;
+            float vert = Input.GetAxis(axisY) * s;
             rbody.position += new Vector2(horiz, vert);
             #region Direction Handling
             if (vert != 0 || horiz != 0)
@@ -192,6 +194,10 @@ public abstract class PlayerController : MonoBehaviour
                 --abilityCooldown[z];
             }
         }
+        if (slowTimer > 0)
+        {
+            --slowTimer;
+        }
     }
     #endregion
     #region Attacks
@@ -257,7 +263,11 @@ public abstract class PlayerController : MonoBehaviour
     }
     public void Damage(int d, string dot)
     {
-        //If any script calls this method, add DoT handling to this method
+        Damage(d);
+        if (dot.ToLower().Contains("slow"))
+        {
+            slowTimer = slowTimerReset;
+        }
     }
     public void Heal(int percent)
     {
