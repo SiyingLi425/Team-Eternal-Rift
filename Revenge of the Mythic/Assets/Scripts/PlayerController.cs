@@ -7,7 +7,7 @@ public abstract class PlayerController : MonoBehaviour
 {
     #region Hidden Variables
     private int instance;
-    private string axisX, axisY;
+    private string axisX = "", axisY = "";
     private Rigidbody2D rbody;
     private CapsuleCollider2D basicAttackRange;
     private BoxCollider2D playerCollider;
@@ -27,14 +27,12 @@ public abstract class PlayerController : MonoBehaviour
     private Sprite[,] playerImages = new Sprite[4, 3];
     private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
     private SpriteRenderer sr;
+    private bool animate = true;
     #endregion
 
     //Protected Variables
     [SerializeField]
     protected readonly string[] damagable;
-
-    //Public Variables
-    public bool Animate = true;
 
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
@@ -65,7 +63,8 @@ public abstract class PlayerController : MonoBehaviour
     void Start()
     {
         #region Set Player-Based Axises
-        instance = GameObject.FindGameObjectsWithTag("Player").Length;
+        instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayerNum;
+        Debug.Log(instance);
         axisX = "Horizontal" + instance;
         axisY = "Vertical" + instance;
         attackAxis = new string[4];
@@ -144,7 +143,14 @@ public abstract class PlayerController : MonoBehaviour
             }
             #endregion
             #region Animate Player
-            if (Animate)
+            try
+            {
+                if (axisX != "" && axisY != "" && GetComponent<Griffon>())
+                {
+                    animate = Input.GetAxis(AxisX) != 0 || Input.GetAxis(AxisY) != 0;
+                }
+            } catch (System.NullReferenceException) { }
+            if (animate)
             {
                 --animateTimer;
                 if (animateTimer <= 0)
@@ -231,7 +237,7 @@ public abstract class PlayerController : MonoBehaviour
     {
         health -= d;
         #region Death Commands
-        if (d <= 0)
+        if (health <= 0)
         {
             dead = true;
             health = 0;
