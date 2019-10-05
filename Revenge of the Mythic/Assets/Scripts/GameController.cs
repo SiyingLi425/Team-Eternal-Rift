@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     //Public variables
     public TextAsset map;
-    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird;
     public float gridSize = 1;
 
     private int gameWidth, gameHeight; //Size of the playable area on the screen, in pixels. If this is no longer the case, please fix OptimalSpawnPoint in RangedAoE
@@ -79,6 +79,9 @@ public class GameController : MonoBehaviour
                         Instantiate(bonusRabbit, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "D":
+                        Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "T":
                         Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                 }
