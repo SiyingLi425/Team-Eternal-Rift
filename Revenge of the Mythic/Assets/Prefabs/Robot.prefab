@@ -141,8 +141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   walkSpeed: 0.02
-  attackSpeed: 4
+  attackSpeed: 75
   attackDamage: 1
+  bleedTimer: 0
+  bleedTime: 0
 --- !u!50 &1094509923705689525
 Rigidbody2D:
   serializedVersion: 4
