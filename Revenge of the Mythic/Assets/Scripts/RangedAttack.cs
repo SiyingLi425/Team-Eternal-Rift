@@ -14,12 +14,12 @@ public class RangedAttack : MonoBehaviour
     [SerializeField]
     private bool destroyOnHit;
     [SerializeField]
-    protected static string[] targets;
+    protected string[] targets;
     [SerializeField]
     protected Collider2D Collider;
     #endregion
     #region Private Variables
-    private Rigidbody2D rBody;
+    protected Rigidbody2D rBody;
     private Vector2 speedVector;
     #endregion
     // Start is called before the first frame update
@@ -32,12 +32,22 @@ public class RangedAttack : MonoBehaviour
     void Update()
     {
         //The following code can be used to make an object always travel in the direction it's facing (according to its z-rotation)
-        speedVector = new Vector2(speed * Mathf.Cos(transform.rotation.z*Mathf.Deg2Rad), speed * Mathf.Sin(transform.rotation.z * Mathf.Deg2Rad));
-        rBody.position += speedVector;
+        /*speedVector = new Vector2(speed * Mathf.Cos(transform.rotation.z*Mathf.Deg2Rad), speed * Mathf.Sin(transform.rotation.z * Mathf.Deg2Rad));
+        Debug.Log(transform.rotation.z * Mathf.Deg2Rad);*/
+        rBody.AddForce(transform.up * speed * Time.deltaTime, ForceMode2D.Impulse);
         --time;
         if (time <= 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
+        }
+    }
+    protected void UpdateCopy()
+    {
+        rBody.AddForce(transform.up * speed * Time.deltaTime, ForceMode2D.Impulse);
+        --time;
+        if (time <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     void OnCollisionEnter2D(Collision2D col)
@@ -56,7 +66,7 @@ public class RangedAttack : MonoBehaviour
         }
         if (hit && destroyOnHit)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

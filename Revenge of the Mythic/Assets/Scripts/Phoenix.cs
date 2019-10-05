@@ -13,21 +13,28 @@ public class Phoenix : PlayerController
     private CircleCollider2D EruptRange;
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Leave this empty
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Leave this empty
-    }
-
     protected override void Attack1() {
         //Ability 1 [Fireball] - Fireball. Does more damage if it passes through ‘Inferno Barrier’. 2 seconds cooldown.
-        Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
+        FireballSpawn.rotation = Quaternion.identity;
+        switch (Direction)
+        {
+            case 0:
+                FireballSpawn.localPosition = new Vector2(0, 0.2f);
+                break;
+            case 1:
+                FireballSpawn.localPosition = new Vector2(0.2f, 0);
+                FireballSpawn.Rotate(0,0,270);
+                break;
+            case 2:
+                FireballSpawn.localPosition = new Vector2(0, -0.2f);
+                FireballSpawn.Rotate(0, 0, 180);
+                break;
+            case 3:
+                FireballSpawn.localPosition = new Vector2(-0.2f, 0);
+                FireballSpawn.Rotate(0, 0, 90);
+                break;
+        }
+        GameObject temp = Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
     }
     protected override void Attack2() {
         //Ability 2 [Erupt] - Ranged AoE.Does damage and applies burning DoT(same as DoT mentioned above). 6 second cooldown.

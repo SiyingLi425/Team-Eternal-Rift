@@ -4,26 +4,14 @@ using UnityEngine;
 
 public class Griffon : PlayerController
 {
+    [SerializeField]
     private CircleCollider2D TauntRange;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        TauntRange = GetComponent<CircleCollider2D>();
-        //Only use this to initialize variables
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Leave this empty
-    }
 
     protected override void Attack1() {
         /*
          Ability 1 [Peck] - Melee damage. Adds a bleeding effect on the enemy that drains hp slowly for 3 seconds. 6 second cooldown.
          */
-        foreach (string s in damagable)
+        foreach (string s in Damagable)
         {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
             {
@@ -36,7 +24,7 @@ public class Griffon : PlayerController
     }
     protected override void Attack2() {
         //Ability 2 [Battle Cry] - Effect.Grab Agro of nearby enemies. 8 seconds cooldown.
-        foreach (string s in damagable)
+        foreach (string s in Damagable)
         {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
             {

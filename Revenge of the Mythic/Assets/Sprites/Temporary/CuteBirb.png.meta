@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 7ad6081af9b287441a07f8cf0e9e0098
+guid: e8c27ce97d58a354085c6ffe3e4b47da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 17426746270384133
-    second: Robot_0
+      213: 3459614869230542599
+    second: CuteBirb_0
   - first:
-      213: 5638259562752074330
-    second: Robot_1
+      213: 1386500959538165166
+    second: CuteBirb_1
   - first:
-      213: -3378959473338303302
-    second: Robot_2
+      213: 7638043974924002136
+    second: CuteBirb_2
   - first:
-      213: 5332947737335612695
-    second: Robot_3
+      213: -2026598894940144753
+    second: CuteBirb_3
   - first:
-      213: 214248980452440492
-    second: Robot_4
+      213: 7494724687132814203
+    second: CuteBirb_4
   - first:
-      213: -3727906849806164347
-    second: Robot_5
+      213: -7018416426003565731
+    second: CuteBirb_5
   - first:
-      213: -5713122161831522535
-    second: Robot_6
+      213: 4257249684172812520
+    second: CuteBirb_6
   - first:
-      213: -321252410884412435
-    second: Robot_7
+      213: -6274448626188488490
+    second: CuteBirb_7
   - first:
-      213: 7287976494194388105
-    second: Robot_8
+      213: 839818796203387138
+    second: CuteBirb_8
   - first:
-      213: 704897558614422922
-    second: Robot_9
+      213: -7267677437492904502
+    second: CuteBirb_9
   - first:
-      213: -7972684559215338029
-    second: Robot_10
+      213: -7792145439391558572
+    second: CuteBirb_10
   - first:
-      213: -3350845546279357508
-    second: Robot_11
+      213: -6601355083709534516
+    second: CuteBirb_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Robot_0
+      name: CuteBirb_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
+        x: 9
+        y: 148
+        width: 31
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 712b7edea3aea8b4aaae0afa99b19d06
-      internalID: 17426746270384133
+      spriteID: 9b56cb641908f5942bc99a4e7b0d45c9
+      internalID: 3459614869230542599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_1
+      name: CuteBirb_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
+        x: 49
+        y: 156
+        width: 47
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62b118c586bf1f34e97704482843ea9c
-      internalID: 5638259562752074330
+      spriteID: b1a0f9f81e4104d45bba07b2d20808ac
+      internalID: 1386500959538165166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_2
+      name: CuteBirb_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
+        x: 108
+        y: 147
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa293c49251df2c418cde8995340f6e3
-      internalID: -3378959473338303302
+      spriteID: f8d1a485098b2184ca1d1f58639ac5df
+      internalID: 7638043974924002136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_3
+      name: CuteBirb_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
+        x: 10
+        y: 101
+        width: 29
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a79ab067da5f1e45936f582449ef8b5
-      internalID: 5332947737335612695
+      spriteID: e0eaba0848b812646831267f70d46499
+      internalID: -2026598894940144753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_4
+      name: CuteBirb_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
+        x: 58
+        y: 103
+        width: 36
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +232,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e7808c811ce7ab40af43d310a76a38d
-      internalID: 214248980452440492
+      spriteID: aa8c1a362e2230d408d1d4053750161e
+      internalID: 7494724687132814203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_5
+      name: CuteBirb_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
+        x: 102
+        y: 99
+        width: 34
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ac00a80e4cb48a479c91e3cef5f442a
-      internalID: -3727906849806164347
+      spriteID: d8dcfc74089cf684fac8f5cbcf7e4425
+      internalID: -7018416426003565731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_6
+      name: CuteBirb_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
+        x: 9
+        y: 53
+        width: 29
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 838dd5bd488e155419a3463e5350c634
-      internalID: -5713122161831522535
+      spriteID: 06d221f72dae37b4ea82d39bfa53bf5a
+      internalID: 4257249684172812520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_7
+      name: CuteBirb_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 50
+        y: 55
+        width: 36
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +295,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ff697fe04eb28949a84ef8f1e52b64b
-      internalID: -321252410884412435
+      spriteID: b51102cef275260459da0bfb958637b9
+      internalID: -6274448626188488490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_8
+      name: CuteBirb_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
+        x: 104
+        y: 51
+        width: 34
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,20 +316,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad890ceea3dfc6b47aef4cf82bc8ebfd
-      internalID: 7287976494194388105
+      spriteID: 9f5cacd26d2a5c6439357a3861d203c4
+      internalID: 839818796203387138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_9
+      name: CuteBirb_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 8
+        y: 4
+        width: 31
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,20 +337,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6abffb55ca24dc740b2e7428d0ab002b
-      internalID: 704897558614422922
+      spriteID: 596a1c2aaf6b8324b85958bf61b4846a
+      internalID: -7267677437492904502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_10
+      name: CuteBirb_10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 48
+        y: 8
+        width: 47
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,20 +358,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b438179ebb0aff47bd9e065b00d27e2
-      internalID: -7972684559215338029
+      spriteID: 78f36205c9c23ab4f84b2b19832555e5
+      internalID: -7792145439391558572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot_11
+      name: CuteBirb_11
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 107
+        y: 3
+        width: 25
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,8 +379,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d98fb3f4c38971c429059fb6be769865
-      internalID: -3350845546279357508
+      spriteID: 0765b87c4f74bc646b537d5913014efd
+      internalID: -6601355083709534516
       vertices: []
       indices: 
       edges: []

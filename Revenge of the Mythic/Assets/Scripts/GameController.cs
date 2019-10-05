@@ -10,8 +10,10 @@ public class GameController : MonoBehaviour
     public float gridSize = 1;
 
     private int gameWidth, gameHeight; //Size of the playable area on the screen, in pixels. If this is no longer the case, please fix OptimalSpawnPoint in RangedAoE
-    public int GameWidth { get; }
-    public int GameHeight { get; }
+    private int playerNum = 1; //CHANGE TO 0 for playable
+    public int GameWidth { get { return gameWidth; } }
+    public int GameHeight { get { return gameHeight; } }
+    public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class GameController : MonoBehaviour
     }
 
     public void GameOver() { }
+<<<<<<< HEAD
 
     //This function makes the map according to the textfile that has been assigned
     public void LoadRoom(TextAsset map)
@@ -82,5 +85,10 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+=======
+    public void AddPlayer()
+    {
+        //instantiate player and up playerNum
+>>>>>>> master
     }
 }

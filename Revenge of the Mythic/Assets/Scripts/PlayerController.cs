@@ -7,30 +7,30 @@ public abstract class PlayerController : MonoBehaviour
 {
     #region Hidden Variables
     private int instance;
-    private string axisX, axisY;
+    private string axisX = "", axisY = "";
     private Rigidbody2D rbody;
     private CapsuleCollider2D basicAttackRange;
     private BoxCollider2D playerCollider;
     private string[] attackAxis;
     private bool dead;
+    private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
+    [SerializeField]
+    private string[] damagable;
     #endregion
 
     #region Private Variables
     [SerializeField]
     private int health;
-    private int speed = 10;
+    private float speed = 0.05f;
+    [SerializeField]
     private int maximumHealth;
     [SerializeField]
     private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
     private Sprite[,] playerImages = new Sprite[4, 3];
-    private int animateTimer = 25, animateTimerReset = 25, animationStage = 0;
-    private int direction = 0; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
+    private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
     private SpriteRenderer sr;
+    private bool animate = true;
     #endregion
-
-    //Protected Variables
-    [SerializeField]
-    protected readonly string[] damagable;
 
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
@@ -49,6 +49,8 @@ public abstract class PlayerController : MonoBehaviour
     protected Rigidbody2D rBody { get { return rbody; } }
     protected CapsuleCollider2D BasicAttackRange { get { return basicAttackRange; } }
     protected string[] AttackAxis { get { return attackAxis; } }
+    protected int Direction { get { return direction; } }
+    protected string[] Damagable { get { return damagable; } }
     #endregion
     #region Public Properties
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }
@@ -60,7 +62,7 @@ public abstract class PlayerController : MonoBehaviour
     void Start()
     {
         #region Set Player-Based Axises
-        instance = GameObject.FindGameObjectsWithTag("Player").Length;
+        instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayerNum;
         axisX = "Horizontal" + instance;
         axisY = "Vertical" + instance;
         attackAxis = new string[4];
@@ -97,7 +99,7 @@ public abstract class PlayerController : MonoBehaviour
             #region Move Player
             float horiz = Input.GetAxis(axisX) * speed;
             float vert = Input.GetAxis(axisY) * speed;
-            rbody.velocity *= new Vector2(horiz, vert);
+            rbody.position += new Vector2(horiz, vert);
             #region Direction Handling
             if (vert != 0 || horiz != 0)
             {
@@ -115,12 +117,12 @@ public abstract class PlayerController : MonoBehaviour
                 }
                 else if (vert > 0)
                 {
-                    direction = 2;
+                    direction = 0;
                     basicAttackRange.offset = new Vector2(0, -0.225f);
                 }
                 else
                 {
-                    direction = 0;
+                    direction = 2;
                     basicAttackRange.offset = new Vector2(0, 0.225f);
                 }
             }
@@ -131,7 +133,7 @@ public abstract class PlayerController : MonoBehaviour
             {
                 for (int z = 0; z < attackAxis.Length; ++z)
                 {
-                    if (Input.GetAxis(attackAxis[z]) > 0)
+                    if (Input.GetAxis(attackAxis[z]) > 0 && ((z > 0 && abilityCooldown[z - 1] == 0) || z == 0))
                     {
                         attack(z);
                     }
@@ -139,15 +141,25 @@ public abstract class PlayerController : MonoBehaviour
             }
             #endregion
             #region Animate Player
-            --animateTimer;
-            if (animateTimer <= 0)
+            try
             {
-                animateTimer = animateTimerReset;
-                animationStage = animationStage == 3 ? ++animationStage : 0;
-                int i = animationStage == 3 ? 1 : animationStage;
-                sr.sprite = playerImages[direction, i];
+                if (axisX != "" && axisY != "" && GetComponent<Griffon>())
+                {
+                    animate = Input.GetAxis(AxisX) != 0 || Input.GetAxis(AxisY) != 0;
+                }
+            } catch (System.NullReferenceException) { }
+            if (animate)
+            {
+                --animateTimer;
+                if (animateTimer <= 0)
+                {
+                    animateTimer = animateTimerReset;
+                    animationStage = animationStage == 3 ? 0 : ++animationStage;
+                    int i = animationStage == 3 ? 1 : animationStage;
+                    sr.sprite = playerImages[direction, i];
+                }
+                #endregion
             }
-            #endregion
         }
         #endregion
         #region Dead Actions
@@ -155,7 +167,8 @@ public abstract class PlayerController : MonoBehaviour
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             GameObject otherPlayer = players[0] = gameObject ? players[1] : players[0];
-            if (otherPlayer.PrimaryCollider().IsTouching(gameObject.PrimaryCollider())){
+            if (otherPlayer.PrimaryCollider().IsTouching(gameObject.PrimaryCollider()))
+            {
                 ++health;
                 if (health >= maximumHealth)
                 {
@@ -222,7 +235,7 @@ public abstract class PlayerController : MonoBehaviour
     {
         health -= d;
         #region Death Commands
-        if (d <= 0)
+        if (health <= 0)
         {
             dead = true;
             health = 0;
