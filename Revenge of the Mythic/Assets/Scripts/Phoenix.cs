@@ -19,22 +19,22 @@ public class Phoenix : PlayerController
         switch (Direction)
         {
             case 0:
-                FireballSpawn.position = new Vector2(0, 0.2f);
+                FireballSpawn.localPosition = new Vector2(0, 0.2f);
                 break;
             case 1:
-                FireballSpawn.position = new Vector2(0.2f, 0);
-                FireballSpawn.Rotate(0,0,90);
+                FireballSpawn.localPosition = new Vector2(0.2f, 0);
+                FireballSpawn.Rotate(0,0,270);
                 break;
             case 2:
-                FireballSpawn.position = new Vector2(0, -0.2f);
+                FireballSpawn.localPosition = new Vector2(0, -0.2f);
                 FireballSpawn.Rotate(0, 0, 180);
                 break;
             case 3:
-                FireballSpawn.position = new Vector2(-0.2f, 0);
-                FireballSpawn.Rotate(0, 0, 270);
+                FireballSpawn.localPosition = new Vector2(-0.2f, 0);
+                FireballSpawn.Rotate(0, 0, 90);
                 break;
         }
-        Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
+        GameObject temp = Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
     }
     protected override void Attack2() {
         //Ability 2 [Erupt] - Ranged AoE.Does damage and applies burning DoT(same as DoT mentioned above). 6 second cooldown.

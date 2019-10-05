@@ -14,7 +14,7 @@ public class RangedAttack : MonoBehaviour
     [SerializeField]
     private bool destroyOnHit;
     [SerializeField]
-    protected static string[] targets;
+    protected string[] targets;
     [SerializeField]
     protected Collider2D Collider;
     #endregion
@@ -26,18 +26,38 @@ public class RangedAttack : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
+        //Help me I'm sad :(
+        switch (transform.rotation.z*180)
+        {
+            case 0:
+                speedVector = new Vector2(0, speed);
+                break;
+            case 90:
+                speedVector = new Vector2(speed, 0);
+                break;
+            case 180:
+                speedVector = new Vector2(0, -speed);
+                break;
+            case 270:
+                speedVector = new Vector2(-speed, 0);
+                break;
+            default:
+                Debug.Log(transform.rotation.z * 180);
+                    break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //The following code can be used to make an object always travel in the direction it's facing (according to its z-rotation)
-        speedVector = new Vector2(speed * Mathf.Cos(transform.rotation.z*Mathf.Deg2Rad), speed * Mathf.Sin(transform.rotation.z * Mathf.Deg2Rad));
+        /*speedVector = new Vector2(speed * Mathf.Cos(transform.rotation.z*Mathf.Deg2Rad), speed * Mathf.Sin(transform.rotation.z * Mathf.Deg2Rad));
+        Debug.Log(transform.rotation.z * Mathf.Deg2Rad);*/
         rBody.position += speedVector;
         --time;
         if (time <= 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
     void OnCollisionEnter2D(Collision2D col)
