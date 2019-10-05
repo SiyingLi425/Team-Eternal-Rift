@@ -5,12 +5,12 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     private Vector2 speedVector;
-    public int time;
-    public float speed;
+    public int time = 500;
+    public float speed = 0.02f;
     private Rigidbody2D rBody;
     private GameObject player;
     private PlayerController playerController;
-    public int attackDamange;
+    public int attackDamange = 1;
 
     // Start is called before the first frame update
     void Start()
