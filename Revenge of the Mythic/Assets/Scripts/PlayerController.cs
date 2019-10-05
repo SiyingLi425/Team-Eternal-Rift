@@ -33,6 +33,9 @@ public abstract class PlayerController : MonoBehaviour
     [SerializeField]
     protected readonly string[] damagable;
 
+    //Public Variables
+    public bool Animate = true;
+
     #region Cooldowns
     private readonly int globalCooldownReset = 25;
     private int globalCooldown = 0;
@@ -141,15 +144,18 @@ public abstract class PlayerController : MonoBehaviour
             }
             #endregion
             #region Animate Player
-            --animateTimer;
-            if (animateTimer <= 0)
+            if (Animate)
             {
-                animateTimer = animateTimerReset;
-                animationStage = animationStage == 3 ? ++animationStage : 0;
-                int i = animationStage == 3 ? 1 : animationStage;
-                sr.sprite = playerImages[direction, i];
+                --animateTimer;
+                if (animateTimer <= 0)
+                {
+                    animateTimer = animateTimerReset;
+                    animationStage = animationStage == 3 ? ++animationStage : 0;
+                    int i = animationStage == 3 ? 1 : animationStage;
+                    sr.sprite = playerImages[direction, i];
+                }
+                #endregion
             }
-            #endregion
         }
         #endregion
         #region Dead Actions
@@ -157,7 +163,8 @@ public abstract class PlayerController : MonoBehaviour
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             GameObject otherPlayer = players[0] = gameObject ? players[1] : players[0];
-            if (otherPlayer.PrimaryCollider().IsTouching(gameObject.PrimaryCollider())){
+            if (otherPlayer.PrimaryCollider().IsTouching(gameObject.PrimaryCollider()))
+            {
                 ++health;
                 if (health >= maximumHealth)
                 {
