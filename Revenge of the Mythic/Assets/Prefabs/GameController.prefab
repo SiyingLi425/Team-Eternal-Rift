@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2714556841349878943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5542762519655050247}
+  - component: {fileID: 6328140015428245337}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5542762519655050247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714556841349878943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.993348, y: -3.022002, z: -25.83403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6328140015428245337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714556841349878943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081e00860a749f04ea7fda11ec998844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 4900000, guid: 0682e36977742fe4a820c7c1edf0879d, type: 3}
+  wall: {fileID: 8619256869774041035, guid: 4f05a4230db808d4bb5dff42473b78ba, type: 3}
+  floor: {fileID: 7487345868251980796, guid: 4aff40e0eecac7b47b0472321c8a1676, type: 3}
+  destroyableObj: {fileID: 5336205792133793546, guid: af402562f05e131488b213c41e212a59,
+    type: 3}
+  undestroyableObj: {fileID: 8980838289566696436, guid: 60537fc73fddbf44bac4f2aa7830142e,
+    type: 3}
+  meleeEnemy: {fileID: 1094509923705689524, guid: cac77716bfdec4143ac514ba5a8816f3,
+    type: 3}
+  rangedEnemy: {fileID: 2942909966416675120, guid: 6d749aad3c56db742a33b312718a04a9,
+    type: 3}
+  gas: {fileID: 8327816948575138475, guid: e8b9ded594957404f89b5488fb7f83a3, type: 3}
+  bonusRabbit: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04,
+    type: 3}
+  player: {fileID: 0}
+  door: {fileID: 9147779268845948142, guid: 6faf5d07009884f4399f3e62e1abb5de, type: 3}
+  griffon: {fileID: 4833405778416478741, guid: f499b99853452ec48b61b9c7598cc308, type: 3}
+  phoenix: {fileID: 7541204883019173752, guid: e65d78811d476d54295bc2535a8e5bea, type: 3}
+  gridSize: 1
