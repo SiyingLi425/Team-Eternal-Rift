@@ -50,7 +50,9 @@ MonoBehaviour:
   time: 0
   damage: 2
   destroyOnHit: 1
-  targets: []
+  targets:
+  - Enemy
+  - Destroyable
   Collider: {fileID: 129589605059095159}
   dots: Burn
   globalCooldownReset: 25

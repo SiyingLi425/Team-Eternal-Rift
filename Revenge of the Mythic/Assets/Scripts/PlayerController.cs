@@ -87,7 +87,7 @@ public abstract class PlayerController : MonoBehaviour
         #endregion
         rbody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        maximumHealth = health;
+        health = maximumHealth;
         //Set Damagable over here... once there's a list of things that can be damaged
     }
 

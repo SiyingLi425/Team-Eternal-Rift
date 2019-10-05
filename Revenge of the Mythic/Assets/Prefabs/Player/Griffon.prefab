@@ -132,7 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c298f5f4e53ff46ad6883e1017fa68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagable: []
+  damagable:
+  - Enemy
+  - Destroyable
   health: 0
   maximumHealth: 40
   north:
@@ -173,7 +175,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &351123612469169289
 SpriteRenderer:
   m_ObjectHideFlags: 0

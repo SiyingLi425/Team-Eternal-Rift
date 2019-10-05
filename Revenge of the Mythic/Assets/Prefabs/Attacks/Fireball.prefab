@@ -73,6 +73,7 @@ MonoBehaviour:
   destroyOnHit: 1
   targets:
   - Enemy
+  - Destroyable
   Collider: {fileID: 4259955483562851012}
 --- !u!212 &-9006255737034869495
 SpriteRenderer:
