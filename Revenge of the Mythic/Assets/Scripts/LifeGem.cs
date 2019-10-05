@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LifeGem : ItemController
 {
-    protected override void effect()
+    protected override void effect(PlayerController p)
     {
-        playerController.Heal(100);
+        p.Heal(100);
     }
 }

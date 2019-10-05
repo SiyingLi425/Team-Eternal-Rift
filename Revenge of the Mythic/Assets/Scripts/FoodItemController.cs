@@ -5,8 +5,8 @@ using UnityEngine;
 public class FoodItemController : ItemController
 {
     public int healPercentage;
-    protected override void effect()
+    protected override void effect(PlayerController p)
     {
-        playerController.Heal(healPercentage);
+        p.Heal(healPercentage);
     }
 }
