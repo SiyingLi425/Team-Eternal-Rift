@@ -59,6 +59,10 @@ public class RangedAttack : MonoBehaviour
             {
                 if (Collider.IsTouching(g.PrimaryCollider()))
                 {
+                    if (tar == "Wall")
+                    {
+                        Destroy(gameObject);
+                    }
                     g.PrimaryController().Damage(damage);
                     hit = true;
                 }
