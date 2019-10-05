@@ -50,6 +50,7 @@ MonoBehaviour:
   time: 0
   damage: 2
   destroyOnHit: 1
+  targets: []
   Collider: {fileID: 129589605059095159}
   dots: Burn
   globalCooldownReset: 25
@@ -133,7 +134,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0000000032599274, y: -0.027346257}
