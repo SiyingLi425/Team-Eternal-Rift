@@ -23,7 +23,16 @@ public abstract class EnemyController : MonoBehaviour
     protected int attackCoolDown;
     private Transform enemyTransform;
     private Transform playerTransform;
+    
 
+  
+
+    private string status;
+
+
+    [Header("Status Effects")]
+    public float bleedTimer;
+    public float bleedTime;
 
     public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
@@ -41,7 +50,7 @@ public abstract class EnemyController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+
         playerPosition = player.GetComponent<Transform>().position;
 
 
@@ -67,8 +76,26 @@ public abstract class EnemyController : MonoBehaviour
             attackCoolDown--;
         }
 
+        if (bleedTimer > 0 && bleedTime % (25/100 * bleedTimer) == 0 )
+        {  
+            playerController.Damage(1);
+         
+        }
 
+        if(bleedTimer > 0)
+        {
+             bleedTimer--;
+        }
+       
 
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (p.PrimaryCollider().IsTouching(HitBox))
+            {
+                playerController = p.GetComponent<PlayerController>();
+
+            }
+        }
     }
     protected virtual void  moveEnemy()
     {
@@ -115,14 +142,32 @@ public abstract class EnemyController : MonoBehaviour
 
     protected virtual void attack()
     {
-
         playerController.Damage(attackDamage);
         attackCoolDown = attackSpeed;
     }
 
-    public virtual void damage(int attackDamage)
+    public virtual void Damage(int attackDamage)
     {
         health -= attackDamage;
+    }
+
+    public virtual void Damage(int attackDamage, string s)
+    {
+        health -= attackDamage;
+        status = s;
+
+       
+ 
+
+        if (status == "Bleed" || status == "Burn")
+        {
+            bleedTimer = bleedTime;
+        }
+        if(status == "Taunt")
+        {
+            target = player.GetComponent<Transform>().position;
+        }
+
     }
 
 
