@@ -15,6 +15,7 @@ public abstract class EnemyController : MonoBehaviour
 
 
     //Private Variables
+    
     protected Collider2D aggroRange, hitBox, playerCollider;
     private GameObject player;
     private PlayerController playerController;
@@ -24,7 +25,7 @@ public abstract class EnemyController : MonoBehaviour
     private Transform playerTransform;
 
 
-
+    public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
     protected virtual void Start()
     {

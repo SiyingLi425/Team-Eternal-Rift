@@ -11,6 +11,7 @@ public class BulletController : MonoBehaviour
     private GameObject player;
     private PlayerController playerController;
     public int attackDamange = 1;
+    private Collider2D bulletCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class BulletController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
+        bulletCollider = this.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -33,14 +35,21 @@ public class BulletController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Player")
+
+        if (ExtensionMethods.PrimaryCollider(player).IsTouching(bulletCollider))
         {
             playerController.Damage(attackDamange);
-             Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
-
+            ;
     }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if(other.tag == "Player")
+    //    {
+    //        playerController.Damage(attackDamange);
+    //         Destroy(this.gameObject);
+    //    }
+
+    //}
 }
