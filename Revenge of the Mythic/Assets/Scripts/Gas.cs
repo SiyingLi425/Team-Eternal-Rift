@@ -8,16 +8,4 @@ public class Gas : ItemController
     {
         p.Damage(0, "Slow");
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
