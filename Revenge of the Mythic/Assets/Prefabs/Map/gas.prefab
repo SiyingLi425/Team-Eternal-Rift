@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8327816948575138454}
   - component: {fileID: 8327816948575138473}
   - component: {fileID: 8327816948575138472}
+  - component: {fileID: 7418758213029200379}
   m_Layer: 0
   m_Name: gas
   m_TagString: Item
@@ -107,3 +108,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7418758213029200379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327816948575138475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ea9625606f74546964fe903f0a2091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 8327816948575138472}
