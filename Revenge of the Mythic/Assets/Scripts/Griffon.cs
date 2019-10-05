@@ -16,7 +16,7 @@ public class Griffon : PlayerController
     // Update is called once per frame
     void Update()
     {
-        //Leave this empty
+        Animate = Input.GetAxis(AxisX) != 0 || Input.GetAxis(AxisY) != 0;
     }
 
     protected override void Attack1() {
