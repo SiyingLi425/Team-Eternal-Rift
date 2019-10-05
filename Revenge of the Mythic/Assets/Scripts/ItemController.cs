@@ -17,8 +17,10 @@ public abstract class ItemController : MonoBehaviour
     {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
+            Debug.Log(p);
             if (p.PrimaryCollider().IsTouching(collider))
             {
+                
                 effect(p.GetComponent<PlayerController>());
                 Destroy(gameObject);
             }

@@ -165,6 +165,14 @@ public abstract class EnemyController : MonoBehaviour
         }
         if(status == "Taunt")
         {
+            foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                if (p.GetComponent<CircleCollider2D>().IsTouching(HitBox))
+                {
+                    playerController = p.GetComponent<PlayerController>();
+
+                }
+            }
             target = player.GetComponent<Transform>().position;
         }
 
