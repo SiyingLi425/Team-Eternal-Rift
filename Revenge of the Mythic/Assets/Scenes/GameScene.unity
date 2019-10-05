@@ -175,8 +175,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 2167291541530323970, guid: 5a6b59618b7515548a8f9f7867b3a362,
     type: 3}
   m_Type: 0
@@ -262,6 +260,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &469054517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7541204883019173752, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_Name
+      value: Phoenix
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4894326
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.26868233
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624668538406548394, guid: e65d78811d476d54295bc2535a8e5bea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e65d78811d476d54295bc2535a8e5bea, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +531,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< Updated upstream
 --- !u!1001 &848247449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -632,6 +700,8 @@ MonoBehaviour:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e65d78811d476d54295bc2535a8e5bea, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &857998508
 >>>>>>> master
 GameObject:
@@ -1010,8 +1080,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -1213900502397144054, guid: 5a6b59618b7515548a8f9f7867b3a362,
     type: 3}
   m_Type: 0

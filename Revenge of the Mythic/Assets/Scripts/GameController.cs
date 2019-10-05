@@ -27,7 +27,6 @@ public class GameController : MonoBehaviour
     }
 
     public void GameOver() { }
-<<<<<<< HEAD
 
     //This function makes the map according to the textfile that has been assigned
     public void LoadRoom(TextAsset map)
@@ -85,10 +84,9 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-=======
+    }
     public void AddPlayer()
     {
         //instantiate player and up playerNum
->>>>>>> master
     }
 }
