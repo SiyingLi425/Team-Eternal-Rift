@@ -54,6 +54,7 @@ public static class ExtensionMethods
             case "Item":
                 return g.GetComponent<ItemController>().collider;
             case "Destroyable":
+            case "Wall":
                 return g.GetComponent<Collider2D>();
         }
 
