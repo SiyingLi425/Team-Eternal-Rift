@@ -26,6 +26,15 @@ public static class ExtensionMethods
             case "GameController":
                 return g.GetComponent<GameController>();
             case "Enemy":
+                //If you DON'T want to grab a particular enemy controller and want to use generic as primary, please remove the below if-statements
+                if (g.GetComponent<EnemyController>() is RangedEnemy r)
+                {
+                    return r;
+                }
+                else if (g.GetComponent<EnemyController>() is MeleeEnemy m)
+                {
+                    return m;
+                }
                 return g.GetComponent<EnemyController>();
         }
         return null;
@@ -36,8 +45,8 @@ public static class ExtensionMethods
         {
             case "Player":
                 return g.GetComponent<PlayerController>().PlayerCollider;
-            /*case "Enemy":
-                return g.GetComponent<EnemyController>().;*/
+            case "Enemy":
+                return g.GetComponent<EnemyController>().HitBox;
         }
 
         return new Collider2D() { enabled = false};
