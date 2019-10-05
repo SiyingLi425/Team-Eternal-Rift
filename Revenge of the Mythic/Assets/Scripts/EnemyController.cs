@@ -193,7 +193,7 @@ public abstract class EnemyController : MonoBehaviour
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
-                if (p.PrimaryCollider().IsTouching(hitBox))
+                if (p.GetComponent<CircleCollider2D>().IsTouching(hitBox))
                 {
                     aggroedPlayer = p;
                 }

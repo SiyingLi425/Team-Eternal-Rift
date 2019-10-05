@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 5638259562752074330, guid: 7ad6081af9b287441a07f8cf0e9e0098,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,8 +143,13 @@ MonoBehaviour:
   walkSpeed: 0.02
   attackSpeed: 75
   attackDamage: 1
+  status: 
   bleedTimer: 0
   bleedTime: 0
+  burnTimer: 0
+  burnTime: 0
+  tauntTimer: 0
+  tauntTime: 0
 --- !u!50 &1094509923705689525
 Rigidbody2D:
   serializedVersion: 4

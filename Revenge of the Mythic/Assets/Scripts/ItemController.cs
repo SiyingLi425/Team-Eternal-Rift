@@ -15,9 +15,9 @@ public abstract class ItemController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+    
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
-            Debug.Log(p);
             if (p.PrimaryCollider().IsTouching(collider))
             {
                 effect(p.GetComponent<PlayerController>());
