@@ -10,12 +10,36 @@ public static class ExtensionMethods
          Each object that can be damaged will likely have its own unique damage method
          If this is not the case, add type conversion and then write out all the things here
          */
+         if (m is DestroyableController d)
+        {
+            d.Damage(i);
+        }
+        else if (m is EnemyController e)
+        {
+            e.Damage(i);
+        }
+        else if (m is PlayerController p)
+        {
+            p.Damage(i);
+        }
     }
     public static void Damage(this MonoBehaviour m, int i, string s)
     {
         /*
          Same as above, but takes DoTs into account
          */
+        if (m is DestroyableController d)
+        {
+            d.Damage(i, s);
+        }
+        else if (m is EnemyController e)
+        {
+            e.Damage(i, s);
+        }
+        else if (m is PlayerController p)
+        {
+            p.Damage(i, s);
+        }
     }
 
     public static MonoBehaviour PrimaryController(this GameObject g) {
@@ -38,7 +62,7 @@ public static class ExtensionMethods
                 return g.GetComponent<EnemyController>();
             case "Item":
                 return g.GetComponent<ItemController>();
-            case "Destroyable":
+            case "Destroyable": //Doesn't work for some reason
                 return g.GetComponent<DestroyableController>();
         }
         return null;

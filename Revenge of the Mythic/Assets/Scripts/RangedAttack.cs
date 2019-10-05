@@ -55,17 +55,19 @@ public class RangedAttack : MonoBehaviour
         bool hit = false;
         foreach (string tar in targets)
         {
-            //Debug.Log(tar);
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(tar))
             {
                 if (Collider.IsTouching(g.PrimaryCollider()))
                 {
-                    Debug.Log(tar);
                     if (tar == "Wall")
                     {
                         Destroy(gameObject);
                     }
-                    g.PrimaryController().Damage(damage);
+                    if (g.GetComponent<DestroyableController>() == g.PrimaryController())
+                    {
+                        Debug.Log("Equal!");
+                    }
+                        g.PrimaryController().Damage(damage);
                     hit = true;
                 }
             }
