@@ -26,7 +26,10 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void GameOver() { }
+    public void GameOver()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+    }
 
     //This function makes the map according to the textfile that has been assigned
     public void LoadRoom(TextAsset map)
@@ -83,6 +86,9 @@ public class GameController : MonoBehaviour
                         break;
                     case "T":
                         Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "O":
+                        Instantiate(tutorialBird, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                 }
             }

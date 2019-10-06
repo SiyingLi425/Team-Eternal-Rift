@@ -119,7 +119,7 @@ MonoBehaviour:
   npcBox: {fileID: 0}
   nameHolder: {fileID: 0}
   sentences:
-  - Use WASD to move Player 1
+  - "Use WASD to move \nZ = Ranged attack, V = melee attack\nBreak the wall with Z"
   speakerName: Tutorial Bird
 --- !u!58 &641284393722299419
 CircleCollider2D:

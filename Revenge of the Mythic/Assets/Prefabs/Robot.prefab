@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1094509923705689522}
   - component: {fileID: 1094509923705688654}
   - component: {fileID: 1094509923705689525}
+  - component: {fileID: 6010742414177005416}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Enemy
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   walkSpeed: 0.02
-  attackSpeed: 75
+  attackSpeed: 50
   attackDamage: 1
   status: 
   bleedTimer: 0
@@ -171,3 +172,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6010742414177005416
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094509923705689524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6cb90ff9fcb058f4c887a0799cf909ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

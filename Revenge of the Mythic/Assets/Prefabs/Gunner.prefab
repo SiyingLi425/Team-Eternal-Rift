@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   walkSpeed: 0.02
-  attackSpeed: 100
+  attackSpeed: 50
   attackDamage: 1
   status: 
   bleedTimer: 0

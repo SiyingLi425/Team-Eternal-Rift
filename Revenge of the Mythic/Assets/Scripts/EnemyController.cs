@@ -10,14 +10,9 @@ public abstract class EnemyController : MonoBehaviour
     public float walkSpeed;
     public int attackSpeed, attackDamage;
 
-    [Header("Animations")]
-    [SerializeField]
-    private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
-    private Sprite[,] playerImages = new Sprite[4, 3];
-    private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
-    private SpriteRenderer sr;
-    private bool animate = true;
 
+
+    private Animator enemyAnimator;
 
     //Private Variables
 
@@ -52,33 +47,28 @@ public abstract class EnemyController : MonoBehaviour
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
-        #region Set Sprites
-        for (int z = 0; z < 3; ++z)
-        {
-            playerImages[0, z] = north[z];
-            playerImages[1, z] = east[z];
-            playerImages[2, z] = south[z];
-            playerImages[3, z] = west[z];
-        }
-        #endregion
+        enemyAnimator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
+        
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
+        playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
         if (status != "Taunt")
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
-                if (aggroRange.IsTouching(p.PrimaryCollider()))
+                if (aggroRange.IsTouching(playerCollider))
                 {
                     aggroedPlayer = p;
                     playerController = p.GetComponent<PlayerController>();
                 }
             }
         }
-        playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
+        
         playerPosition = aggroedPlayer.GetComponent<Transform>().position;
         playerTransform = aggroedPlayer.GetComponent<Transform>();
 
@@ -105,52 +95,31 @@ public abstract class EnemyController : MonoBehaviour
             attackCoolDown--;
         }
 
-        if (bleedTimer > 0 && bleedTime % (25/100 * bleedTimer) == 0 )
-        {  
+        if (bleedTimer > 0 && bleedTime % (25 / 100 * bleedTimer) == 0)
+        {
             playerController.Damage(1);
-         
+
         }
 
-        if(bleedTimer > 0)
+        if (bleedTimer > 0)
         {
-             bleedTimer--;
+            bleedTimer--;
         }
-        if(burnTimer > 0)
+        if (burnTimer > 0)
         {
             burnTimer--;
         }
 
-        if(tauntTimer > 0)
+        if (tauntTimer > 0)
         {
             tauntTime--;
         }
 
-        if(tauntTimer <= 0)
+        if (tauntTimer <= 0)
         {
-           
-        }
-        #region Animate Player
-        try
-        {
-            if (axisX != "" && axisY != "" && GetComponent<Griffon>())
-            {
-                animate = Input.GetAxis(AxisX) != 0 || Input.GetAxis(AxisY) != 0;
-            }
-        }
-        catch (System.NullReferenceException) { }
-        if (animate)
-        {
-            --animateTimer;
-            if (animateTimer <= 0)
-            {
-                animateTimer = animateTimerReset;
-                animationStage = animationStage == 3 ? 0 : ++animationStage;
-                int i = animationStage == 3 ? 1 : animationStage;
-                sr.sprite = playerImages[direction, i];
-            }
-            #endregion
 
         }
+    }
     protected virtual void  moveEnemy()
     {
  
@@ -163,25 +132,30 @@ public abstract class EnemyController : MonoBehaviour
         {
             speedX = walkSpeed;
             speedY = yDistance / (xDistance / walkSpeed);
+            enemyAnimator.SetInteger("Direction", 3);
+        
         }
         else
         {
             speedY = walkSpeed;
             speedX = xDistance / (yDistance / walkSpeed);
+            enemyAnimator.SetInteger("Direction", 2);
         }
 
         if (target.x < pos.x)
         {
             speedX = -speedX;
+            enemyAnimator.SetInteger("Direction", 1);
         }
 
         if (target.y < pos.y)
         {
             speedY = -speedY;
+            enemyAnimator.SetInteger("Direction", 0);
         }
 
         GetComponent<Rigidbody2D>().position += new Vector2(speedX, speedY);
-        rotateEnemy();
+        //rotateEnemy();
 
     }
 
@@ -235,6 +209,8 @@ public abstract class EnemyController : MonoBehaviour
         }
 
     }
+
+ 
 
 
 }
