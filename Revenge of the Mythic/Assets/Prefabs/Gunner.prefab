@@ -132,9 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  walkSpeed: 0.02
+  walkSpeed: 0.05
   attackSpeed: 50
   attackDamage: 1
+  meat: {fileID: 6317656113553127805, guid: 4b725abe0b4a14f4b94855968a7bbab3, type: 3}
   status: 
   bleedTimer: 0
   bleedTime: 0
