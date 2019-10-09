@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 473758476448346988}
   - component: {fileID: 602973784730585349}
   - component: {fileID: 841659618}
+  - component: {fileID: 3289563847504579983}
   m_Layer: 0
   m_Name: Gunner
   m_TagString: Enemy
@@ -146,7 +147,7 @@ MonoBehaviour:
   minDistanceAway: 3
   bullet: {fileID: 9069119562871470622, guid: 3a950b6cc6931cc498a742fb8fda7f99, type: 3}
   bulletSpawn: {fileID: 5102424632136824982}
-  tooCLose: 0
+  TooClose: 0
 --- !u!50 &602973784730585349
 Rigidbody2D:
   serializedVersion: 4
@@ -167,7 +168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &841659618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,6 +195,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42, y: 0.6}
   m_EdgeRadius: 0
+--- !u!95 &3289563847504579983
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942909966416675120}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb6961be0e43db44698f9e2fb0b1d52c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8698536214839637808
 GameObject:
   m_ObjectHideFlags: 0

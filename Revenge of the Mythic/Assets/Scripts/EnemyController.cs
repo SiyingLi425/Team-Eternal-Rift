@@ -16,14 +16,16 @@ public abstract class EnemyController : MonoBehaviour
 
     //Private Variables
 
+
     protected Collider2D aggroRange, hitBox, playerCollider;
+
     private GameObject player1;
     private GameObject player2;
     private GameObject aggroedPlayer;
     private PlayerController playerController;
     protected Vector2 target, playerPosition;
     protected int attackCoolDown;
-    private Transform enemyTransform;
+    protected Transform enemyTransform;
     private Transform playerTransform;
     
 
@@ -88,7 +90,7 @@ public abstract class EnemyController : MonoBehaviour
         if (playerCollider.IsTouching(aggroRange))
         {
             target = playerPosition;
-            moveEnemy();
+            getMovementTargert();
         }
 
         if (attackCoolDown > 0)
@@ -121,13 +123,14 @@ public abstract class EnemyController : MonoBehaviour
 
         }
     }
-    protected virtual void  moveEnemy()
+    protected virtual void  getMovementTargert()
     {
  
         float speedX = 0, speedY = 0;
         Vector2 pos = GetComponent<Transform>().position;
         float xDistance = Mathf.Abs(Mathf.Abs(pos.x) - Mathf.Abs(target.x));
         float yDistance = Mathf.Abs(Mathf.Abs(pos.y) - Mathf.Abs(target.y));
+
 
         if (xDistance > yDistance)
         {
@@ -155,19 +158,11 @@ public abstract class EnemyController : MonoBehaviour
             enemyAnimator.SetInteger("Direction", 0);
         }
 
-        GetComponent<Rigidbody2D>().position += new Vector2(speedX, speedY);
-        //rotateEnemy();
+        moveEnemy(speedX, speedY);
 
     }
 
-    protected void rotateEnemy()
-    {
-        float offset = 90f;
-        Vector2 direction = target - (Vector2)enemyTransform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        enemyTransform.rotation = Quaternion.Euler(Vector3.forward * ((angle + 180) + offset));
-    }
+    public abstract void moveEnemy(float speedX, float speedY);
 
     protected virtual void attack()
     {

@@ -7,7 +7,7 @@ public class RangedEnemy : EnemyController
     public float minDistanceAway;
     public GameObject bullet;
     public Transform bulletSpawn;
-    public bool tooCLose = false;
+    public bool TooClose = false;
 
     protected Collider2D minDistance;
 
@@ -22,15 +22,15 @@ public class RangedEnemy : EnemyController
     {
         base.Update();
         if (playerCollider.IsTouching(minDistance))
-        { 
-            tooCLose = true;
+        {
+            TooClose = true;
         }
         else
         {
-            tooCLose = false;
+            TooClose = false;
         }
 
-        if (tooCLose == true)
+        if (TooClose == true)
         {
             if (attackCoolDown == 0)
             {
@@ -39,59 +39,32 @@ public class RangedEnemy : EnemyController
 
         }
     }
-    protected override void moveEnemy()
+
+
+    public override void moveEnemy(float speedX, float speedY)
     {
-        float speedX = 0, speedY = 0;
-        Vector2 pos = GetComponent<Transform>().position;
-        float xDistance = Mathf.Abs(Mathf.Abs(pos.x) - Mathf.Abs(target.x));
-        float yDistance = Mathf.Abs(Mathf.Abs(pos.y) - Mathf.Abs(target.y));
-        float avgDistance = xDistance + yDistance / 2;
-
-
-
-        if (xDistance > yDistance)
-        {
-            speedX = walkSpeed;
-            speedY = yDistance / (xDistance / walkSpeed);
-           
-
-        }
-        else
-        {
-            speedY = walkSpeed;
-            speedX = xDistance / (yDistance / walkSpeed);
-            
-        }
-
-        if (target.x < pos.x)
-        {
-            speedX = -speedX;
- 
-
-        }
-
-
-        if (target.y < pos.y)
-        {
-            speedY = -speedY;
-
-        }
-
-
-        if (tooCLose == false)
+        if (TooClose == false)
         {
             GetComponent<Rigidbody2D>().position += new Vector2(speedX, speedY);
-            base.rotateEnemy();
+          
         }
-
-
     }
 
     protected override void attack()
     {
         Debug.Log("AttackRange");
         attackCoolDown = attackSpeed;
-        Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+        Instantiate(bullet, bulletSpawn.position, rotate());
+    }
+
+    protected Quaternion rotate()
+    {
+        float offset = 90f;
+        Vector2 direction = target - (Vector2)enemyTransform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation= Quaternion.Euler(Vector3.forward * ((angle + 180) + offset));
+        return rotation;
     }
 }
 
