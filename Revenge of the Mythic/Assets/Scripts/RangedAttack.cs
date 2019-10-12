@@ -63,7 +63,6 @@ public class RangedAttack : MonoBehaviour
                     {
                         Destroy(gameObject);
                     }
-                    Debug.Log("Ranged Attack!");
                     g.PrimaryController().Damage(damage);
                     hit = true;
                 }

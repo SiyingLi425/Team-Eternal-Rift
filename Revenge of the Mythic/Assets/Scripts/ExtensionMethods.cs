@@ -96,20 +96,20 @@ public static class ExtensionMethods
         return o;
     }
 
-    public static int[,] Expand(this int[,] o, int[] value, int i)
+    public static int[,] Expand(this int[,] o, int[] value, int curLength)
     {
         int[,] temp = o;
-        o = new int[temp.Length + 1, i];
-        for (int z = 0; z < temp.Length; ++z)
+        o = new int[curLength + 1, value.Length];
+        for (int z = 0; z < curLength; ++z)
         {
-            for (int y=0; y<i; ++y)
+            for (int y = 0; y < value.Length; ++y)
             {
                 o[z,y] = temp[z,y];
             }
         }
-        for (int z=0;z<i; ++z)
+        for (int z = 0; z < value.Length; ++z)
         {
-            o[temp.Length,z] = value[z];
+            o[curLength,z] = value[z];
         }
         return o;
     }

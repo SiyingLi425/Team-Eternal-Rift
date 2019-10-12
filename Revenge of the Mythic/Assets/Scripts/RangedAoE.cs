@@ -10,6 +10,9 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
     private int globalCooldownReset;
     private int globalCooldown = 0;
     private bool testing = true;
+
+    [SerializeField]
+    private GameObject tester;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,26 +62,30 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
                 if (col.bounds.Contains(point)) //If the current point is within the provided range
                 {
                     #region Initialize Variables
-                    Collider2D testCol = Collider;
-                    testCol.transform.position = point;
                     int priority = 0;
-                    #endregion
-                    #region Set priority
-                    foreach (string s in targets)
+                    GameObject temp = Instantiate(tester, point, Quaternion.identity);
                     {
-                        foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
+                        CircleCollider2D testCol = temp.GetComponent<CircleCollider2D>();
+                        testCol.gameObject.transform.position = point;
+                        #endregion
+                        #region Set priority
+                        foreach (string s in targets)
                         {
-                            if (testCol.bounds.Contains(g.transform.position))
+                            foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
                             {
-                                ++priority;
+                                if (testCol.bounds.Contains(g.transform.position))
+                                {
+                                    ++priority;
+                                }
                             }
                         }
                     }
+                    Destroy(temp);
                     #endregion
                     if (priority > 0)
                     {
                         int[] val = { (int) point.x, (int) point.y, priority };
-                        priorities = priorities.Expand(val, 3);
+                        priorities = priorities.Expand(val, prioritiesSize);
                         ++prioritiesSize;
                     }
                 }
