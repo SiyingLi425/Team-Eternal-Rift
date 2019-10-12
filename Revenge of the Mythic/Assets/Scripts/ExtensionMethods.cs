@@ -22,6 +22,14 @@ public static class ExtensionMethods
         {
             p.Damage(i);
         }
+        else if (m is BulletController b)
+        {
+            b.gameObject.GetComponent<DestroyableController>().Damage(i);
+        }
+        else if (m is RangedAttack r)
+        {
+            r.gameObject.GetComponent<DestroyableController>().Damage(i);
+        }
     }
     public static void Damage(this MonoBehaviour m, int i, string s)
     {
@@ -39,6 +47,14 @@ public static class ExtensionMethods
         else if (m is PlayerController p)
         {
             p.Damage(i, s);
+        }
+        else if (m is BulletController b)
+        {
+            b.gameObject.GetComponent<DestroyableController>().Damage(i, s);
+        }
+        else if (m is RangedAttack r)
+        {
+            r.gameObject.GetComponent<DestroyableController>().Damage(i, s);
         }
     }
 
@@ -62,8 +78,12 @@ public static class ExtensionMethods
                 return g.GetComponent<EnemyController>();
             case "Item":
                 return g.GetComponent<ItemController>();
-            case "Destroyable": //Doesn't work for some reason
+            case "Destroyable":
                 return g.GetComponent<DestroyableController>();
+            case "EnemyRanged":
+                return g.GetComponent<BulletController>();
+            case "PlayerRanged":
+                return g.GetComponent<RangedAttack>();
         }
         return null;
     }
@@ -80,6 +100,10 @@ public static class ExtensionMethods
             case "Destroyable":
             case "Wall":
                 return g.GetComponent<BoxCollider2D>();
+            case "PlayerRanged":
+                return g.GetComponent<RangedAttack>().ColliderGet;
+            case "EnemyRanged":
+                return g.GetComponent<Collider2D>();
         }
 
         return new Collider2D() { enabled = false};

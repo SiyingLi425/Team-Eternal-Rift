@@ -21,7 +21,7 @@ public abstract class PlayerController : MonoBehaviour
     #region Private Variables
     [SerializeField]
     private int health;
-    private float speed = 0.10f;
+    private float speed = 0.08f;
     [SerializeField]
     private int maximumHealth;
     [SerializeField]
