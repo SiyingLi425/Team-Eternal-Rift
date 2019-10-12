@@ -40,5 +40,7 @@ public class Phoenix : PlayerController
         //Ability 2 [Erupt] - Ranged AoE.Does damage and applies burning DoT(same as DoT mentioned above). 6 second cooldown.
         Instantiate(Erupt, Erupt.GetComponent<RangedAoE>().OptimalSpawnPoint(EruptRange), FireballSpawn.rotation);
     }
-    protected override void Attack3() { }
+    protected override void Attack3() {
+        //Ability 3 [Inferno Barrier] - Fire Wall that burns enemies on contact and protect player. Lasts for 5 seconds.
+    }
 }
