@@ -160,8 +160,8 @@ public abstract class PlayerController : MonoBehaviour
                     int i = animationStage == 3 ? 1 : animationStage;
                     sr.sprite = playerImages[direction, i];
                 }
-                #endregion
             }
+            #endregion
         }
         #endregion
         #region Dead Actions

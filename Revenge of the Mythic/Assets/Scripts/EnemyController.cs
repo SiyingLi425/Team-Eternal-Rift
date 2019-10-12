@@ -12,7 +12,7 @@ public abstract class EnemyController : MonoBehaviour
     public GameObject meat;
 
 
-    private Animator enemyAnimator;
+    ///private Animator enemyAnimator;
 
     //Private Variables
 
@@ -27,11 +27,18 @@ public abstract class EnemyController : MonoBehaviour
     protected int attackCoolDown;
     protected Transform enemyTransform;
     private Transform playerTransform;
-    
 
-  
+    [Header("Animation Variables")]
+    [SerializeField]
+    private Sprite[] north = new Sprite[3], east = new Sprite[3], south = new Sprite[3], west = new Sprite[3];
+    private Sprite[,] enemyImages = new Sprite[4, 3];
+    private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
+    private SpriteRenderer sr;
+    private bool animate = true;
+    [SerializeField] //Serialized if an enemy should face a certain direction
+    private int direction = 2; //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
 
-    
+
     public string status;
 
     [Header("Status Effects")]
@@ -49,8 +56,17 @@ public abstract class EnemyController : MonoBehaviour
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
-        enemyAnimator = GetComponent<Animator>();
-
+        //enemyAnimator = GetComponent<Animator>();
+        #region Set Sprites
+        for (int z = 0; z < 3; ++z)
+        {
+            enemyImages[0, z] = north[z];
+            enemyImages[1, z] = east[z];
+            enemyImages[2, z] = south[z];
+            enemyImages[3, z] = west[z];
+        }
+        #endregion
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -59,7 +75,21 @@ public abstract class EnemyController : MonoBehaviour
         
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
         playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
-        if (status != "Taunt")
+
+        #region Animation
+        if (animate)
+        {
+            --animateTimer;
+            if (animateTimer <= 0)
+            {
+                animateTimer = animateTimerReset;
+                animationStage = animationStage == 3 ? 0 : ++animationStage;
+                int i = animationStage == 3 ? 1 : animationStage;
+                sr.sprite = enemyImages[direction, i];
+            }
+        }
+            #endregion
+            if (status != "Taunt")
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
@@ -136,30 +166,40 @@ public abstract class EnemyController : MonoBehaviour
         {
             speedX = walkSpeed;
             speedY = yDistance / (xDistance / walkSpeed);
-            enemyAnimator.SetInteger("Direction", 3);
+            //enemyAnimator.SetInteger("Direction", 3);
         
         }
         else
         {
             speedY = walkSpeed;
             speedX = xDistance / (yDistance / walkSpeed);
-            enemyAnimator.SetInteger("Direction", 2);
+            //enemyAnimator.SetInteger("Direction", 2);
         }
 
         if (target.x < pos.x)
         {
             speedX = -speedX;
-            enemyAnimator.SetInteger("Direction", 1);
+            //enemyAnimator.SetInteger("Direction", 1);
         }
 
         if (target.y < pos.y)
         {
             speedY = -speedY;
-            enemyAnimator.SetInteger("Direction", 0);
+            //enemyAnimator.SetInteger("Direction", 0);
         }
-
+        #region Direction Handling
+        bool vert = Mathf.Abs(speedX) <= Mathf.Abs(speedY);
+        if (vert)
+        {
+            direction = speedY > 0 ? 0 : 2;
+        }
+        else
+        {
+            direction = speedX > 0 ? 1 : 3;
+        }
+        #endregion
         moveEnemy(speedX, speedY);
-
+        animate = speedX != 0 || speedY != 0;
     }
 
     public abstract void moveEnemy(float speedX, float speedY);
