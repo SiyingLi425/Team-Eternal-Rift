@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
   - DialogueTextHolder
   - SpeakerName
   - NPC
@@ -12,6 +11,8 @@ TagManager:
   - Enemy
   - Destroyable
   - Wall
+  - PlayerRanged
+  - EnemyRanged
   layers:
   - Default
   - TransparentFX
