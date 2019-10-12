@@ -10,7 +10,7 @@ public static class ExtensionMethods
          Each object that can be damaged will likely have its own unique damage method
          If this is not the case, add type conversion and then write out all the things here
          */
-         if (m is DestroyableController d)
+        if (m is DestroyableController d)
         {
             d.Damage(i);
         }

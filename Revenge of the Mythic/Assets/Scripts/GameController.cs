@@ -9,10 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird;
     public float gridSize = 1;
 
-    private int gameWidth, gameHeight; //Size of the playable area on the screen, in pixels. If this is no longer the case, please fix OptimalSpawnPoint in RangedAoE
     private int playerNum = 0;
-    public int GameWidth { get { return gameWidth; } }
-    public int GameHeight { get { return gameHeight; } }
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()

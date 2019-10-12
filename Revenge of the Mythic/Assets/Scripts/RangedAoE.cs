@@ -12,6 +12,7 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
     // Start is called before the first frame update
     void Start()
     {
+        alive = true;
         Tick();
         rBody = GetComponent<Rigidbody2D>();
     }
@@ -30,16 +31,29 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
     public Vector3 OptimalSpawnPoint(Collider2D col)
     {
         #region Initialize Variables
-        GameController c = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //GameController c = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         Vector2 point = new Vector2(0, 0);
         int[,] priorities = new int[0,3];
         int prioritiesSize = 0;
+        float size = 0.00f;
+        if (col is BoxCollider2D b)
+        {
+            size = b.size.x > b.size.y ? b.size.x/2 : b.size.y/2;
+        }
+        else if (col is CircleCollider2D c)
+        {
+            size = c.radius;
+        }
+        else if (col is CapsuleCollider2D a)
+        {
+            size = a.size.x > a.size.y ? a.size.x / 2 : a.size.y / 2;
+        }
         #endregion
         #region Playable Area Loop
-        for (int x=0; x<c.GameWidth; ++x)
+        for (float x = col.bounds.center.x - size; x < col.bounds.center.x + size; x += 0.1f)
         {
             point.x = x;
-            for (int y=0; y>c.GameHeight; ++y)
+            for (float y = col.bounds.center.y - size; y < col.bounds.center.y + size; y += 0.1f)
             {
                 point.y = y;
                 if (col.bounds.Contains(point)) //If the current point is within the provided range
@@ -124,18 +138,21 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
 
     private void Tick()
     {
-        globalCooldown = globalCooldownReset;
-        foreach (string s in targets)
+        if (alive)
         {
-            foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
+            globalCooldown = globalCooldownReset;
+            foreach (string s in targets)
             {
-                if (dots == "")
+                foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
                 {
-                    g.PrimaryController().Damage(damage);
-                }
-                else
-                {
-                    g.PrimaryController().Damage(damage, dots);
+                    if (dots == "")
+                    {
+                        g.PrimaryController().Damage(damage);
+                    }
+                    else
+                    {
+                        g.PrimaryController().Damage(damage, dots);
+                    }
                 }
             }
         }

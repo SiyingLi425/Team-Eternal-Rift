@@ -33,13 +33,13 @@ public class BulletController : MonoBehaviour
 
         if (time <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
-        if (ExtensionMethods.PrimaryCollider(player).IsTouching(bulletCollider))
+        if (player.PrimaryCollider().IsTouching(bulletCollider))
         {
             playerController.Damage(attackDamange);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
             ;
     }
