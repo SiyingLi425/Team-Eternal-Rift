@@ -21,12 +21,10 @@ public class RangedAttack : MonoBehaviour
     #region Private & Protected Variables
     protected Rigidbody2D rBody;
     private Vector2 speedVector;
-    protected bool alive = false;
     #endregion
     // Start is called before the first frame update
     void Start()
     {
-        alive = true;
         rBody = GetComponent<Rigidbody2D>();
     }
 
@@ -54,28 +52,27 @@ public class RangedAttack : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (alive)
+        bool hit = false;
+        foreach (string tar in targets)
         {
-            bool hit = false;
-            foreach (string tar in targets)
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag(tar))
             {
-                foreach (GameObject g in GameObject.FindGameObjectsWithTag(tar))
+                if (Collider.IsTouching(g.PrimaryCollider()))
                 {
-                    if (Collider.IsTouching(g.PrimaryCollider()))
+                    if (tar == "Wall")
                     {
-                        if (tar == "Wall")
-                        {
-                            Destroy(gameObject);
-                        }
-                        g.PrimaryController().Damage(damage);
-                        hit = true;
+                        Destroy(gameObject);
                     }
+                    Debug.Log("Ranged Attack!");
+                    g.PrimaryController().Damage(damage);
+                    hit = true;
                 }
             }
-            if (hit && destroyOnHit)
-            {
-                Destroy(gameObject);
-            }
         }
+        if (hit && destroyOnHit)
+        {
+            Destroy(gameObject);
+        }
+    
     }
 }

@@ -9,10 +9,10 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
     [SerializeField]
     private int globalCooldownReset;
     private int globalCooldown = 0;
+    private bool testing = true;
     // Start is called before the first frame update
     void Start()
     {
-        alive = true;
         Tick();
         rBody = GetComponent<Rigidbody2D>();
     }
@@ -84,6 +84,7 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
                 }
             }
         }
+        testing = false;
         #endregion
         #region Find Maximum Priority
         int max = 0, index = 0, total = 0; ;
@@ -138,7 +139,7 @@ public class RangedAoE : RangedAttack //Because this inherits from RangedAttack,
 
     private void Tick()
     {
-        if (alive)
+        if (testing == false)
         {
             globalCooldown = globalCooldownReset;
             foreach (string s in targets)
