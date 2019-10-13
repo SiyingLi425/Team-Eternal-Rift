@@ -35,5 +35,8 @@ public class Griffon : PlayerController
             }
         }
     }
-    protected override void Attack3() { }
+    protected override void Attack3() {
+        //Ability 3 [Shield] - Defence. Nullify attacks that hit the shield. Lasts for 5 seconds. 10 second cooldown.
+        aegisTimer = aegisTimerReset;
+    }
 }

@@ -21,7 +21,7 @@ public abstract class PlayerController : MonoBehaviour
     #region Private Variables
     [SerializeField]
     private int health;
-    private float speed = 0.10f;
+    private float speed = 0.08f;
     [SerializeField]
     private int maximumHealth;
     [SerializeField]
@@ -30,7 +30,10 @@ public abstract class PlayerController : MonoBehaviour
     private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
     private SpriteRenderer sr;
     private bool animate = true;
+    #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
+    protected int aegisTimer = 0, aegisTimerReset = 250;
+    #endregion
     #endregion
 
     #region Cooldowns
@@ -160,8 +163,8 @@ public abstract class PlayerController : MonoBehaviour
                     int i = animationStage == 3 ? 1 : animationStage;
                     sr.sprite = playerImages[direction, i];
                 }
-                #endregion
             }
+            #endregion
         }
         #endregion
         #region Dead Actions
@@ -197,6 +200,10 @@ public abstract class PlayerController : MonoBehaviour
         if (slowTimer > 0)
         {
             --slowTimer;
+        }
+        if (aegisTimer > 0)
+        {
+            aegisTimer = 0;
         }
     }
     #endregion
@@ -237,36 +244,50 @@ public abstract class PlayerController : MonoBehaviour
     protected abstract void Attack2();
     protected abstract void Attack3();
     #endregion
-    public void Damage (int d)
+    public void Damage(int d)
     {
-        health -= d;
-        #region Death Commands
-        if (health <= 0)
+        if (aegisTimer > 0)
         {
-            dead = true;
-            health = 0;
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            bool allDead = false;
-            if (players.Length == 2)
+            aegisTimer = 0;
+        }
+        else
+        {
+            health -= d;
+            #region Death Commands
+            if (health <= 0)
             {
-                if (players[0].GetComponent<PlayerController>().Dead && players[1].GetComponent<PlayerController>().Dead)
+                dead = true;
+                health = 0;
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+                bool allDead = false;
+                if (players.Length == 2)
                 {
-                    allDead = true;
+                    if (players[0].GetComponent<PlayerController>().Dead && players[1].GetComponent<PlayerController>().Dead)
+                    {
+                        allDead = true;
+                    }
+                }
+                if (players.Length == 1 || allDead)
+                {
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
                 }
             }
-            if (players.Length == 1 || allDead)
-            {
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
-            }
+            #endregion
         }
-        #endregion
     }
     public void Damage(int d, string dot)
     {
-        Damage(d);
-        if (dot.ToLower().Contains("slow"))
+        if (aegisTimer > 0)
         {
-            slowTimer = slowTimerReset;
+            aegisTimer = 0;
+        }
+        else
+        {
+            if (dot.ToLower().Contains("slow"))
+            {
+                slowTimer = slowTimerReset;
+            }
+            Damage(d);
         }
     }
     public void Heal(int percent)

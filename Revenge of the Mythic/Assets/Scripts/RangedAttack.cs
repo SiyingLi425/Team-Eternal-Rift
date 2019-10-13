@@ -18,10 +18,12 @@ public class RangedAttack : MonoBehaviour
     [SerializeField]
     protected Collider2D Collider;
     #endregion
-    #region Private Variables
+    #region Private & Protected Variables
     protected Rigidbody2D rBody;
     private Vector2 speedVector;
+    private bool doubleDmg = false;
     #endregion
+    public Collider2D ColliderGet { get { return Collider; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -63,11 +65,14 @@ public class RangedAttack : MonoBehaviour
                     {
                         Destroy(gameObject);
                     }
-                    if (g.GetComponent<DestroyableController>() == g.PrimaryController())
+                    else if (tar == "PlayerRanged")
                     {
-                        Debug.Log("Equal!");
+                        g.GetComponent<RangedAttack>().DoubleDamage();
                     }
+                    else
+                    {
                         g.PrimaryController().Damage(damage);
+                    }
                     hit = true;
                 }
             }
@@ -75,6 +80,15 @@ public class RangedAttack : MonoBehaviour
         if (hit && destroyOnHit)
         {
             Destroy(gameObject);
+        }
+    
+    }
+    public void DoubleDamage()
+    {
+        if (doubleDmg == false)
+        {
+            damage *= 2;
+            doubleDmg = true;
         }
     }
 }
