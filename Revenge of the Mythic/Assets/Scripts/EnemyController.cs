@@ -9,6 +9,7 @@ public abstract class EnemyController : MonoBehaviour
     public int health;
     public float walkSpeed;
     public int attackSpeed, attackDamage;
+    public GameObject foodItem;
 
 
 
@@ -107,6 +108,7 @@ public abstract class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
+            Instantiate(foodItem, enemyTransform.position, enemyTransform.rotation);
             Destroy(this.gameObject);
         }
 

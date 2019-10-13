@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public abstract class PlayerController : MonoBehaviour
 {
@@ -60,6 +60,8 @@ public abstract class PlayerController : MonoBehaviour
     public BoxCollider2D PlayerCollider { get { return playerCollider; } }
     public bool Dead { get { return dead; } }
     public int MaximumHealth { get { return maximumHealth; } }
+    public int Health { get { return health; } }
+    public int[] AbilityCoolDown { get { return abilityCooldown; } }
     #endregion
 
     // Start is called before the first frame update
@@ -97,6 +99,7 @@ public abstract class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ability1CD.text = abilityCooldown[0];
         #region Input Actions
         if (dead == false)
         {
@@ -274,6 +277,7 @@ public abstract class PlayerController : MonoBehaviour
             }
             #endregion
         }
+        
     }
     public void Damage(int d, string dot)
     {
@@ -289,6 +293,7 @@ public abstract class PlayerController : MonoBehaviour
             }
             Damage(d);
         }
+        
     }
     public void Heal(int percent)
     {
@@ -297,6 +302,7 @@ public abstract class PlayerController : MonoBehaviour
         {
             health = maximumHealth;
         }
+        
     }
 }
 

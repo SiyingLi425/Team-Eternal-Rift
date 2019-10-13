@@ -136,6 +136,25 @@ MonoBehaviour:
   walkSpeed: 0.02
   attackSpeed: 50
   attackDamage: 1
+  foodItem: {fileID: 6317656113553127805, guid: 4b725abe0b4a14f4b94855968a7bbab3,
+    type: 3}
+  north:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  east:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  south:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  west:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  direction: 2
   status: 
   bleedTimer: 0
   bleedTime: 0

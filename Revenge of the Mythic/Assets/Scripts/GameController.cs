@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -8,19 +9,24 @@ public class GameController : MonoBehaviour
     public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird;
     public float gridSize = 1;
+    public Text playerHealth;
+    public PlayerController playerController;
 
     private int playerNum = 0;
+    private int health;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
     {
         LoadRoom(map);
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        playerHealth.text = "Health: " + playerController.Health;
     }
 
     public void GameOver()

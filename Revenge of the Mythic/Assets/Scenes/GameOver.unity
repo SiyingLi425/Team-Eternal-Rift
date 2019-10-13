@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 24527201}
   - component: {fileID: 24527200}
   m_Layer: 5
-  m_Name: Restart
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1979123483}
-        m_MethodName: onClickRestart
+        m_MethodName: onClickStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

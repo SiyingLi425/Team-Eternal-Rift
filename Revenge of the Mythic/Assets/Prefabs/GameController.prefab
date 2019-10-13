@@ -63,3 +63,5 @@ MonoBehaviour:
   tutorialBird: {fileID: 7132909035118809549, guid: 05d6b45e70625cf4faa13cd73f2fd6d9,
     type: 3}
   gridSize: 1
+  playerHealth: {fileID: 0}
+  playerController: {fileID: 0}
