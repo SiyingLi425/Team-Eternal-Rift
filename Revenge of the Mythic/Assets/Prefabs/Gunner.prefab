@@ -139,21 +139,21 @@ MonoBehaviour:
   foodItem: {fileID: 6317656113553127805, guid: 4b725abe0b4a14f4b94855968a7bbab3,
     type: 3}
   north:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -1317752060538432968, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
+  - {fileID: -1427851816842466061, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
+  - {fileID: 16280028778554385, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
   east:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   south:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -5693930522163591640, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
+  - {fileID: -7933449486187953486, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
+  - {fileID: 3010534020082722701, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
   west:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2253298922891795659, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
+  - {fileID: 1790079624169847734, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
+  - {fileID: -8572989561280535646, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
   direction: 2
   status: 
   bleedTimer: 0
