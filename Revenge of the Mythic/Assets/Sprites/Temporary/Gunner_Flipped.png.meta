@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: fbcd301b76c15e940b9fc2b122f53c51
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8831118578254642292
+    second: Gunner_Flipped_0
+  - first:
+      213: 3168458237415831947
+    second: Gunner_Flipped_1
+  - first:
+      213: -715407297628560316
+    second: Gunner_Flipped_2
+  - first:
+      213: 3858302656820641861
+    second: Gunner_Flipped_3
+  - first:
+      213: -2938960622627535119
+    second: Gunner_Flipped_4
+  - first:
+      213: -7008768015505599015
+    second: Gunner_Flipped_5
+  - first:
+      213: -2727199266992173544
+    second: Gunner_Flipped_6
+  - first:
+      213: -2334659125976498658
+    second: Gunner_Flipped_7
+  - first:
+      213: -8529218304707223632
+    second: Gunner_Flipped_8
+  - first:
+      213: 4372381830363107152
+    second: Gunner_Flipped_9
+  - first:
+      213: 7661391406971404814
+    second: Gunner_Flipped_10
+  - first:
+      213: 6542019404709645046
+    second: Gunner_Flipped_11
+  - first:
+      213: 6995403382891142857
+    second: Gunner_Flipped_12
+  - first:
+      213: -7222184265223289381
+    second: Gunner_Flipped_13
+  - first:
+      213: 480249538641993468
+    second: Gunner_Flipped_14
+  - first:
+      213: 4485630112306667309
+    second: Gunner_Flipped_15
+  - first:
+      213: -1370559343747404009
+    second: Gunner_Flipped_16
+  - first:
+      213: -775545408232329716
+    second: Gunner_Flipped_17
+  - first:
+      213: 846686136292373284
+    second: Gunner_Flipped_18
+  - first:
+      213: -6184153596411096347
+    second: Gunner_Flipped_19
+  - first:
+      213: -2839886417261936611
+    second: Gunner_Flipped_20
+  - first:
+      213: 2850492379768118417
+    second: Gunner_Flipped_21
+  - first:
+      213: 6993753027664419725
+    second: Gunner_Flipped_22
+  - first:
+      213: -8174292837973552736
+    second: Gunner_Flipped_23
+  - first:
+      213: 4866418410525612699
+    second: Gunner_Flipped_24
+  - first:
+      213: -4953999853995732537
+    second: Gunner_Flipped_25
+  - first:
+      213: 7915375671136373533
+    second: Gunner_Flipped_26
+  - first:
+      213: -2163463427233427526
+    second: Gunner_Flipped_27
+  - first:
+      213: 2118168521673636181
+    second: Gunner_Flipped_28
+  - first:
+      213: 546591557755900462
+    second: Gunner_Flipped_29
+  - first:
+      213: 6171354176425318489
+    second: Gunner_Flipped_30
+  - first:
+      213: -7452918649170833017
+    second: Gunner_Flipped_31
+  - first:
+      213: -6986143516915021445
+    second: Gunner_Flipped_32
+  - first:
+      213: 999060677661578950
+    second: Gunner_Flipped_33
+  - first:
+      213: 7666062684309490525
+    second: Gunner_Flipped_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gunner_Flipped_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 489
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b7ddfd3bcaa144bbc361fc2bbd3e09
+      internalID: -8831118578254642292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 489
+        width: 31
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f311236a069879d409917a17fc660bbf
+      internalID: 3168458237415831947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 488
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210f4493a350cfa49984f728938c122b
+      internalID: -715407297628560316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 488
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2b23d190bae934ebcfddc24e28eddd
+      internalID: 3858302656820641861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 488
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a653c51f76c7ba7449d7f9d99e7468a1
+      internalID: -2938960622627535119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 409
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a9f0e1a84565141982d0ef8ca754d8
+      internalID: -7008768015505599015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 408
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da21a85e91896c64f85b80da6cafbef2
+      internalID: -2727199266992173544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 408
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc26d5307119584687b988c940c1890
+      internalID: -2334659125976498658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 408
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baaabe72f1e224247bd093e27820f5d9
+      internalID: -8529218304707223632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_9
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 408
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4121120e49b574ca1ace1080b3028e
+      internalID: 4372381830363107152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 335
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3126cf1f2bc232642bbbecf1d68a1c3c
+      internalID: 7661391406971404814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 334
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3a9354cb0e9194fbb6194060ac00b4
+      internalID: 6542019404709645046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_12
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 334
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709007c20a0459143a2bf0a4ffbd1b2d
+      internalID: 6995403382891142857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 334
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee2ea086ef055a4f9b1408fb35a1c28
+      internalID: -7222184265223289381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_14
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 334
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b80eadf709397047be5b38a440f0dc8
+      internalID: 480249538641993468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_15
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 262
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788d17e1cbb30c54e8f3973ab5ed72e3
+      internalID: 4485630112306667309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_16
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 264
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2289c71dee5d74581b7b002ba2ba81
+      internalID: -1370559343747404009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_17
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 263
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d302e952d07f33244bffd750e4690355
+      internalID: -775545408232329716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_18
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 262
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ddc682e392242649b2754abece92c4c
+      internalID: 846686136292373284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_19
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 261
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2115615b0a21bf2448819a268e132138
+      internalID: -6184153596411096347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_20
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 183
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5412a3426e00f46a57d2fa7f20aa76
+      internalID: -2839886417261936611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_21
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 183
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f384dee583f72046a16d96e4238c692
+      internalID: 2850492379768118417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_22
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 183
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b10f374d2666e42845343e3dc59381
+      internalID: 6993753027664419725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_23
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 183
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5b444bf57a4a74cbac52e44126cc95
+      internalID: -8174292837973552736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_24
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 183
+        width: 45
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752c3e8a7589d324ca7f42345a063939
+      internalID: 4866418410525612699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_25
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 107
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c72ff40ec506324abeb95c3042e6afe
+      internalID: -4953999853995732537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_26
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 107
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5198034b873186478763cba24239545
+      internalID: 7915375671136373533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_27
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 107
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67eec34e817c5894bb4288df2f410e4e
+      internalID: -2163463427233427526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_28
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 107
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b058f36719a2603419682ad564d089aa
+      internalID: 2118168521673636181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_29
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 107
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ac87b24d069aa4e9dacd8daf8ad4ff
+      internalID: 546591557755900462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_30
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 32
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8a792576375784cb350c93500f6fb0
+      internalID: 6171354176425318489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_31
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 32
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff3d51d4aecaa54cb15b50b7703c89f
+      internalID: -7452918649170833017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e67bdc45d81d5448c9aefa81abc474
+      internalID: -6986143516915021445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_33
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 33
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40acba52fde95714b8077391168c056f
+      internalID: 999060677661578950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_34
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 33
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ce7714f9e5e7141a7bd8f5292e7afe
+      internalID: 7666062684309490525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

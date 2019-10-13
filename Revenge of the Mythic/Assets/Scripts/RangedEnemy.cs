@@ -14,9 +14,9 @@ public class RangedEnemy : EnemyController
     protected override void Start()
     {
         base.Start();
-        //bullet = GameObject.FindGameObjectWithTag("Bullet");
+        
         minDistance = GetComponent<CapsuleCollider2D>();
-        //bullet = GameObject.FindGameObjectWithTag("Bullet");
+
     }
     protected override void Update()
     {

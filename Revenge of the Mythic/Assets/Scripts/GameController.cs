@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird;
     public float gridSize = 1;
-    public Text playerHealth;
+    public Text playerHealth, ability1CD, ability2CD, ability3CD;
     public PlayerController playerController;
 
     private int playerNum = 0;
@@ -21,12 +21,19 @@ public class GameController : MonoBehaviour
         LoadRoom(map);
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerHealth = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
+        ability1CD = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
+        ability2CD = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
+        ability3CD = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         playerHealth.text = "Health: " + playerController.Health;
+        ability1CD.text = playerController.AbilityCoolDown[0] == 0 ? "R" : $"{playerController.AbilityCoolDown[0]/50}";
+        ability2CD.text = playerController.AbilityCoolDown[1] == 0 ? "R" : $"{playerController.AbilityCoolDown[1] / 50}";
+        ability3CD.text = playerController.AbilityCoolDown[2] == 0 ? "R" : $"{playerController.AbilityCoolDown[2] / 50}";
     }
 
     public void GameOver()
