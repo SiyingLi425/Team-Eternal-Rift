@@ -202,10 +202,6 @@ MonoBehaviour:
   - {fileID: -2116434511981202434, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
   - {fileID: -2516983635409943500, guid: 509201b6e5e967f4c882bdbade836511, type: 3}
   abilityCooldownReset: 640000002c0100008a020000
-  playerHealth: {fileID: 0}
-  ability1CD: {fileID: 0}
-  ability2CD: {fileID: 0}
-  ability3CD: {fileID: 0}
   Fireball: {fileID: 1668453768661694534, guid: 899143f8235585843914210744458731,
     type: 3}
   Erupt: {fileID: 1183906346097244795, guid: 936bc59f89302b847ae7007767e8557e, type: 3}
