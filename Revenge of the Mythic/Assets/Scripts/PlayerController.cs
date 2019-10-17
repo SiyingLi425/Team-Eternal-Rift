@@ -21,7 +21,7 @@ public abstract class PlayerController : MonoBehaviour
     #region Private Variables
     [SerializeField]
     private int health;
-    private float speed = 0.08f;
+    private float speed = 2.0f;
     [SerializeField]
     private int maximumHealth;
     [SerializeField]
@@ -107,7 +107,8 @@ public abstract class PlayerController : MonoBehaviour
             float s = slowTimer == 0 ? speed : speed / 2; 
             float horiz = Input.GetAxis(axisX) * s;
             float vert = Input.GetAxis(axisY) * s;
-            rbody.position += new Vector2(horiz, vert);
+            Vector2 movement = new Vector2(horiz, vert);
+            rbody.velocity = movement;
             #region Direction Handling
             if (vert != 0 || horiz != 0)
             {
