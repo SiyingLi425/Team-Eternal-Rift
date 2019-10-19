@@ -1,97 +1,112 @@
 fileFormatVersion: 2
-guid: 37e70ff81a68c9346a168368faf97bad
+guid: fbcd301b76c15e940b9fc2b122f53c51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8171958947958391838
-    second: GoldCoin_0
+      213: -8831118578254642292
+    second: Gunner_Flipped_0
   - first:
-      213: 8345988582887971383
-    second: GoldCoin_1
+      213: 3168458237415831947
+    second: Gunner_Flipped_1
   - first:
-      213: -1544025272900734116
-    second: GoldCoin_2
+      213: -715407297628560316
+    second: Gunner_Flipped_2
   - first:
-      213: -8601388597316423814
-    second: GoldCoin_3
+      213: 3858302656820641861
+    second: Gunner_Flipped_3
   - first:
-      213: 939855329408720032
-    second: GoldCoin_4
+      213: -2938960622627535119
+    second: Gunner_Flipped_4
   - first:
-      213: -4036543711520957751
-    second: GoldCoin_5
+      213: -7008768015505599015
+    second: Gunner_Flipped_5
   - first:
-      213: 4631877491840325328
-    second: GoldCoin_6
+      213: -2727199266992173544
+    second: Gunner_Flipped_6
   - first:
-      213: -426217793503525940
-    second: GoldCoin_7
+      213: -2334659125976498658
+    second: Gunner_Flipped_7
   - first:
-      213: -5988133931114290765
-    second: GoldCoin_8
+      213: -8529218304707223632
+    second: Gunner_Flipped_8
   - first:
-      213: -1633812641067655970
-    second: GoldCoin_9
+      213: 4372381830363107152
+    second: Gunner_Flipped_9
   - first:
-      213: -4712243763095810995
-    second: GoldCoin_10
+      213: 7661391406971404814
+    second: Gunner_Flipped_10
   - first:
-      213: -4296843993836185555
-    second: GoldCoin_11
+      213: 6542019404709645046
+    second: Gunner_Flipped_11
   - first:
-      213: 4690598572341690738
-    second: GoldCoin_12
+      213: 6995403382891142857
+    second: Gunner_Flipped_12
   - first:
-      213: 2961232294670380666
-    second: GoldCoin_13
+      213: -7222184265223289381
+    second: Gunner_Flipped_13
   - first:
-      213: -7166696714287772589
-    second: GoldCoin_14
+      213: 480249538641993468
+    second: Gunner_Flipped_14
   - first:
-      213: -8074229276337698109
-    second: GoldCoin_15
+      213: 4485630112306667309
+    second: Gunner_Flipped_15
   - first:
-      213: -7849892144462736468
-    second: GoldCoin_16
+      213: -1370559343747404009
+    second: Gunner_Flipped_16
   - first:
-      213: 6904141202248572277
-    second: GoldCoin_17
+      213: -775545408232329716
+    second: Gunner_Flipped_17
   - first:
-      213: -3479803602514730544
-    second: GoldCoin_18
+      213: 846686136292373284
+    second: Gunner_Flipped_18
   - first:
-      213: -5659148066737181323
-    second: GoldCoin_19
+      213: -6184153596411096347
+    second: Gunner_Flipped_19
   - first:
-      213: 4614267347820327845
-    second: GoldCoin_20
+      213: -2839886417261936611
+    second: Gunner_Flipped_20
   - first:
-      213: -7533803957240840752
-    second: GoldCoin_21
+      213: 2850492379768118417
+    second: Gunner_Flipped_21
   - first:
-      213: 6417726741503081909
-    second: GoldCoin_22
+      213: 6993753027664419725
+    second: Gunner_Flipped_22
   - first:
-      213: -3235110781323113885
-    second: GoldCoin_23
+      213: -8174292837973552736
+    second: Gunner_Flipped_23
   - first:
-      213: 3689757552232197881
-    second: GoldCoin_24
+      213: 4866418410525612699
+    second: Gunner_Flipped_24
   - first:
-      213: -2452882674816354866
-    second: GoldCoin_25
+      213: -4953999853995732537
+    second: Gunner_Flipped_25
   - first:
-      213: -6340251800556998585
-    second: GoldCoin_26
+      213: 7915375671136373533
+    second: Gunner_Flipped_26
   - first:
-      213: 3893718098292567318
-    second: GoldCoin_27
+      213: -2163463427233427526
+    second: Gunner_Flipped_27
   - first:
-      213: 8959582615685645803
-    second: GoldCoin_28
+      213: 2118168521673636181
+    second: Gunner_Flipped_28
   - first:
-      213: 8879619227230462451
-    second: GoldCoin_29
+      213: 546591557755900462
+    second: Gunner_Flipped_29
+  - first:
+      213: 6171354176425318489
+    second: Gunner_Flipped_30
+  - first:
+      213: -7452918649170833017
+    second: Gunner_Flipped_31
+  - first:
+      213: -6986143516915021445
+    second: Gunner_Flipped_32
+  - first:
+      213: 999060677661578950
+    second: Gunner_Flipped_33
+  - first:
+      213: 7666062684309490525
+    second: Gunner_Flipped_34
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -188,13 +203,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GoldCoin_0
+      name: Gunner_Flipped_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 389
-        width: 118
-        height: 118
+        x: 46
+        y: 489
+        width: 41
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9aa1ece2a217054d877c115fbbca505
-      internalID: -8171958947958391838
+      spriteID: 33b7ddfd3bcaa144bbc361fc2bbd3e09
+      internalID: -8831118578254642292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_1
+      name: Gunner_Flipped_1
       rect:
         serializedVersion: 2
-        x: 165
-        y: 389
-        width: 54
-        height: 118
+        x: 110
+        y: 489
+        width: 31
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45dba38e6b0d0745801e566f883044c
-      internalID: 8345988582887971383
+      spriteID: f311236a069879d409917a17fc660bbf
+      internalID: 3168458237415831947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_2
+      name: Gunner_Flipped_2
       rect:
         serializedVersion: 2
-        x: 283
-        y: 389
-        width: 74
-        height: 118
+        x: 159
+        y: 488
+        width: 37
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e7b02ca8f91d6949a79ceadce083e9f
-      internalID: -1544025272900734116
+      spriteID: 210f4493a350cfa49984f728938c122b
+      internalID: -715407297628560316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_3
+      name: Gunner_Flipped_3
       rect:
         serializedVersion: 2
-        x: 402
-        y: 389
-        width: 92
-        height: 118
+        x: 212
+        y: 488
+        width: 38
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b9cedd3570670e4ab10ebc32985f326
-      internalID: -8601388597316423814
+      spriteID: 3d2b23d190bae934ebcfddc24e28eddd
+      internalID: 3858302656820641861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_4
+      name: Gunner_Flipped_4
       rect:
         serializedVersion: 2
-        x: 523
-        y: 389
-        width: 106
-        height: 118
+        x: 265
+        y: 488
+        width: 42
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c3d3f21f6e7dbb4e9929ae09c2d88a8
-      internalID: 939855329408720032
+      spriteID: a653c51f76c7ba7449d7f9d99e7468a1
+      internalID: -2938960622627535119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_5
+      name: Gunner_Flipped_5
       rect:
         serializedVersion: 2
-        x: 646
-        y: 389
-        width: 116
-        height: 118
+        x: 46
+        y: 409
+        width: 41
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16aaedc96b264f44e8a2eee96d367ea9
-      internalID: -4036543711520957751
+      spriteID: 35a9f0e1a84565141982d0ef8ca754d8
+      internalID: -7008768015505599015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_6
+      name: Gunner_Flipped_6
       rect:
         serializedVersion: 2
-        x: 772
-        y: 389
-        width: 120
-        height: 118
+        x: 109
+        y: 408
+        width: 32
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49ebf06f361e60b4f96bd987971c5a67
-      internalID: 4631877491840325328
+      spriteID: da21a85e91896c64f85b80da6cafbef2
+      internalID: -2727199266992173544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_7
+      name: Gunner_Flipped_7
       rect:
         serializedVersion: 2
-        x: 901
-        y: 389
-        width: 118
-        height: 118
+        x: 159
+        y: 408
+        width: 37
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,20 +364,251 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7050c9a007f1e564bbb9c892b3a35b27
-      internalID: -426217793503525940
+      spriteID: 1fc26d5307119584687b988c940c1890
+      internalID: -2334659125976498658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_8
+      name: Gunner_Flipped_8
       rect:
         serializedVersion: 2
-        x: 4
+        x: 212
+        y: 408
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baaabe72f1e224247bd093e27820f5d9
+      internalID: -8529218304707223632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_9
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 408
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4121120e49b574ca1ace1080b3028e
+      internalID: 4372381830363107152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 335
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3126cf1f2bc232642bbbecf1d68a1c3c
+      internalID: 7661391406971404814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 334
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3a9354cb0e9194fbb6194060ac00b4
+      internalID: 6542019404709645046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_12
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 334
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709007c20a0459143a2bf0a4ffbd1b2d
+      internalID: 6995403382891142857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 334
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee2ea086ef055a4f9b1408fb35a1c28
+      internalID: -7222184265223289381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_14
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 334
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b80eadf709397047be5b38a440f0dc8
+      internalID: 480249538641993468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_15
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 262
+        width: 41
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788d17e1cbb30c54e8f3973ab5ed72e3
+      internalID: 4485630112306667309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_16
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 264
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2289c71dee5d74581b7b002ba2ba81
+      internalID: -1370559343747404009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_17
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 263
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d302e952d07f33244bffd750e4690355
+      internalID: -775545408232329716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_18
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 262
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ddc682e392242649b2754abece92c4c
+      internalID: 846686136292373284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Flipped_19
+      rect:
+        serializedVersion: 2
+        x: 262
         y: 261
-        width: 120
-        height: 118
+        width: 42
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,20 +616,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07cef7ee37897eb4684c09196906845f
-      internalID: -5988133931114290765
+      spriteID: 2115615b0a21bf2448819a268e132138
+      internalID: -6184153596411096347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_9
+      name: Gunner_Flipped_20
       rect:
         serializedVersion: 2
-        x: 134
-        y: 261
-        width: 116
-        height: 118
+        x: 45
+        y: 183
+        width: 42
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,20 +637,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4c425e1257d61b4194af3f4b93aa9db
-      internalID: -1633812641067655970
+      spriteID: 4e5412a3426e00f46a57d2fa7f20aa76
+      internalID: -2839886417261936611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_10
+      name: Gunner_Flipped_21
       rect:
         serializedVersion: 2
-        x: 267
-        y: 261
-        width: 106
-        height: 118
+        x: 108
+        y: 183
+        width: 34
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,20 +658,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e7f34ab6985a7448ab751805a755132
-      internalID: -4712243763095810995
+      spriteID: 4f384dee583f72046a16d96e4238c692
+      internalID: 2850492379768118417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_11
+      name: Gunner_Flipped_22
       rect:
         serializedVersion: 2
-        x: 388
-        y: 261
-        width: 120
-        height: 118
+        x: 159
+        y: 183
+        width: 40
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,20 +679,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fa040fb784d4734aaa2a0bb8cba63fd
-      internalID: -4296843993836185555
+      spriteID: e6b10f374d2666e42845343e3dc59381
+      internalID: 6993753027664419725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_12
+      name: Gunner_Flipped_23
       rect:
         serializedVersion: 2
-        x: 530
-        y: 261
-        width: 92
-        height: 118
+        x: 212
+        y: 183
+        width: 40
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,20 +700,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e0aa16b313da64459fe5d14eb1745f7
-      internalID: 4690598572341690738
+      spriteID: af5b444bf57a4a74cbac52e44126cc95
+      internalID: -8174292837973552736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_13
+      name: Gunner_Flipped_24
       rect:
         serializedVersion: 2
-        x: 667
-        y: 261
-        width: 74
-        height: 118
+        x: 261
+        y: 183
+        width: 45
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,20 +721,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad015b70a1a15224e99532e71576e28c
-      internalID: 2961232294670380666
+      spriteID: 752c3e8a7589d324ca7f42345a063939
+      internalID: 4866418410525612699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_14
+      name: Gunner_Flipped_25
       rect:
         serializedVersion: 2
-        x: 805
-        y: 261
-        width: 54
-        height: 118
+        x: 45
+        y: 107
+        width: 42
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,20 +742,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3766bc826c7030844845c1fea86335dd
-      internalID: -7166696714287772589
+      spriteID: 3c72ff40ec506324abeb95c3042e6afe
+      internalID: -4953999853995732537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_15
+      name: Gunner_Flipped_26
       rect:
         serializedVersion: 2
-        x: 945
-        y: 261
-        width: 30
-        height: 118
+        x: 108
+        y: 107
+        width: 34
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,20 +763,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dceff265d6619d4ab4d27940d92592a
-      internalID: -8074229276337698109
+      spriteID: b5198034b873186478763cba24239545
+      internalID: 7915375671136373533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_16
+      name: Gunner_Flipped_27
       rect:
         serializedVersion: 2
-        x: 49
-        y: 133
-        width: 30
-        height: 118
+        x: 159
+        y: 107
+        width: 40
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,20 +784,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0754976e04b36b24aaf274d959b72052
-      internalID: -7849892144462736468
+      spriteID: 67eec34e817c5894bb4288df2f410e4e
+      internalID: -2163463427233427526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_17
+      name: Gunner_Flipped_28
       rect:
         serializedVersion: 2
-        x: 165
-        y: 133
-        width: 54
-        height: 118
+        x: 211
+        y: 107
+        width: 38
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,20 +805,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ac3212277bc2c4488c897b87e156407
-      internalID: 6904141202248572277
+      spriteID: b058f36719a2603419682ad564d089aa
+      internalID: 2118168521673636181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_18
+      name: Gunner_Flipped_29
       rect:
         serializedVersion: 2
-        x: 283
-        y: 133
-        width: 74
-        height: 118
+        x: 260
+        y: 107
+        width: 43
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,20 +826,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a620a1de99340e45b89fdef9bd49390
-      internalID: -3479803602514730544
+      spriteID: 21ac87b24d069aa4e9dacd8daf8ad4ff
+      internalID: 546591557755900462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_19
+      name: Gunner_Flipped_30
       rect:
         serializedVersion: 2
-        x: 402
-        y: 133
-        width: 92
-        height: 118
+        x: 46
+        y: 32
+        width: 42
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,20 +847,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a1854a8cc84a34d896e04ee5fca47b
-      internalID: -5659148066737181323
+      spriteID: ec8a792576375784cb350c93500f6fb0
+      internalID: 6171354176425318489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_20
+      name: Gunner_Flipped_31
       rect:
         serializedVersion: 2
-        x: 523
-        y: 133
-        width: 106
-        height: 118
+        x: 108
+        y: 32
+        width: 34
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,20 +868,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be96ecf270efcbe4e9f5003a67a7582c
-      internalID: 4614267347820327845
+      spriteID: 5ff3d51d4aecaa54cb15b50b7703c89f
+      internalID: -7452918649170833017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_21
+      name: Gunner_Flipped_32
       rect:
         serializedVersion: 2
-        x: 646
-        y: 133
-        width: 116
-        height: 118
+        x: 160
+        y: 32
+        width: 40
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,20 +889,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8278675602384fb458cf1d6b084cc626
-      internalID: -7533803957240840752
+      spriteID: c6e67bdc45d81d5448c9aefa81abc474
+      internalID: -6986143516915021445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_22
+      name: Gunner_Flipped_33
       rect:
         serializedVersion: 2
-        x: 774
-        y: 133
-        width: 116
-        height: 118
+        x: 211
+        y: 33
+        width: 38
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,20 +910,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1df21de6d98546a40838087fa1deb1cd
-      internalID: 6417726741503081909
+      spriteID: 40acba52fde95714b8077391168c056f
+      internalID: 999060677661578950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin_23
+      name: Gunner_Flipped_34
       rect:
         serializedVersion: 2
-        x: 900
-        y: 133
-        width: 120
-        height: 118
+        x: 260
+        y: 33
+        width: 43
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -685,134 +931,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b767fbf68f5776a45ab20fab67ae9727
-      internalID: -3235110781323113885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoldCoin_24
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 5
-        width: 106
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3fd79f0aaec52b4c84ea8b72f0a9fc2
-      internalID: 3689757552232197881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoldCoin_25
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 5
-        width: 92
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1570ac3ef84cbd146aa667016aad4edd
-      internalID: -2452882674816354866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoldCoin_26
-      rect:
-        serializedVersion: 2
-        x: 283
-        y: 5
-        width: 74
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ed9a79738a7d4148b41939709369af9
-      internalID: -6340251800556998585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoldCoin_27
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 5
-        width: 54
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcf8eaaa37e3a76418bedc40a258652d
-      internalID: 3893718098292567318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoldCoin_28
-      rect:
-        serializedVersion: 2
-        x: 561
-        y: 5
-        width: 30
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f22fa62d058efef409e28f60345effbf
-      internalID: 8959582615685645803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GoldCoin_29
-      rect:
-        serializedVersion: 2
-        x: 689
-        y: 5
-        width: 30
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39f650886344cc743877d8f116e2c262
-      internalID: 8879619227230462451
+      spriteID: 75ce7714f9e5e7141a7bd8f5292e7afe
+      internalID: 7666062684309490525
       vertices: []
       indices: 
       edges: []

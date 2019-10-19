@@ -5,11 +5,13 @@ using UnityEngine;
 public abstract class ItemController : MonoBehaviour
 {
     public Collider2D collider;
-   
+    public GameController gameController;
+
     // Start is called before the first frame update
     protected virtual void  Start()
     {
         collider = GetComponent<Collider2D>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame

@@ -15,6 +15,10 @@ TagManager:
   - EnemyRanged
   - Bullet
   - Player1Health
+  - P1Ability1CD
+  - P1Ability2CD
+  - P1Ability3CD
+  - ScoreText
   layers:
   - Default
   - TransparentFX

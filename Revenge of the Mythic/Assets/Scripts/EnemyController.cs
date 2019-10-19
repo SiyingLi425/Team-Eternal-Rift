@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class EnemyController : MonoBehaviour
 {
 
     //Public Variables
-    public int health;
+    public int health = 20;
     public float walkSpeed;
     public int attackSpeed, attackDamage;
     public GameObject foodItem;
@@ -28,7 +29,11 @@ public abstract class EnemyController : MonoBehaviour
     protected int attackCoolDown;
     protected Transform enemyTransform;
     private Transform playerTransform;
+<<<<<<< HEAD
     public GameObject AggroedPlayer { get { return aggroedPlayer; } }
+=======
+    protected Text healthBar;
+>>>>>>> master
 
     [Header("Animation Variables")]
     [SerializeField]
@@ -58,6 +63,7 @@ public abstract class EnemyController : MonoBehaviour
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
+        healthBar = this.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Text>();
         //enemyAnimator = GetComponent<Animator>();
         #region Set Sprites
         for (int z = 0; z < 3; ++z)
@@ -69,15 +75,23 @@ public abstract class EnemyController : MonoBehaviour
         }
         #endregion
         sr = GetComponent<SpriteRenderer>();
+
+        healthBar.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
+
         
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
         playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
 
+        if(healthBar.IsActive() == true)
+        {
+             healthBar.text ="HP:"+ health;
+        }
+        
         #region Animation
         if (animate)
         {
@@ -208,13 +222,13 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void Damage(int attackDamage)
     {
-        Debug.Log("Getting Damaged 1");
         health -= attackDamage;
+        healthBar.gameObject.SetActive(true);
     }
 
     public virtual void Damage(int attackDamage, string s)
     {
-        Debug.Log("Getting Damaged 2");
+        Debug.Log("Damaged Status");
         health -= attackDamage;
         status = s; 
 
@@ -239,6 +253,7 @@ public abstract class EnemyController : MonoBehaviour
             target = aggroedPlayer.GetComponent<Transform>().position;
             tauntTimer = tauntTime;
         }
+        healthBar.gameObject.SetActive(true);
 
     }
 

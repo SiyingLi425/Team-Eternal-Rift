@@ -7,10 +7,14 @@ public class GameController : MonoBehaviour
 {
     //Public variables
     public TextAsset map;
-    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver;
     public float gridSize = 1;
-    public Text playerHealth;
+    public Text playerHealth, ability1CD, ability2CD, ability3CD;
     public PlayerController playerController;
+
+    [Header("ScoreBoard")]
+    public int score;
+    public GameObject scoreText;
 
     private int playerNum = 0;
     private int health;
@@ -21,12 +25,20 @@ public class GameController : MonoBehaviour
         LoadRoom(map);
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerHealth = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
+        ability1CD = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
+        ability2CD = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
+        ability3CD = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText"); ;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         playerHealth.text = "Health: " + playerController.Health;
+        ability1CD.text = playerController.AbilityCoolDown[0] == 0 ? "R" : $"{playerController.AbilityCoolDown[0]/50}";
+        ability2CD.text = playerController.AbilityCoolDown[1] == 0 ? "R" : $"{playerController.AbilityCoolDown[1] / 50}";
+        ability3CD.text = playerController.AbilityCoolDown[2] == 0 ? "R" : $"{playerController.AbilityCoolDown[2] / 50}";
     }
 
     public void GameOver()
@@ -88,10 +100,13 @@ public class GameController : MonoBehaviour
                         Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "T":
-                        Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
+                        Instantiate(tutorialBird, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "O":
-                        Instantiate(tutorialBird, new Vector2(xAxis, yAxis), transform.rotation);
+                        Instantiate(gold, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "Q":
+                        Instantiate(silver, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                 }
             }
@@ -102,5 +117,10 @@ public class GameController : MonoBehaviour
         ++playerNum;
         GameObject player = playerNum == 1 ? phoenix  : griffon;
         Instantiate(player, new Vector2(x, y), transform.rotation);
+    }
+    public void AddScore(int amount)
+    {
+        score += amount;
+        scoreText.GetComponent<Text>().text = "Score: " + score;
     }
 }
