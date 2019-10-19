@@ -1,7 +1,97 @@
 fileFormatVersion: 2
 guid: fc22458ae7ff43940b56ba99afddc09c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8485202650169963015
+    second: BronzeCoin_0
+  - first:
+      213: -431627405129366236
+    second: BronzeCoin_1
+  - first:
+      213: 5762274850583497670
+    second: BronzeCoin_2
+  - first:
+      213: 8884508526426131825
+    second: BronzeCoin_3
+  - first:
+      213: 1268126197196201162
+    second: BronzeCoin_4
+  - first:
+      213: 6893610084038089757
+    second: BronzeCoin_5
+  - first:
+      213: 4606126193924501272
+    second: BronzeCoin_6
+  - first:
+      213: -8196132395107554156
+    second: BronzeCoin_7
+  - first:
+      213: -8837156886156598448
+    second: BronzeCoin_8
+  - first:
+      213: -1943911939578944982
+    second: BronzeCoin_9
+  - first:
+      213: -4826699304709246345
+    second: BronzeCoin_10
+  - first:
+      213: -7726226601135652896
+    second: BronzeCoin_11
+  - first:
+      213: -2922881507568624762
+    second: BronzeCoin_12
+  - first:
+      213: -6464057170880101461
+    second: BronzeCoin_13
+  - first:
+      213: -3716124876574966666
+    second: BronzeCoin_14
+  - first:
+      213: 2894127944823959522
+    second: BronzeCoin_15
+  - first:
+      213: 6498508005239333709
+    second: BronzeCoin_16
+  - first:
+      213: -9215746603676627260
+    second: BronzeCoin_17
+  - first:
+      213: -1554488495802614763
+    second: BronzeCoin_18
+  - first:
+      213: 6920844714638870684
+    second: BronzeCoin_19
+  - first:
+      213: -3152620260140339197
+    second: BronzeCoin_20
+  - first:
+      213: -3422641646914368637
+    second: BronzeCoin_21
+  - first:
+      213: 3120149194382457111
+    second: BronzeCoin_22
+  - first:
+      213: -140061473285645078
+    second: BronzeCoin_23
+  - first:
+      213: -1509545082513999601
+    second: BronzeCoin_24
+  - first:
+      213: -8435967688725148026
+    second: BronzeCoin_25
+  - first:
+      213: 309865527672797661
+    second: BronzeCoin_26
+  - first:
+      213: 2803552299398803614
+    second: BronzeCoin_27
+  - first:
+      213: -8824422328116161351
+    second: BronzeCoin_28
+  - first:
+      213: -3762771485356836669
+    second: BronzeCoin_29
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +130,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +160,663 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BronzeCoin_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 389
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b06efc150f4da4ebadc1685c3f1568
+      internalID: 8485202650169963015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 389
+        width: 54
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdfef4c7c23c1640900fd71855132ae
+      internalID: -431627405129366236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 389
+        width: 74
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e843bc9bdd51684a831728138a253ba
+      internalID: 5762274850583497670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 389
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2918b263a118147be8727da336a947
+      internalID: 8884508526426131825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_4
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 389
+        width: 106
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2fbb1d439025d6438c08b4af5e66c48
+      internalID: 1268126197196201162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_5
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 389
+        width: 116
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cb1739e728c84499d62947a4595b27
+      internalID: 6893610084038089757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 389
+        width: 120
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d6d8255446e3a458328d1963dd8cfc
+      internalID: 4606126193924501272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_7
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 389
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd69fdc7bf0616443a0edea4dc11cb79
+      internalID: -8196132395107554156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 261
+        width: 120
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06dc6db8aaa5c4d46a9806adcbda22aa
+      internalID: -8837156886156598448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_9
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 261
+        width: 116
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664f2a8b44f45d348b91d8bd251ba5e8
+      internalID: -1943911939578944982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_10
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 261
+        width: 106
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754230c2d56c10344a89b981bac0129d
+      internalID: -4826699304709246345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_11
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 261
+        width: 120
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ed03a903e5cff4b8fe92402d84d6c4
+      internalID: -7726226601135652896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_12
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 261
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaebc84a15dd6b4494c19ce63cae9a2
+      internalID: -2922881507568624762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_13
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 261
+        width: 74
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c1692b099609547b4f8da93dbc343e
+      internalID: -6464057170880101461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_14
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 261
+        width: 54
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ff81d30bd514749b81516401ee40c9
+      internalID: -3716124876574966666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_15
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 261
+        width: 30
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9accfc7642095fa4aa1b0114f6402bf5
+      internalID: 2894127944823959522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_16
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 133
+        width: 30
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277f962b7709d774ea85b8655a16e19a
+      internalID: 6498508005239333709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 133
+        width: 54
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81131309d0802f24884830c85ce9c49a
+      internalID: -9215746603676627260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_18
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 133
+        width: 74
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc2ca95732fd2f4290013379360da6f
+      internalID: -1554488495802614763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_19
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 133
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334139203dc9abd45baf6174c6ad0129
+      internalID: 6920844714638870684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_20
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 133
+        width: 106
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d0b5411a38fd34099d6d65c48ac9d1
+      internalID: -3152620260140339197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_21
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 133
+        width: 116
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843d662fe1cd37e4e85cee8bf4ed861e
+      internalID: -3422641646914368637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_22
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 133
+        width: 116
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8031046b1a0814fa0dacbebd0d15b5
+      internalID: 3120149194382457111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_23
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 133
+        width: 120
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e46f84671999341adf35b31beb4ae3
+      internalID: -140061473285645078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_24
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 5
+        width: 106
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f11d97d08807a488b387203d401e04
+      internalID: -1509545082513999601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_25
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 5
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02fe1d7b72c6584a83aa1bc11e14cc9
+      internalID: -8435967688725148026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_26
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 5
+        width: 74
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651bf2aec22cd2f438d146cdc5337901
+      internalID: 309865527672797661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_27
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 5
+        width: 54
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2953b8100bbd6dd4a861c81b0ee808bf
+      internalID: 2803552299398803614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_28
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 5
+        width: 30
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e115534794ac04d902c634a5d73858
+      internalID: -8824422328116161351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeCoin_29
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 5
+        width: 30
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c982f98b33894b14787d9b2a6195fc5e
+      internalID: -3762771485356836669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
