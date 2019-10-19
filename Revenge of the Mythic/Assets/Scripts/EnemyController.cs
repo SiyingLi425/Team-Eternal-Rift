@@ -29,11 +29,8 @@ public abstract class EnemyController : MonoBehaviour
     protected int attackCoolDown;
     protected Transform enemyTransform;
     private Transform playerTransform;
-<<<<<<< HEAD
     public GameObject AggroedPlayer { get { return aggroedPlayer; } }
-=======
     protected Text healthBar;
->>>>>>> master
 
     [Header("Animation Variables")]
     [SerializeField]
