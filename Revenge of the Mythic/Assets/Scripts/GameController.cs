@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     //Public variables
     public TextAsset map;
-    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver;
     public float gridSize = 1;
     public Text playerHealth;
     public PlayerController playerController;
@@ -88,10 +88,13 @@ public class GameController : MonoBehaviour
                         Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "T":
-                        Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);
+                        Instantiate(tutorialBird, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "O":
-                        Instantiate(tutorialBird, new Vector2(xAxis, yAxis), transform.rotation);
+                        Instantiate(gold, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "Q":
+                        Instantiate(silver, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                 }
             }
