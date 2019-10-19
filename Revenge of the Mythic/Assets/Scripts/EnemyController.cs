@@ -145,6 +145,10 @@ public abstract class EnemyController : MonoBehaviour
         {
             Damage(1);
         }
+        if (burnTimer > 0 && burnTime % (25 / 100 * burnTimer) == 0)
+        {
+            Damage(1);
+        }
 
         if (bleedTimer > 0)
         {
