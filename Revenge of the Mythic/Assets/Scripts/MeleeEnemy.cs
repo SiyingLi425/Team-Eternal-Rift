@@ -7,8 +7,6 @@ public class MeleeEnemy : EnemyController
     public override void moveEnemy(float speedX, float speedY)
     {
         GetComponent<Rigidbody2D>().position += new Vector2(speedX, speedY);
-        
-        
     }
 
 }
