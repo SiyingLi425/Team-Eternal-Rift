@@ -12,6 +12,10 @@ public class GameController : MonoBehaviour
     public Text playerHealth, ability1CD, ability2CD, ability3CD;
     public PlayerController playerController;
 
+    [Header("ScoreBoard")]
+    public int score;
+    public GameObject scoreText;
+
     private int playerNum = 0;
     private int health;
     public int PlayerNum { get { return playerNum; } }
@@ -24,6 +28,7 @@ public class GameController : MonoBehaviour
         ability1CD = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
         ability2CD = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
         ability3CD = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText"); ;
 
     }
 
@@ -109,5 +114,10 @@ public class GameController : MonoBehaviour
         ++playerNum;
         GameObject player = playerNum == 1 ? phoenix  : griffon;
         Instantiate(player, new Vector2(x, y), transform.rotation);
+    }
+    public void AddScore(int amount)
+    {
+        score += amount;
+        scoreText.GetComponent<Text>().text = "Score: " + score;
     }
 }
