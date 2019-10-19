@@ -8,7 +8,7 @@ public class Phoenix : PlayerController
     [SerializeField]
     private GameObject Fireball, Erupt, Firewall;
     [SerializeField]
-    private Transform FireballSpawn;
+    private Transform FireballSpawn, FirewallSpawn;
     [SerializeField]
     private CircleCollider2D EruptRange;
     #endregion
@@ -23,7 +23,7 @@ public class Phoenix : PlayerController
     protected override void Attack1() {
         //Ability 1 [Fireball] - Fireball. Does more damage if it passes through ‘Inferno Barrier’. 2 seconds cooldown.
         SetFireballSpawn();
-        GameObject temp = Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
+        Instantiate(Fireball, FireballSpawn.position, FireballSpawn.rotation);
         attackSound1.Play();
     }
     protected override void Attack2() {
@@ -33,7 +33,8 @@ public class Phoenix : PlayerController
     }
     protected override void Attack3() {
         //Ability 3 [Inferno Barrier] - Fire Wall that burns enemies on contact and protect player. Lasts for 5 seconds.
-        Instantiate(Firewall, FireballSpawn.position, FireballSpawn.rotation);
+        SetFireballSpawn();
+        Instantiate(Firewall, FirewallSpawn.position, FirewallSpawn.rotation);
         attackSound3.Play();
     }
     private void SetFireballSpawn()
@@ -43,18 +44,25 @@ public class Phoenix : PlayerController
         {
             case 0:
                 FireballSpawn.localPosition = new Vector2(0, 0.2f);
+                FirewallSpawn.localPosition = new Vector2(0, 0.5f);
                 break;
             case 1:
                 FireballSpawn.localPosition = new Vector2(0.2f, 0);
+                FirewallSpawn.localPosition = new Vector2(0.5f, 0);
                 FireballSpawn.Rotate(0, 0, 270);
+                FirewallSpawn.Rotate(0, 0, 270);
                 break;
             case 2:
                 FireballSpawn.localPosition = new Vector2(0, -0.2f);
+                FirewallSpawn.localPosition = new Vector2(0, -0.5f);
                 FireballSpawn.Rotate(0, 0, 180);
+                FirewallSpawn.Rotate(0, 0, 180);
                 break;
             case 3:
                 FireballSpawn.localPosition = new Vector2(-0.2f, 0);
+                FirewallSpawn.localPosition = new Vector2(-0.5f, 0);
                 FireballSpawn.Rotate(0, 0, 90);
+                FirewallSpawn.Rotate(0, 0, 90);
                 break;
         }
     }
