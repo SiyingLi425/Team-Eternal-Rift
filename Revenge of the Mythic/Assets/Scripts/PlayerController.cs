@@ -127,12 +127,12 @@ public abstract class PlayerController : MonoBehaviour
                 else if (vert > 0)
                 {
                     direction = 0;
-                    basicAttackRange.offset = new Vector2(0, -0.225f);
+                    basicAttackRange.offset = new Vector2(0, 0.225f);
                 }
                 else
                 {
                     direction = 2;
-                    basicAttackRange.offset = new Vector2(0, 0.225f);
+                    basicAttackRange.offset = new Vector2(0, -0.225f);
                 }
             }
             #endregion
