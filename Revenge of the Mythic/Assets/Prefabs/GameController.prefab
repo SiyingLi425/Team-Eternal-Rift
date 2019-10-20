@@ -62,6 +62,14 @@ MonoBehaviour:
   phoenix: {fileID: 7541204883019173752, guid: e65d78811d476d54295bc2535a8e5bea, type: 3}
   tutorialBird: {fileID: 7132909035118809549, guid: 05d6b45e70625cf4faa13cd73f2fd6d9,
     type: 3}
+  gold: {fileID: 1844867402273812646, guid: 013b0a4f41926c44b9ae2ab809aae291, type: 3}
+  silver: {fileID: 6032275023933744691, guid: f3cc53b10cd1d3a4082e935ede6ecbca, type: 3}
+  boss: {fileID: 2640669536252386819, guid: 280f569dad6291043a984680a1e6578a, type: 3}
   gridSize: 1
   playerHealth: {fileID: 0}
+  ability1CD: {fileID: 0}
+  ability2CD: {fileID: 0}
+  ability3CD: {fileID: 0}
   playerController: {fileID: 0}
+  score: 0
+  scoreText: {fileID: 0}
