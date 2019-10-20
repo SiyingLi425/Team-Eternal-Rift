@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     private Collider2D goalCollider, playerCollider;
-    public int level;
+    public static int level;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,15 @@ public class GoalController : MonoBehaviour
     {
         if (playerCollider.IsTouching(goalCollider))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level" + (level + 1));
+            if(level < 3)
+            {
+                level++;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level" + (level + 1));
+            }else if(level >= 3)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+            }
+
         }
     }
 }
