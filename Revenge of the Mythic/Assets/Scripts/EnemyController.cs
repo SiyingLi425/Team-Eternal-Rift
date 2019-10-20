@@ -29,6 +29,7 @@ public abstract class EnemyController : MonoBehaviour
     protected int attackCoolDown;
     protected Transform enemyTransform;
     private Transform playerTransform;
+    public GameObject AggroedPlayer { get { return aggroedPlayer; } }
     protected Text healthBar;
 
     [Header("Animation Variables")]
@@ -120,7 +121,7 @@ public abstract class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(foodItem, enemyTransform.position, enemyTransform.rotation);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         if (playerCollider.IsTouching(hitBox) && attackCoolDown == 0)
@@ -142,8 +143,11 @@ public abstract class EnemyController : MonoBehaviour
 
         if (bleedTimer > 0 && bleedTime % (25 / 100 * bleedTimer) == 0)
         {
-            playerController.Damage(1);
-
+            Damage(1);
+        }
+        if (burnTimer > 0 && burnTime % (25 / 100 * burnTimer) == 0)
+        {
+            Damage(1);
         }
 
         if (bleedTimer > 0)
@@ -158,11 +162,6 @@ public abstract class EnemyController : MonoBehaviour
         if (tauntTimer > 0)
         {
             tauntTime--;
-        }
-
-        if (tauntTimer <= 0)
-        {
-
         }
     }
     protected virtual void  getMovementTargert()
