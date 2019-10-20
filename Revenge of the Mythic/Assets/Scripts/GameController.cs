@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     public int score;
     public GameObject scoreText;
 
+    [Header("Audio Controller")]
+    public AudioSource breakSound;
+
     private int playerNum = 0;
     private int health;
     private PersisableObjects persisableObjects;
