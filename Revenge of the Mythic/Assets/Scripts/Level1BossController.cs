@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Level1BossController : MeleeEnemy
 {
-    private int dashTimer = 0, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 50;
+    private int dashTimer = 5, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 50;
     private float speedIncrement = 5, xSpeed, ySpeed;
     private Vector3 dashTarget;
 
     void FixedUpdate()
     {
-        if (dashTimer > 1)
+        if (dashTimer > 0)
         {
             --dashTimer;
             if (dashTimer <= 0)
             {
-                Debug.Log("iello");
                 chargeUpTimer = chargeUpTimerReset;
             }
         }
@@ -26,7 +25,6 @@ public class Level1BossController : MeleeEnemy
             if (chargeUpTimer <= 0)
             {
                 dashTarget = AggroedPlayer.transform.position;
-                Debug.Log("hello");
                 #region Set Speed
                 Vector3 t = AggroedPlayer.transform.position;
                 float xDif = Mathf.Abs(transform.position.x - t.x), yDif = Mathf.Abs(transform.position.y - t.y);
@@ -63,7 +61,7 @@ public class Level1BossController : MeleeEnemy
         {
             base.moveEnemy(speedX, speedY);
         }
-        else if (chargeUpTimer == 0)
+        else if (chargeUpTimer <= 0)
         {
             base.moveEnemy(xSpeed, ySpeed);
             bool pastX = (transform.position.x > dashTarget.x && xSpeed >= 0) || (transform.position.x < dashTarget.x && xSpeed <= 0);
@@ -77,7 +75,7 @@ public class Level1BossController : MeleeEnemy
 
     protected override void getMovementTargert()
     {
-        if (dashTimer > 0)
+        if (chargeUpTimer <= 0)
         {
             base.getMovementTargert();
         }
