@@ -286,7 +286,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1979123483}
-        m_MethodName: onClickStart
+        m_MethodName: onClickRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -843,6 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c5c57cd3902934582bb409955a5186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  persisableObject: {fileID: 0}
 --- !u!4 &1979123484
 Transform:
   m_ObjectHideFlags: 0

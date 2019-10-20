@@ -18,17 +18,22 @@ public class GameController : MonoBehaviour
 
     private int playerNum = 0;
     private int health;
+    private PersisableObjects persisableObjects;
+    private int playerType;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
     {
+        persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
+        playerType = persisableObjects.playerType;
         LoadRoom(map);
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerHealth = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
         ability1CD = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
         ability2CD = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
         ability3CD = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
-        scoreText = GameObject.FindGameObjectWithTag("ScoreText"); ;
+        scoreText = GameObject.FindGameObjectWithTag("ScoreText");
+
 
     }
 
@@ -114,9 +119,20 @@ public class GameController : MonoBehaviour
     }
     public void AddPlayer(float x, float y)
     {
-        ++playerNum;
-        GameObject player = playerNum == 1 ? phoenix  : griffon;
+        
+        playerNum++;
+        GameObject player = new GameObject();
+        //= playerNum == 1 ? phoenix  : griffon;
+        if (playerType == 1)
+        {
+            player = phoenix;
+        }else if(playerType == 2)
+        {
+            player = griffon;
+        }
+        Debug.Log(player);
         Instantiate(player, new Vector2(x, y), transform.rotation);
+
     }
     public void AddScore(int amount)
     {

@@ -19,6 +19,8 @@ TagManager:
   - P1Ability2CD
   - P1Ability3CD
   - ScoreText
+  - CharacterChoice
+  - PersisableObject
   layers:
   - Default
   - TransparentFX

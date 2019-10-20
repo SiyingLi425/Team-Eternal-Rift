@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     private Collider2D goalCollider, playerCollider;
-    public string level;
+    public int level;
     
     // Start is called before the first frame update
     void Start()
