@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2808185963198687373}
-  - component: {fileID: 3197930331168820168}
   m_Layer: 0
   m_Name: FirewallSpawn
   m_TagString: Untagged
@@ -31,22 +30,6 @@ Transform:
   m_Father: {fileID: 2624668538406548394}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3197930331168820168
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206107367955937580}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.05
 --- !u!1 &4890784262667791988
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,11 +575,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2624668538406548394}
     m_Modifications:
-    - target: {fileID: 7030813437853403919, guid: 7b2529b46f256394d8fd12e564bc05fd,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7030813437853403916, guid: 7b2529b46f256394d8fd12e564bc05fd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -702,21 +680,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7030813437853403915, guid: 7b2529b46f256394d8fd12e564bc05fd,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 8273866961543719209}
-    - target: {fileID: 7030813438216088809, guid: 7b2529b46f256394d8fd12e564bc05fd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7030813438216088809, guid: 7b2529b46f256394d8fd12e564bc05fd,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -4
-      objectReference: {fileID: 0}
     - target: {fileID: 639733349, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 133
@@ -733,6 +696,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 139
       objectReference: {fileID: 0}
+    - target: {fileID: 7030813437853403919, guid: 7b2529b46f256394d8fd12e564bc05fd,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030813438216088809, guid: 7b2529b46f256394d8fd12e564bc05fd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030813438216088809, guid: 7b2529b46f256394d8fd12e564bc05fd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030813437853403915, guid: 7b2529b46f256394d8fd12e564bc05fd,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 8273866961543719209}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
 --- !u!224 &6680987518332067074 stripped
