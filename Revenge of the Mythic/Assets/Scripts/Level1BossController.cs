@@ -10,11 +10,12 @@ public class Level1BossController : MeleeEnemy
 
     void FixedUpdate()
     {
-        if (dashTimer > 0)
+        if (dashTimer > 1)
         {
             --dashTimer;
             if (dashTimer <= 0)
             {
+                Debug.Log("iello");
                 chargeUpTimer = chargeUpTimerReset;
             }
         }
@@ -25,6 +26,7 @@ public class Level1BossController : MeleeEnemy
             if (chargeUpTimer <= 0)
             {
                 dashTarget = AggroedPlayer.transform.position;
+                Debug.Log("hello");
                 #region Set Speed
                 Vector3 t = AggroedPlayer.transform.position;
                 float xDif = Mathf.Abs(transform.position.x - t.x), yDif = Mathf.Abs(transform.position.y - t.y);
