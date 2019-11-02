@@ -6,6 +6,7 @@ public class SceneManager : MonoBehaviour
 {
     public PersisableObjects persisableObject;
     private GameObject charChoice;
+    private string firstScene = "GameScene"; //modify this to start at a particular level
 
     void Start()
     {
@@ -28,14 +29,14 @@ public class SceneManager : MonoBehaviour
     {
         persisableObject.playerType = 1;
         DontDestroyOnLoad(persisableObject);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(firstScene);
     }
     public void onClickGriffin()
     {
 
         persisableObject.playerType = 2;
         DontDestroyOnLoad(persisableObject);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(firstScene);
     }
 
     

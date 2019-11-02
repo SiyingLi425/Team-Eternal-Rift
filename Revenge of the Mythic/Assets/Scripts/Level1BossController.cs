@@ -5,7 +5,7 @@ using UnityEngine;
 public class Level1BossController : MeleeEnemy
 {
     private int dashTimer = 5, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 50;
-    private float speedIncrement = 5, xSpeed, ySpeed;
+    private float speedIncrement = 3, xSpeed, ySpeed;
     private Vector3 dashTarget;
 
     void FixedUpdate()
@@ -42,6 +42,7 @@ public class Level1BossController : MeleeEnemy
                 }
                 xSpeed = transform.position.x > t.x ? -xSpeed : xSpeed;
                 ySpeed = transform.position.y > t.y ? -ySpeed : ySpeed;
+                Debug.Log(xSpeed+", "+ySpeed);
                 #endregion
             }
         }
@@ -63,9 +64,9 @@ public class Level1BossController : MeleeEnemy
         }
         else if (chargeUpTimer <= 0)
         {
-            base.moveEnemy(xSpeed, ySpeed);
-            bool pastX = (transform.position.x > dashTarget.x && xSpeed >= 0) || (transform.position.x < dashTarget.x && xSpeed <= 0);
-            bool pastY = (transform.position.y > dashTarget.y && ySpeed >= 0) || (transform.position.y < dashTarget.y && ySpeed <= 0);
+            base.moveEnemy(speedX, speedY);
+            bool pastX = (transform.position.x >= dashTarget.x && speedX >= 0) || (transform.position.x <= dashTarget.x && speedX <= 0);
+            bool pastY = (transform.position.y >= dashTarget.y && speedY >= 0) || (transform.position.y <= dashTarget.y && speedY <= 0);
             if (pastX && pastY)
             {
                 dashTimer = dashTimerReset;
@@ -86,6 +87,10 @@ public class Level1BossController : MeleeEnemy
         if (col.gameObject.tag == "Wall")
         {
             dashTimer = dashTimerReset;
+        }
+        else if (col.gameObject.tag == "Destroyable")
+        {
+            col.gameObject.PrimaryController().Damage(attackDamage);
         }
     }
 }
