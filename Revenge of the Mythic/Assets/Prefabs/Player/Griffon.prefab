@@ -136,7 +136,7 @@ MonoBehaviour:
   damagable:
   - Enemy
   - Destroyable
-  health: 0
+  health: 40
   maximumHealth: 40
   north:
   - {fileID: 1047826097938572156, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
