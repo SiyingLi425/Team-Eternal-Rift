@@ -26,6 +26,32 @@ public class Dragon : PlayerController
     protected override void Attack2()
     {
         //Ability 2 [Conflagration] - Ranged damage cone, applies burning DoT for 3 seconds.Leaves burning DoT AoE for 3 seconds[burns tick every 0.5 seconds and stack. They do little damage]. 12 second cooldown.
+        #region Set Collider Rotation
+        switch (Direction)
+        {
+            case 0:
+                conflagrationRange.points[0] = new Vector2(0, 0.1f);
+                conflagrationRange.points[1] = new Vector2(0.4f, 0.65f);
+                conflagrationRange.points[2] = new Vector2(-0.4f, 0.65f);
+                break;
+            case 1:
+                conflagrationRange.points[0] = new Vector2(0.1f, 0);
+                conflagrationRange.points[1] = new Vector2(0.65f, 0.4f);
+                conflagrationRange.points[2] = new Vector2(0.65f, -0.4f);
+                break;
+            case 2:
+                conflagrationRange.points[0] = new Vector2(0, -0.1f);
+                conflagrationRange.points[1] = new Vector2(0.4f, -0.65f);
+                conflagrationRange.points[2] = new Vector2(-0.4f, -0.65f);
+                break;
+            case 3:
+                conflagrationRange.points[0] = new Vector2(-0.1f, 0);
+                conflagrationRange.points[1] = new Vector2(-0.65f, 0.4f);
+                conflagrationRange.points[2] = new Vector2(-0.65f, -0.4f);
+                break;
+        }
+        #endregion
+        #region Conflagration
         foreach (string s in Damagable)
         {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
@@ -36,6 +62,7 @@ public class Dragon : PlayerController
                 }
             }
         }
+        #endregion
     }
     protected override void Attack3()
     {
