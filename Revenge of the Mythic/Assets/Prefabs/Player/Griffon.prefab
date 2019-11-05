@@ -1,5 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &758274916148384618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7638386112434316236}
+  - component: {fileID: 5233395088416603025}
+  - component: {fileID: 3193697413189636034}
+  m_Layer: 0
+  m_Name: AttackObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7638386112434316236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758274916148384618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4028612144430151960}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &5233395088416603025
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758274916148384618}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.225}
+  m_Size: {x: 0.4, y: 0.25}
+  m_Direction: 1
+--- !u!58 &3193697413189636034
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758274916148384618}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
 --- !u!1 &866092664799637010
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +94,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4028612144430151960}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6808469289163729885
 Camera:
@@ -96,8 +160,6 @@ GameObject:
   - component: {fileID: 8276424200015999158}
   - component: {fileID: 351123612469169289}
   - component: {fileID: 4038799436821465475}
-  - component: {fileID: 8535805541974298791}
-  - component: {fileID: 5290100819264975846}
   m_Layer: 0
   m_Name: Griffon
   m_TagString: Player
@@ -113,9 +175,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4833405778416478741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7638386112434316236}
   - {fileID: 4518162725268238292}
   - {fileID: 1489335588241824147}
   m_Father: {fileID: 0}
@@ -154,8 +217,9 @@ MonoBehaviour:
   - {fileID: -3017418346619816129, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
   - {fileID: 5641869318666967415, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
   - {fileID: 196355874785145769, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
+  attackObject: {fileID: 758274916148384618}
   abilityCooldownReset: 2c01000090010000f4010000
-  TauntRange: {fileID: 5290100819264975846}
+  TauntRange: {fileID: 3193697413189636034}
 --- !u!50 &8276424200015999158
 Rigidbody2D:
   serializedVersion: 4
@@ -253,38 +317,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!70 &8535805541974298791
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833405778416478741}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.225}
-  m_Size: {x: 0.4, y: 0.25}
-  m_Direction: 1
---- !u!58 &5290100819264975846
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833405778416478741}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.5
 --- !u!1001 &8446880714062549663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,7 +367,7 @@ PrefabInstance:
     - target: {fileID: 7030813437853403916, guid: 7b2529b46f256394d8fd12e564bc05fd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7030813437853403916, guid: 7b2529b46f256394d8fd12e564bc05fd,
         type: 3}

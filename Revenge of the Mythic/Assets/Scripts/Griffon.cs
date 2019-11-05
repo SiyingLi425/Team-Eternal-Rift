@@ -8,9 +8,7 @@ public class Griffon : PlayerController
     private CircleCollider2D TauntRange;
 
     protected override void Attack1() {
-        /*
-         Ability 1 [Peck] - Melee damage. Adds a bleeding effect on the enemy that drains hp slowly for 3 seconds. 6 second cooldown.
-         */
+         //Ability 1 [Peck] - Melee damage. Adds a bleeding effect on the enemy that drains hp slowly for 3 seconds. 6 second cooldown.
         foreach (string s in Damagable)
         {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))

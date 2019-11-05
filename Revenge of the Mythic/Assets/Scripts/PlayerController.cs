@@ -30,6 +30,8 @@ public abstract class PlayerController : MonoBehaviour
     private int animateTimer = 15, animateTimerReset = 15, animationStage = 0;
     private SpriteRenderer sr;
     private bool animate = true;
+    [SerializeField]
+    private GameObject attackObject;
     #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
     protected int aegisTimer = 0, aegisTimerReset = 250;
@@ -79,7 +81,7 @@ public abstract class PlayerController : MonoBehaviour
         #endregion
         #region Colliders
         playerCollider = GetComponent<BoxCollider2D>();
-        basicAttackRange = GetComponent<CapsuleCollider2D>();
+        basicAttackRange = attackObject.GetComponent<CapsuleCollider2D>();
         #endregion
         #region Set Sprites
         for (int z=0; z<3; ++z)
@@ -93,7 +95,6 @@ public abstract class PlayerController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         health = maximumHealth;
-        //Set Damagable over here... once there's a list of things that can be damaged
     }
 
     // Update is called once per frame
@@ -112,28 +113,25 @@ public abstract class PlayerController : MonoBehaviour
             #region Direction Handling
             if (vert != 0 || horiz != 0)
             {
-                basicAttackRange.direction = vert == 0 ? CapsuleDirection2D.Vertical : CapsuleDirection2D.Horizontal;
-                basicAttackRange.size = vert == 0 ? new Vector2(0.25f, 0.4f) : new Vector2(0.4f, 0.25f);
                 if (horiz < 0 && vert == 0)
                 {
                     direction = 3;
-                    basicAttackRange.offset = new Vector2(-0.225f, 0);
+                    
                 }
                 else if (horiz > 0 && vert == 0)
                 {
                     direction = 1;
-                    basicAttackRange.offset = new Vector2(0.225f, 0);
                 }
                 else if (vert > 0)
                 {
                     direction = 0;
-                    basicAttackRange.offset = new Vector2(0, 0.225f);
                 }
                 else
                 {
                     direction = 2;
-                    basicAttackRange.offset = new Vector2(0, -0.225f);
                 }
+                attackObject.transform.rotation = Quaternion.identity;
+                attackObject.transform.Rotate(0, 0, -90 * direction);
             }
             #endregion
             #endregion
