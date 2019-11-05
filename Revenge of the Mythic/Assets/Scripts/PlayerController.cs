@@ -112,8 +112,8 @@ public abstract class PlayerController : MonoBehaviour
             #region Direction Handling
             if (vert != 0 || horiz != 0)
             {
+                basicAttackRange.direction = vert == 0 ? CapsuleDirection2D.Vertical : CapsuleDirection2D.Horizontal;
                 basicAttackRange.size = vert == 0 ? new Vector2(0.25f, 0.4f) : new Vector2(0.4f, 0.25f);
-                basicAttackRange.direction = vert == 0 ? CapsuleDirection2D.Horizontal : CapsuleDirection2D.Vertical;
                 if (horiz < 0 && vert == 0)
                 {
                     direction = 3;
