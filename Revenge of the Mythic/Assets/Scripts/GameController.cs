@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     //Public variables
     public TextAsset map;
-    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus;
     public float gridSize = 1;
     public Text playerHealth, ability1CD, ability2CD, ability3CD;
     public PlayerController playerController;
@@ -135,6 +135,14 @@ public class GameController : MonoBehaviour
         }else if(playerType == 2)
         {
             player = griffon;
+        }
+        else if (playerType == 3)
+        {
+            player = dragon;
+        }
+        else if (playerType == 4)
+        {
+            player = pegasus;
         }
         Debug.Log(player);
         Instantiate(player, new Vector2(x, y), transform.rotation);

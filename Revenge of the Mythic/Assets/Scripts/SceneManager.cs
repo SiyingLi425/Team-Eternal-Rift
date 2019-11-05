@@ -38,8 +38,23 @@ public class SceneManager : MonoBehaviour
         DontDestroyOnLoad(persisableObject);
         UnityEngine.SceneManagement.SceneManager.LoadScene(firstScene);
     }
+    public void onClickDragon()
+    {
 
-    
+        persisableObject.playerType = 3;
+        DontDestroyOnLoad(persisableObject);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(firstScene);
+    }
+    public void onClickPegasus()
+    {
 
-    
+        persisableObject.playerType = 4;
+        DontDestroyOnLoad(persisableObject);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(firstScene);
+    }
+
+
+
+
+
 }

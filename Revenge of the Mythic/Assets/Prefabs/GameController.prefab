@@ -67,6 +67,8 @@ MonoBehaviour:
   gold: {fileID: 1844867402273812646, guid: 013b0a4f41926c44b9ae2ab809aae291, type: 3}
   silver: {fileID: 6032275023933744691, guid: f3cc53b10cd1d3a4082e935ede6ecbca, type: 3}
   boss: {fileID: 2640669536252386819, guid: 280f569dad6291043a984680a1e6578a, type: 3}
+  dragon: {fileID: 3479943806675472142, guid: 9e569dde68ecd4a45bf55229c6d67b5e, type: 3}
+  pegasus: {fileID: 1796597620560605602, guid: 257ed607482f4c048882be9bba3ca3cf, type: 3}
   gridSize: 1
   playerHealth: {fileID: 0}
   ability1CD: {fileID: 0}
