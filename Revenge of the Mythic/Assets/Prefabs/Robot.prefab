@@ -244,11 +244,13 @@ MonoBehaviour:
   direction: 2
   status: 
   bleedTimer: 0
-  bleedTime: 0
+  bleedTime: 200
   burnTimer: 0
-  burnTime: 0
+  burnTime: 200
   tauntTimer: 0
-  tauntTime: 0
+  tauntTime: 200
+  fearTimer: 0
+  fearTime: 200
 --- !u!50 &1094509923705689525
 Rigidbody2D:
   serializedVersion: 4

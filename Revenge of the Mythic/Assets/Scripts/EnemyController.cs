@@ -52,6 +52,7 @@ public abstract class EnemyController : MonoBehaviour
     public float burnTime;
     public float tauntTimer;
     public float tauntTime;
+    public float fearTimer, fearTime;
 
     public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
@@ -135,13 +136,14 @@ public abstract class EnemyController : MonoBehaviour
             target = playerPosition;
             getMovementTargert();
         }
+       
 
         if (attackCoolDown > 0)
         {
             attackCoolDown--;
         }
 
-        if (bleedTimer > 0 && bleedTime % (25 / 100 * bleedTimer) == 0)
+        if (bleedTimer > 0 && bleedTimer % 25  == 0)
         {
             Damage(1);
         }
@@ -162,6 +164,10 @@ public abstract class EnemyController : MonoBehaviour
         if (tauntTimer > 0)
         {
             tauntTime--;
+        }
+        if(fearTimer > 0)
+        {
+            fearTimer--;
         }
     }
     protected virtual void  getMovementTargert()
@@ -209,7 +215,16 @@ public abstract class EnemyController : MonoBehaviour
             direction = speedX > 0 ? 1 : 3;
         }
         #endregion
-        moveEnemy(speedX, speedY);
+        if(fearTimer > 0)
+        {
+            moveEnemy(-speedX, -speedY);
+        }
+        else
+        {
+            moveEnemy(speedX, speedY);
+
+        }
+        
         animate = speedX != 0 || speedY != 0;
     }
 
@@ -235,12 +250,18 @@ public abstract class EnemyController : MonoBehaviour
 
         if (status == "Bleed")
         {
+            Debug.Log("Bleeding");
             bleedTimer = bleedTime;
         }
         if(status == "Burn")
         {
             burnTimer = burnTime;
         }
+        if(status == "Fear")
+        {
+            fearTimer = fearTime;
+        }
+        
 
         if(status == "Taunt")
         {

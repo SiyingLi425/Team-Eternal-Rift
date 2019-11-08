@@ -52,7 +52,6 @@ public class RangedEnemy : EnemyController
 
     protected override void attack()
     {
-        Debug.Log("AttackRange");
         attackCoolDown = attackSpeed;
         Instantiate(bullet, bulletSpawn.position, rotate());
     }
