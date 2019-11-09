@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 641284393722299419}
   m_Layer: 0
   m_Name: TutorialBird
-  m_TagString: Untagged
+  m_TagString: Tutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,9 +118,8 @@ MonoBehaviour:
   dialogueTextHolder: {fileID: 0}
   npcBox: {fileID: 0}
   nameHolder: {fileID: 0}
-  sentences:
-  - "Use WASD to move \nZ = Ranged attack, V = melee attack\nBreak the wall with Z"
   speakerName: Tutorial Bird
+  interactText: {fileID: 0}
 --- !u!58 &641284393722299419
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,6 +133,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004916668, y: 0}
+  m_Offset: {x: 0.098618984, y: 0}
   serializedVersion: 2
-  m_Radius: 2.6714702
+  m_Radius: 2.2489448

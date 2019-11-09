@@ -75,6 +75,12 @@ MonoBehaviour:
   ability2CD: {fileID: 0}
   ability3CD: {fileID: 0}
   playerController: {fileID: 0}
+  tutorialText:
+  - {fileID: 4900000, guid: 0d6009d1997560c428603ef3dc472c48, type: 3}
+  - {fileID: 4900000, guid: 12e5e0137a45c10469791436208b6556, type: 3}
+  - {fileID: 4900000, guid: 08987e7aa8ecc7b4382b309027923db4, type: 3}
+  - {fileID: 4900000, guid: 7040a07c6bd425b42b1b7503f612f37b, type: 3}
+  npcBox: {fileID: 0}
   score: 0
   scoreText: {fileID: 0}
   breakSound: {fileID: 5462860255890750481}
