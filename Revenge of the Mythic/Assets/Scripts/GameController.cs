@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     public float gridSize = 1;
     public Text playerHealth, ability1CD, ability2CD, ability3CD;
     public PlayerController playerController;
+    public TextAsset[] tutorialText = new TextAsset[9];
+
 
     [Header("ScoreBoard")]
     public int score;
@@ -121,6 +123,16 @@ public class GameController : MonoBehaviour
                         break;
                 }
             }
+        }
+        GameObject[] NPCs = GameObject.FindGameObjectsWithTag("Tutorial");
+        for (int z = 0, o = 0, r = 0, w = 0; z < NPCs.Length; ++z)
+        {
+            if (NPCs[z].name.Contains("Tutorial"))
+            {
+                NPCs[z].GetComponent<TurorialController>().interactText = tutorialText[tutorialText.Length - 1 - o];
+                ++o;
+            }
+           
         }
     }
     public void AddPlayer(float x, float y)

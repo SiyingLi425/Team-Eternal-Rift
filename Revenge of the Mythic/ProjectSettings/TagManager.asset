@@ -21,6 +21,7 @@ TagManager:
   - ScoreText
   - CharacterChoice
   - PersisableObject
+  - Tutorial
   layers:
   - Default
   - TransparentFX
