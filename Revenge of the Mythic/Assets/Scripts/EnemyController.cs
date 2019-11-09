@@ -12,7 +12,7 @@ public abstract class EnemyController : MonoBehaviour
     public int attackSpeed, attackDamage;
     public GameObject foodItem;
 
-
+    private float speedX = 0, speedY = 0;
 
     ///private Animator enemyAnimator;
 
@@ -53,6 +53,8 @@ public abstract class EnemyController : MonoBehaviour
     public float tauntTimer;
     public float tauntTime;
     public float fearTimer, fearTime;
+    public float silenceTimer, silenceTime;
+    public float knockbackTimer, knockbackTime;
 
     public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
@@ -81,15 +83,15 @@ public abstract class EnemyController : MonoBehaviour
     protected virtual void Update()
     {
 
-        
+
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
         playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
 
-        if(healthBar.IsActive() == true)
+        if (healthBar.IsActive() == true)
         {
-             healthBar.text ="HP:"+ health;
+            healthBar.text = "HP:" + health;
         }
-        
+
         #region Animation
         if (animate)
         {
@@ -102,8 +104,8 @@ public abstract class EnemyController : MonoBehaviour
                 sr.sprite = enemyImages[direction, i];
             }
         }
-            #endregion
-            if (status != "Taunt")
+        #endregion
+        if (status != "Taunt")
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
@@ -114,7 +116,7 @@ public abstract class EnemyController : MonoBehaviour
                 }
             }
         }
-        
+
         playerPosition = aggroedPlayer.GetComponent<Transform>().position;
         playerTransform = aggroedPlayer.GetComponent<Transform>();
 
@@ -127,8 +129,11 @@ public abstract class EnemyController : MonoBehaviour
 
         if (playerCollider.IsTouching(hitBox) && attackCoolDown == 0)
         {
+            if (silenceTimer == 0)
+            {
+                attack();
+            }
 
-            attack();
         }
 
         if (playerCollider.IsTouching(aggroRange))
@@ -136,18 +141,22 @@ public abstract class EnemyController : MonoBehaviour
             target = playerPosition;
             getMovementTargert();
         }
-       
+        #region StatusTimers
 
+        if (silenceTimer > 0)
+        {
+            silenceTimer--;
+        }
         if (attackCoolDown > 0)
         {
             attackCoolDown--;
         }
 
-        if (bleedTimer > 0 && bleedTimer % 25  == 0)
+        if (bleedTimer > 0 && bleedTimer % 25 == 0)
         {
             Damage(1);
         }
-        if (burnTimer > 0 && burnTime % (25 / 100 * burnTimer) == 0)
+        if (burnTimer > 0 && burnTimer % 25 == 0)
         {
             Damage(1);
         }
@@ -165,15 +174,22 @@ public abstract class EnemyController : MonoBehaviour
         {
             tauntTime--;
         }
-        if(fearTimer > 0)
+        if (fearTimer > 0)
         {
             fearTimer--;
         }
+        if (knockbackTimer > 0)
+        {
+            knockbackTimer--;
+        }
+        #endregion
+
+
     }
-    protected virtual void  getMovementTargert()
+    protected virtual void getMovementTargert()
     {
- 
-        float speedX = 0, speedY = 0;
+
+
         Vector2 pos = GetComponent<Transform>().position;
         float xDistance = Mathf.Abs(Mathf.Abs(pos.x) - Mathf.Abs(target.x));
         float yDistance = Mathf.Abs(Mathf.Abs(pos.y) - Mathf.Abs(target.y));
@@ -184,7 +200,7 @@ public abstract class EnemyController : MonoBehaviour
             speedX = walkSpeed;
             speedY = yDistance / (xDistance / walkSpeed);
             //enemyAnimator.SetInteger("Direction", 3);
-        
+
         }
         else
         {
@@ -215,7 +231,7 @@ public abstract class EnemyController : MonoBehaviour
             direction = speedX > 0 ? 1 : 3;
         }
         #endregion
-        if(fearTimer > 0)
+        if (fearTimer > 0 || knockbackTimer > 0)
         {
             moveEnemy(-speedX, -speedY);
         }
@@ -260,6 +276,14 @@ public abstract class EnemyController : MonoBehaviour
         if(status == "Fear")
         {
             fearTimer = fearTime;
+        }
+        if(status == "Silence")
+        {
+            silenceTimer = silenceTime;
+        }
+        if(status == "Knockback")
+        {
+            knockbackTimer = knockbackTime;
         }
         
 

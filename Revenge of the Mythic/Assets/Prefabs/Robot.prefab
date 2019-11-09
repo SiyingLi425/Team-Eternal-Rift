@@ -251,6 +251,10 @@ MonoBehaviour:
   tauntTime: 200
   fearTimer: 0
   fearTime: 200
+  silenceTimer: 0
+  silenceTime: 200
+  knockbackTimer: 0
+  knockbackTime: 20
 --- !u!50 &1094509923705689525
 Rigidbody2D:
   serializedVersion: 4
@@ -259,11 +263,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094509923705689524}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
