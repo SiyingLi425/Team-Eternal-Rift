@@ -9,17 +9,18 @@ public class Dragon : PlayerController
     [SerializeField]
     private CircleCollider2D roarRange;
     [SerializeField]
-    private GameObject conflagrationSprite;
-    private int conflagrationSpriteTimer = 0, conflagrationSpriteTimerReset = 25;
+    private SpriteRenderer conflagrationSprite;
+    private int conflagrationSpriteTimer = 0, conflagrationSpriteTimerReset = 50;
 
-    void FixedUpdate()
+    public override void Update()
     {
+        base.Update();
         if (conflagrationSpriteTimer > 0)
         {
             --conflagrationSpriteTimer;
             if (conflagrationSpriteTimer <= 0)
             {
-                conflagrationSprite.SetActive(false);
+                conflagrationSprite.enabled = false;
             }
         }
     }
@@ -40,7 +41,8 @@ public class Dragon : PlayerController
     protected override void Attack2()
     {
         //Ability 2 [Conflagration] - Ranged damage cone, applies burning DoT for 3 seconds.Leaves burning DoT AoE for 3 seconds[burns tick every 0.5 seconds and stack. They do little damage]. 12 second cooldown.
-        conflagrationSprite.SetActive(true);
+        conflagrationSprite.enabled = true;
+        conflagrationSpriteTimer = conflagrationSpriteTimerReset;
         foreach (string s in Damagable)
         {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))

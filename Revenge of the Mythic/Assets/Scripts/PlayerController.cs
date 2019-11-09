@@ -98,7 +98,7 @@ public abstract class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         //ability1CD.text = abilityCooldown[0];
         #region Input Actions
