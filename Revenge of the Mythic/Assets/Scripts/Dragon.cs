@@ -8,7 +8,21 @@ public class Dragon : PlayerController
     private PolygonCollider2D conflagrationRange;
     [SerializeField]
     private CircleCollider2D roarRange;
+    [SerializeField]
+    private GameObject conflagrationSprite;
+    private int conflagrationSpriteTimer = 0, conflagrationSpriteTimerReset = 25;
 
+    void FixedUpdate()
+    {
+        if (conflagrationSpriteTimer > 0)
+        {
+            --conflagrationSpriteTimer;
+            if (conflagrationSpriteTimer <= 0)
+            {
+                conflagrationSprite.SetActive(false);
+            }
+        }
+    }
     protected override void Attack1()
     {
         //Ability 1 [Nullity Fang] - Melee damage. Silences target for 1 second. Against bosses, this attack interrupts a magic attack instead. 5 second cooldown.
@@ -26,6 +40,7 @@ public class Dragon : PlayerController
     protected override void Attack2()
     {
         //Ability 2 [Conflagration] - Ranged damage cone, applies burning DoT for 3 seconds.Leaves burning DoT AoE for 3 seconds[burns tick every 0.5 seconds and stack. They do little damage]. 12 second cooldown.
+        conflagrationSprite.SetActive(true);
         foreach (string s in Damagable)
         {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s))
