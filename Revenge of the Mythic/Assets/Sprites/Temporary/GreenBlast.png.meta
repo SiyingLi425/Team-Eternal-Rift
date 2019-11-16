@@ -1,0 +1,883 @@
+fileFormatVersion: 2
+guid: 354098a3b7255c14ea872179c8f00ba5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3675700339188000905
+    second: GreenBlast_0
+  - first:
+      213: 5635915643889815136
+    second: GreenBlast_1
+  - first:
+      213: 8156442650473077210
+    second: GreenBlast_2
+  - first:
+      213: -3971488762393450972
+    second: GreenBlast_3
+  - first:
+      213: 7615435470496298485
+    second: GreenBlast_4
+  - first:
+      213: 4248326360744277845
+    second: GreenBlast_5
+  - first:
+      213: 3162161875633636573
+    second: GreenBlast_6
+  - first:
+      213: 5827713922176850162
+    second: GreenBlast_7
+  - first:
+      213: -6001950480202227715
+    second: GreenBlast_8
+  - first:
+      213: -7669963432181134884
+    second: GreenBlast_9
+  - first:
+      213: -4561042610876891593
+    second: GreenBlast_10
+  - first:
+      213: 8738096260878392153
+    second: GreenBlast_11
+  - first:
+      213: -6879105099067877529
+    second: GreenBlast_12
+  - first:
+      213: -7481600822811019139
+    second: GreenBlast_13
+  - first:
+      213: 74061393324537534
+    second: GreenBlast_14
+  - first:
+      213: -7483627463014250749
+    second: GreenBlast_15
+  - first:
+      213: -138170424172943712
+    second: GreenBlast_16
+  - first:
+      213: 2048095242460703312
+    second: GreenBlast_17
+  - first:
+      213: -3430262457813765251
+    second: GreenBlast_18
+  - first:
+      213: 3534532778574292022
+    second: GreenBlast_19
+  - first:
+      213: -380819205368354157
+    second: GreenBlast_20
+  - first:
+      213: 2069338818678298950
+    second: GreenBlast_21
+  - first:
+      213: -2575804099099366132
+    second: GreenBlast_22
+  - first:
+      213: -6463412266364600619
+    second: GreenBlast_23
+  - first:
+      213: 5332189640763027507
+    second: GreenBlast_24
+  - first:
+      213: 8682467698646005051
+    second: GreenBlast_25
+  - first:
+      213: -242875232612840604
+    second: GreenBlast_26
+  - first:
+      213: 8621037626910863934
+    second: GreenBlast_27
+  - first:
+      213: -751490999306707784
+    second: GreenBlast_28
+  - first:
+      213: -2279669909160783516
+    second: GreenBlast_29
+  - first:
+      213: -3736352649253799708
+    second: GreenBlast_30
+  - first:
+      213: 2052082271798973564
+    second: GreenBlast_31
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GreenBlast_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1599
+        width: 145
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d6ad6908b335e468cba67f3e4acfe1
+      internalID: -3675700339188000905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_1
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1587
+        width: 170
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec536c81d36c7149848fabf19119c4a
+      internalID: 5635915643889815136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_2
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 1575
+        width: 191
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7dc379a1b8d80458ec44768e31dd7d
+      internalID: 8156442650473077210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_3
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1565
+        width: 205
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c496d5794769bf449aa00068b65a715e
+      internalID: -3971488762393450972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_4
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 1556
+        width: 211
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c47b4150ffe8b0408c6e050d52a55a1
+      internalID: 7615435470496298485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_5
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1547
+        width: 215
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a77c5a8fae23894d9d4d12c9ba4916d
+      internalID: 4248326360744277845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1239
+        width: 221
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6a454977c335e4bb6d3adf74acbe3e
+      internalID: 3162161875633636573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_7
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1233
+        width: 227
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03db33aee134ce4b9948439262aba51
+      internalID: 5827713922176850162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_8
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1227
+        width: 236
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db2e65ecceec7543818d65384fefb3f
+      internalID: -6001950480202227715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_9
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1222
+        width: 244
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9c4b0e59521864fb325b66389f76db
+      internalID: -7669963432181134884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_10
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 1218
+        width: 250
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1abaf9026cf7b0408ddce33b8bfa9c9
+      internalID: -4561042610876891593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_11
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1214
+        width: 256
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071263e9d88ee9240ab1bafbf979e716
+      internalID: 8738096260878392153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 911
+        width: 261
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d536bfe42c07904eae5ba49074aaf91
+      internalID: -6879105099067877529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_13
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 910
+        width: 266
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e5baca5e4c7294f9638d7629c43376
+      internalID: -7481600822811019139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_14
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 909
+        width: 270
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61419df5abba08468ac823f6e64b2e0
+      internalID: 74061393324537534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_15
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 909
+        width: 271
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8465197c07b2a34583397e7d0951fe8
+      internalID: -7483627463014250749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_16
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 910
+        width: 273
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268e1ec3e01937e42a990b171f084918
+      internalID: -138170424172943712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_17
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 911
+        width: 277
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a137efd595e4f54e9719c2a896a4e42
+      internalID: 2048095242460703312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 614
+        width: 281
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b03febd445ddc94791f962561c87d57
+      internalID: -3430262457813765251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_19
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 631
+        width: 286
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c780c26f871ec4b8e590481a01d3d6
+      internalID: 3534532778574292022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_20
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 629
+        width: 291
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df313a1d182cf7c4eb90c7f2fe31d627
+      internalID: -380819205368354157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_21
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 627
+        width: 295
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef716be05423eb4c9b0042597f0668d
+      internalID: 2069338818678298950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_22
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 625
+        width: 298
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a176d5bde45d85e4988a147bd1f894ef
+      internalID: -2575804099099366132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_23
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 623
+        width: 299
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42e2199a55708b468533d07bb6fe617
+      internalID: -6463412266364600619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 323
+        width: 299
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddffab16663a4be4db6a5414c247fd96
+      internalID: 5332189640763027507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_25
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 331
+        width: 286
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0b2e68ac680fd42bc930d075ed82a8
+      internalID: 8682467698646005051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_26
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 362
+        width: 226
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ad0c14b21c2ab45950332cb9760ee8
+      internalID: -242875232612840604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_27
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 369
+        width: 220
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2611f6f92e81ff14c8547d88adff8224
+      internalID: 8621037626910863934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_28
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 376
+        width: 204
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9f14441e48a2e4e94b56d24f5ed5c0
+      internalID: -751490999306707784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_29
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 377
+        width: 173
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51b5e818b993b743945bfe2cb96bf1e
+      internalID: -2279669909160783516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_30
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 78
+        width: 169
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b53ad07c389ad749bf1e69a40b334b1
+      internalID: -3736352649253799708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBlast_31
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 90
+        width: 144
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32fc81f1b3dd292478fa5ce415a12f7f
+      internalID: 2052082271798973564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

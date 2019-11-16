@@ -221,10 +221,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   walkSpeed: 0.05
-  attackSpeed: 50
+  attackSpeed: 100
   attackDamage: 1
   foodItem: {fileID: 6317656113553127805, guid: 4b725abe0b4a14f4b94855968a7bbab3,
     type: 3}
+  attackCoolDown: 0
   north:
   - {fileID: 704897558614422922, guid: 7ad6081af9b287441a07f8cf0e9e0098, type: 3}
   - {fileID: -7972684559215338029, guid: 7ad6081af9b287441a07f8cf0e9e0098, type: 3}

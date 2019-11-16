@@ -26,7 +26,7 @@ public abstract class EnemyController : MonoBehaviour
     private GameObject aggroedPlayer;
     private PlayerController playerController;
     protected Vector2 target, playerPosition;
-    protected int attackCoolDown;
+    public int attackCoolDown;
     protected Transform enemyTransform;
     private Transform playerTransform;
     public GameObject AggroedPlayer { get { return aggroedPlayer; } }

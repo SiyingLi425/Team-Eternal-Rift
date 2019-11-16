@@ -134,10 +134,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   walkSpeed: 0.02
-  attackSpeed: 50
+  attackSpeed: 100
   attackDamage: 1
   foodItem: {fileID: 6317656113553127805, guid: 4b725abe0b4a14f4b94855968a7bbab3,
     type: 3}
+  attackCoolDown: 0
   north:
   - {fileID: -1317752060538432968, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
   - {fileID: -1427851816842466061, guid: 2f268061c81546e45b6db4d64d766a9d, type: 3}
@@ -162,6 +163,12 @@ MonoBehaviour:
   burnTime: 0
   tauntTimer: 0
   tauntTime: 0
+  fearTimer: 0
+  fearTime: 0
+  silenceTimer: 0
+  silenceTime: 0
+  knockbackTimer: 0
+  knockbackTime: 0
   minDistanceAway: 3
   bullet: {fileID: 9069119562871470622, guid: 3a950b6cc6931cc498a742fb8fda7f99, type: 3}
   bulletSpawn: {fileID: 5102424632136824982}
