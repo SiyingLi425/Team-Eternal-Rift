@@ -80,7 +80,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 12e5e0137a45c10469791436208b6556, type: 3}
   - {fileID: 4900000, guid: 08987e7aa8ecc7b4382b309027923db4, type: 3}
   - {fileID: 4900000, guid: 7040a07c6bd425b42b1b7503f612f37b, type: 3}
-  npcBox: {fileID: 0}
+  - {fileID: 4900000, guid: ce2aba3768f804549a91c9f20daddd74, type: 3}
+  - {fileID: 4900000, guid: d38429bc35065a743a5da533e6763e25, type: 3}
   score: 0
   scoreText: {fileID: 0}
   breakSound: {fileID: 5462860255890750481}
