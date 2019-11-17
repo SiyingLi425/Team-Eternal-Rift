@@ -22,6 +22,8 @@ TagManager:
   - CharacterChoice
   - PersisableObject
   - Tutorial
+  - GameMode
+  - PlayerSelection
   layers:
   - Default
   - TransparentFX

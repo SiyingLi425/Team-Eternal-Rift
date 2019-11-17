@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class PersisableObjects : MonoBehaviour
 {
-    public int playerType;
+    public int totalPlayers;
+    public List<int> playerTypes;
+    public int playerType1;
+    public int playerType2;
 }

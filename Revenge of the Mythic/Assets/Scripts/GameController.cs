@@ -24,13 +24,13 @@ public class GameController : MonoBehaviour
     private int playerNum = 0;
     private int health;
     private PersisableObjects persisableObjects;
-    private int playerType;
+    private List<int> playerTypes;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
     {
         persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
-        playerType = persisableObjects.playerType;
+        playerTypes = persisableObjects.playerTypes;
         LoadRoom(map);
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerHealth = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
@@ -137,28 +137,28 @@ public class GameController : MonoBehaviour
     }
     public void AddPlayer(float x, float y)
     {
-        
+        for(int i = 0; i < persisableObjects.totalPlayers; i++)
+        {
         playerNum++;
         GameObject player = new GameObject();
-        //= playerNum == 1 ? phoenix  : griffon;
-        if (playerType == 1)
+        if (playerTypes[i] == 1)
         {
             player = phoenix;
-        }else if(playerType == 2)
+        }else if(playerTypes[i] == 2)
         {
             player = griffon;
         }
-        else if (playerType == 3)
+        else if (playerTypes[i] == 3)
         {
             player = dragon;
         }
-        else if (playerType == 4)
+        else if (playerTypes[i] == 4)
         {
             player = pegasus;
         }
-        Debug.Log(player);
-        Instantiate(player, new Vector2(x, y), transform.rotation);
 
+        Instantiate(player, new Vector2(x, y), transform.rotation);
+        }
     }
     public void AddScore(int amount)
     {

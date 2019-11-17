@@ -1,17 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MultipleTargetCamera : MonoBehaviour
 {
-    public List<Transform> targets;
+    private List<Transform> targets = new List<Transform>();
     public Vector3 offset;
     public float smoothTime = 0.5f;
 
     private Vector3 velocity;
+    private List<GameObject> players;
+    private bool ran = false;
+    private void Start()
+    {
 
+    }
     private void LateUpdate()
     {
+        if(ran == false)
+        {
+            players = GameObject.FindGameObjectsWithTag("Player").ToList();
+            Debug.Log(players.Count());
+            for (int i = 0; i < players.Count; i++)
+            {
+                targets.Add(players[i].transform);
+            }
+            Debug.Log(targets.Count());
+            ran = true;
+        }
         if(targets.Count == 0)
         {
             return;
