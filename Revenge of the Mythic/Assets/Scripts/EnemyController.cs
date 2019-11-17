@@ -123,7 +123,11 @@ public abstract class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
-            Instantiate(foodItem, enemyTransform.position, enemyTransform.rotation);
+            if(foodItem != null)
+            {
+                Instantiate(foodItem, enemyTransform.position, enemyTransform.rotation);
+            }
+            
             Destroy(gameObject);
         }
 

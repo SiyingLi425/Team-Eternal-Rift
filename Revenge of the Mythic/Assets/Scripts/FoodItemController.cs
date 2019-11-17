@@ -7,6 +7,7 @@ public class FoodItemController : ItemController
     public int healPercentage;
     protected override void effect(PlayerController p)
     {
+        Debug.Log(healPercentage);
         p.Heal(healPercentage);
     }
 }

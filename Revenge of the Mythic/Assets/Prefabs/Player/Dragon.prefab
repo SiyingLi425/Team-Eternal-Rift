@@ -372,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9177333520406137609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4949469049604447235}
@@ -548,11 +548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639733349, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 132
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 639733349, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -246
+      value: -228
       objectReference: {fileID: 0}
     - target: {fileID: 607777075, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -560,13 +560,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607777075, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 141
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 7030813438216088809, guid: 7b2529b46f256394d8fd12e564bc05fd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 20
+      value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 7030813437853403915, guid: 7b2529b46f256394d8fd12e564bc05fd,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 3252725075314560710}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2529b46f256394d8fd12e564bc05fd, type: 3}
 --- !u!224 &7490511293152214152 stripped

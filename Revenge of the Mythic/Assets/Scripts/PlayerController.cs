@@ -294,9 +294,9 @@ public abstract class PlayerController : MonoBehaviour
         }
         
     }
-    public void Heal(int percent)
+    public void Heal(float percent)
     {
-        health += maximumHealth * percent;
+        health += (int)(maximumHealth * (percent/100));
         if (health >= maximumHealth)
         {
             health = maximumHealth;
