@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081e00860a749f04ea7fda11ec998844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 4900000, guid: 0682e36977742fe4a820c7c1edf0879d, type: 3}
+  map: {fileID: 4900000, guid: 22b975b02c5127f4ba550bff6722cb59, type: 3}
   wall: {fileID: 8619256869774041035, guid: 4f05a4230db808d4bb5dff42473b78ba, type: 3}
   floor: {fileID: 7487345868251980796, guid: 4aff40e0eecac7b47b0472321c8a1676, type: 3}
   destroyableObj: {fileID: 5336205792133793546, guid: af402562f05e131488b213c41e212a59,
@@ -69,6 +69,9 @@ MonoBehaviour:
   boss: {fileID: 2640669536252386819, guid: 280f569dad6291043a984680a1e6578a, type: 3}
   dragon: {fileID: 3479943806675472142, guid: 9e569dde68ecd4a45bf55229c6d67b5e, type: 3}
   pegasus: {fileID: 1796597620560605602, guid: 257ed607482f4c048882be9bba3ca3cf, type: 3}
+  chimera: {fileID: 7979489706375343177, guid: ff8e7b783844942469ba486acd7f3592, type: 3}
+  scientist: {fileID: 4835673521968624626, guid: 5dd196652ff5a5744ad29ac547e2b4b9,
+    type: 3}
   gridSize: 1
   playerHealth: {fileID: 0}
   ability1CD: {fileID: 0}
