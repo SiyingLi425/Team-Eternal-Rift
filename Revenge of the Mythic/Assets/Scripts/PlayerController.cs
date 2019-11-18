@@ -31,7 +31,8 @@ public abstract class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private bool animate = true;
     [SerializeField]
-    private GameObject attackObject;
+    private GameObject attackObject, basicAttack;
+    private int basicAttackTimer = 0, basicAttackTimerReset = 25;
     #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
     protected int aegisTimer = 0, aegisTimerReset = 250;
@@ -185,6 +186,14 @@ public abstract class PlayerController : MonoBehaviour
             }
         }
         #endregion
+        if (basicAttackTimer > 0)
+        {
+            --basicAttackTimer;
+            if (basicAttackTimer <= 0)
+            {
+                basicAttack.SetActive(false);
+            }
+        }
     }
 
     #region Cooldown Timers
@@ -234,6 +243,8 @@ public abstract class PlayerController : MonoBehaviour
     }
     private void BasicAttack()
     {
+        basicAttack.SetActive(true);
+        basicAttackTimer = basicAttackTimerReset;
         foreach (string s in damagable) {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag(s)) {
                 if (g.PrimaryCollider().enabled && basicAttackRange.IsTouching(g.PrimaryCollider())) {
