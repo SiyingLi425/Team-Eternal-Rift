@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour
     public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist;
     public float gridSize = 1;
-    public Text playerHealth, ability1CD, ability2CD, ability3CD;
-    public PlayerController playerController;
+    public Text playerHealth1, ability1CD1, ability2CD1, ability3CD1, playerHealth2, ability1CD2, ability2CD2, ability3CD2;
+    public PlayerController playerController1, playerController2;
     public TextAsset[] tutorialText = new TextAsset[9];
 
 
@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     private int health;
     private PersisableObjects persisableObjects;
     private List<int> playerTypes;
+    private GameObject player2UI;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
@@ -32,23 +33,42 @@ public class GameController : MonoBehaviour
         persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
         playerTypes = persisableObjects.playerTypes;
         LoadRoom(map);
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerHealth = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
-        ability1CD = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
-        ability2CD = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
-        ability3CD = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
+        #region UI Setting
+        player2UI = GameObject.FindGameObjectWithTag("Player2UI");
+        player2UI.SetActive(false);
+        playerController1 = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
+        playerHealth1 = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
+        ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
+        ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
+        ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText");
-
+        if(persisableObjects.totalPlayers == 2)
+        {
+            player2UI.SetActive(true);
+            playerController2 = GameObject.FindGameObjectsWithTag("Player")[1].GetComponent<PlayerController>();
+            playerHealth2 = GameObject.FindGameObjectWithTag("Player2Health").GetComponent<Text>();
+            ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<Text>();
+            ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<Text>();
+            ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
+        }
+        #endregion
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealth.text = "Health: " + playerController.Health;
-        ability1CD.text = playerController.AbilityCoolDown[0] == 0 ? "R" : $"{playerController.AbilityCoolDown[0]/50}";
-        ability2CD.text = playerController.AbilityCoolDown[1] == 0 ? "R" : $"{playerController.AbilityCoolDown[1] / 50}";
-        ability3CD.text = playerController.AbilityCoolDown[2] == 0 ? "R" : $"{playerController.AbilityCoolDown[2] / 50}";
+        playerHealth1.text = "Health: " + playerController1.Health;
+        ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? "R" : $"{playerController1.AbilityCoolDown[0]/50}";
+        ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? "R" : $"{playerController1.AbilityCoolDown[1] / 50}";
+        ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? "R" : $"{playerController1.AbilityCoolDown[2] / 50}";
+        if(persisableObjects.totalPlayers == 2)
+        {
+            playerHealth2.text = "Health: " + playerController2.Health;
+            ability1CD2.text = playerController2.AbilityCoolDown[0] == 0 ? "R" : $"{playerController2.AbilityCoolDown[0] / 50}";
+            ability2CD2.text = playerController2.AbilityCoolDown[1] == 0 ? "R" : $"{playerController2.AbilityCoolDown[1] / 50}";
+            ability3CD2.text = playerController2.AbilityCoolDown[2] == 0 ? "R" : $"{playerController2.AbilityCoolDown[2] / 50}";
+        }
     }
 
     public void GameOver()
@@ -87,6 +107,16 @@ public class GameController : MonoBehaviour
                         break;
                     case "P":
                         AddPlayer(xAxis, yAxis);
+                        break;
+                    case "A":
+                        if (persisableObjects.totalPlayers == 2)
+                        {
+                            AddPlayer(xAxis, yAxis);
+                        }
+                        else
+                        {
+                            Instantiate(floor, new Vector2(xAxis, yAxis), transform.rotation);
+                        }
                         break;
                     case "B":
                         Instantiate(destroyableObj, new Vector2(xAxis, yAxis), transform.rotation);
@@ -143,9 +173,7 @@ public class GameController : MonoBehaviour
     }
     public void AddPlayer(float x, float y)
     {
-        for(int i = 0; i < persisableObjects.totalPlayers; i++)
-        {
-        playerNum++;
+        int i = GameObject.FindGameObjectsWithTag("Player").Length;
         GameObject player = new GameObject();
         if (playerTypes[i] == 1)
         {
@@ -162,13 +190,18 @@ public class GameController : MonoBehaviour
         {
             player = pegasus;
         }
-
         Instantiate(player, new Vector2(x, y), transform.rotation);
-        }
+
+    }
+
+    public void IndexPlayer()
+    {
+        ++playerNum;
     }
     public void AddScore(int amount)
     {
         score += amount;
         scoreText.GetComponent<Text>().text = "Score: " + score;
     }
+
 }

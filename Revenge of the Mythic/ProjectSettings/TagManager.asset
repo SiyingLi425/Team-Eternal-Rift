@@ -24,6 +24,11 @@ TagManager:
   - Tutorial
   - GameMode
   - PlayerSelection
+  - Player2Health
+  - P2Ability1CD
+  - P2Ability2CD
+  - P2Ability3CD
+  - Player2UI
   layers:
   - Default
   - TransparentFX

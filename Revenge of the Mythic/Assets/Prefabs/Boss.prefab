@@ -200,6 +200,7 @@ MonoBehaviour:
   attackDamage: 1
   foodItem: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04,
     type: 3}
+  attackCoolDown: 0
   north:
   - {fileID: 918220088607041566, guid: 6d9b45e044eafb6449455bc507bdfc84, type: 3}
   - {fileID: -5526135730193626139, guid: 6d9b45e044eafb6449455bc507bdfc84, type: 3}
@@ -224,6 +225,12 @@ MonoBehaviour:
   burnTime: 0
   tauntTimer: 0
   tauntTime: 0
+  fearTimer: 0
+  fearTime: 0
+  silenceTimer: 0
+  silenceTime: 0
+  knockbackTimer: 0
+  knockbackTime: 0
 --- !u!212 &4753304834132572316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -324,7 +331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.323, y: 0.406}
+  m_AnchoredPosition: {x: 4.75, y: 1.76}
   m_SizeDelta: {x: 52.6967, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &972105181237354421
@@ -353,6 +360,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14

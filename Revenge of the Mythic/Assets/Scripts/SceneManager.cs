@@ -25,7 +25,11 @@ public class SceneManager : MonoBehaviour
 
     private void Update()
     {
-        //playerSelection.GetComponent<Text>().text = "Player " + (playerNum + 1);
+        if(playerNum == 1)
+        {
+            playerSelection.GetComponent<Text>().text = "Player " + (playerNum + 1);
+        }
+        
     }
     public void onClickStart()
     {
