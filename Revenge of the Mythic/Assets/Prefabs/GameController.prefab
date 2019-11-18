@@ -85,6 +85,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 7040a07c6bd425b42b1b7503f612f37b, type: 3}
   - {fileID: 4900000, guid: ce2aba3768f804549a91c9f20daddd74, type: 3}
   - {fileID: 4900000, guid: d38429bc35065a743a5da533e6763e25, type: 3}
+  - {fileID: 4900000, guid: 589e9e62d0d2bae408691af333076256, type: 3}
   score: 0
   scoreText: {fileID: 0}
   breakSound: {fileID: 5462860255890750481}

@@ -145,7 +145,7 @@ public class GameController : MonoBehaviour
     {
         for(int i = 0; i < persisableObjects.totalPlayers; i++)
         {
-        playerNum++;
+        
         GameObject player = new GameObject();
         if (playerTypes[i] == 1)
         {
@@ -164,6 +164,7 @@ public class GameController : MonoBehaviour
         }
 
         Instantiate(player, new Vector2(x, y), transform.rotation);
+            playerNum++;
         }
     }
     public void AddScore(int amount)

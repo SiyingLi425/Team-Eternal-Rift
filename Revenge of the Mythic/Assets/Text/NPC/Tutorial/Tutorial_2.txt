@@ -1,1 +1,2 @@
-Use V to attack the walls
+V for normal Attack,
+break these walls!
