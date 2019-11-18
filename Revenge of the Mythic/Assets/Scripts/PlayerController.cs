@@ -71,7 +71,9 @@ public abstract class PlayerController : MonoBehaviour
     void Start()
     {
         #region Set Player-Based Axises
-        instance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayerNum;
+        GameController g = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        g.IndexPlayer();
+        instance = g.PlayerNum;
         axisX = "Horizontal" + instance;
         axisY = "Vertical" + instance;
         attackAxis = new string[4];

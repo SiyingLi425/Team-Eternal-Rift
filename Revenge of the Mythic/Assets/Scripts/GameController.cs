@@ -173,26 +173,30 @@ public class GameController : MonoBehaviour
     }
     public void AddPlayer(float x, float y)
     {
-        
+        int i = GameObject.FindGameObjectsWithTag("Player").Length;
         GameObject player = new GameObject();
-        if (playerTypes[playerNum] == 1)
+        if (playerTypes[i] == 1)
         {
             player = phoenix;
-        }else if(playerTypes[playerNum] == 2)
+        }else if(playerTypes[i] == 2)
         {
             player = griffon;
         }
-        else if (playerTypes[playerNum] == 3)
+        else if (playerTypes[i] == 3)
         {
             player = dragon;
         }
-        else if (playerTypes[playerNum] == 4)
+        else if (playerTypes[i] == 4)
         {
             player = pegasus;
         }
         Instantiate(player, new Vector2(x, y), transform.rotation);
-        playerNum++;
 
+    }
+
+    public void IndexPlayer()
+    {
+        ++playerNum;
     }
     public void AddScore(int amount)
     {
