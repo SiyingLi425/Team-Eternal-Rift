@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
 
     [Header("Audio Controller")]
     public AudioSource breakSound;
+    public AudioSource coinSound;
 
     private int playerNum = 0;
     private int health;
@@ -201,6 +202,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+        coinSound.Play();
         scoreText.GetComponent<Text>().text = "Score: " + score;
     }
 
