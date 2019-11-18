@@ -108,6 +108,16 @@ public class GameController : MonoBehaviour
                     case "P":
                         AddPlayer(xAxis, yAxis);
                         break;
+                    case "A":
+                        if (persisableObjects.totalPlayers == 2)
+                        {
+                            AddPlayer(xAxis, yAxis);
+                        }
+                        else
+                        {
+                            Instantiate(floor, new Vector2(xAxis, yAxis), transform.rotation);
+                        }
+                        break;
                     case "B":
                         Instantiate(destroyableObj, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
@@ -163,33 +173,31 @@ public class GameController : MonoBehaviour
     }
     public void AddPlayer(float x, float y)
     {
-        for(int i = 0; i < persisableObjects.totalPlayers; i++)
-        {
         
         GameObject player = new GameObject();
-        if (playerTypes[i] == 1)
+        if (playerTypes[playerNum] == 1)
         {
             player = phoenix;
-        }else if(playerTypes[i] == 2)
+        }else if(playerTypes[playerNum] == 2)
         {
             player = griffon;
         }
-        else if (playerTypes[i] == 3)
+        else if (playerTypes[playerNum] == 3)
         {
             player = dragon;
         }
-        else if (playerTypes[i] == 4)
+        else if (playerTypes[playerNum] == 4)
         {
             player = pegasus;
         }
-
         Instantiate(player, new Vector2(x, y), transform.rotation);
-            playerNum++;
-        }
+        playerNum++;
+
     }
     public void AddScore(int amount)
     {
         score += amount;
         scoreText.GetComponent<Text>().text = "Score: " + score;
     }
+
 }
