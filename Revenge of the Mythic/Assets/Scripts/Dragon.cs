@@ -12,6 +12,13 @@ public class Dragon : PlayerController
     private SpriteRenderer conflagrationSprite;
     private int conflagrationSpriteTimer = 0, conflagrationSpriteTimerReset = 50;
 
+    #region Sound Public Variables
+    [Header("Audio Controller")]
+    public AudioSource attackSound1;
+    public AudioSource attackSound2;
+    public AudioSource attackSound3;
+    #endregion
+
     public override void Update()
     {
         base.Update();
@@ -37,6 +44,7 @@ public class Dragon : PlayerController
                 }
             }
         }
+        attackSound1.Play();
     }
     protected override void Attack2()
     {
@@ -53,6 +61,7 @@ public class Dragon : PlayerController
                 }
             }
         }
+        attackSound2.Play();
     }
     protected override void Attack3()
     {
@@ -67,5 +76,6 @@ public class Dragon : PlayerController
                 }
             }
         }
+        attackSound3.Play();
     }
 }

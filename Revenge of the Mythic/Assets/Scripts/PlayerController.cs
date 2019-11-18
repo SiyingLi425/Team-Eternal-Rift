@@ -65,6 +65,7 @@ public abstract class PlayerController : MonoBehaviour
     public int MaximumHealth { get { return maximumHealth; } }
     public int Health { get { return health; } }
     public int[] AbilityCoolDown { get { return abilityCooldown; } }
+    public AudioSource BasicAttackSound;
     #endregion
 
     // Start is called before the first frame update
@@ -144,6 +145,7 @@ public abstract class PlayerController : MonoBehaviour
                     if (Input.GetAxis(attackAxis[z]) > 0 && ((z > 0 && abilityCooldown[z - 1] == 0) || z == 0))
                     {
                         attack(z);
+                        BasicAttackSound.Play();
                     }
                 }
             }

@@ -10,6 +10,13 @@ public class Pegasus : PlayerController
     private BoxCollider2D dashPath;
     [SerializeField]
     private Transform dashLocation;
+
+    #region Sound Public Variables
+    [Header("Audio Controller")]
+    public AudioSource attackSound1;
+    public AudioSource attackSound2;
+    public AudioSource attackSound3;
+    #endregion
     protected override void Attack1()
     {
         //Ability 1 [Kick] - Melee damage. Turns around and kicks. Interrupts enemy attack. 6 seconds cool down.
@@ -23,6 +30,7 @@ public class Pegasus : PlayerController
                 }
             }
         }
+        attackSound1.Play();
     }
     protected override void Attack2()
     {
@@ -54,6 +62,7 @@ public class Pegasus : PlayerController
             rBody.position = dashLocation.position;
         }
         #endregion
+        attackSound2.Play();
     }
     protected override void Attack3()
     {
@@ -69,5 +78,6 @@ public class Pegasus : PlayerController
                 }
             }
         }
+        attackSound3.Play();
     }
 }
