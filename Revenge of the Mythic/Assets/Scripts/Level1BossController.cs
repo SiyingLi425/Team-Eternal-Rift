@@ -82,6 +82,7 @@ public class Level1BossController : MeleeEnemy
         }
     }
 
+    /*
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Wall")
@@ -93,4 +94,5 @@ public class Level1BossController : MeleeEnemy
             col.gameObject.PrimaryController().Damage(attackDamage);
         }
     }
+    */
 }

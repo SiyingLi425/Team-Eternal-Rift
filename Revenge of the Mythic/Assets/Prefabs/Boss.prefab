@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  walkSpeed: 0.075
-  attackSpeed: 20
+  walkSpeed: 0.025
+  attackSpeed: 10
   attackDamage: 1
   foodItem: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04,
     type: 3}
@@ -360,8 +360,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
