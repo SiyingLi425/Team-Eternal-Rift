@@ -147,7 +147,6 @@ public abstract class PlayerController : MonoBehaviour
                     if (Input.GetAxis(attackAxis[z]) > 0 && ((z > 0 && abilityCooldown[z - 1] == 0) || z == 0))
                     {
                         attack(z);
-                        BasicAttackSound.Play();
                     }
                 }
             }
@@ -230,6 +229,7 @@ public abstract class PlayerController : MonoBehaviour
         {
             case 0:
                 BasicAttack();
+                BasicAttackSound.Play();
                 break;
             case 1:
                 abilityCooldown[0] = abilityCooldownReset[0];
