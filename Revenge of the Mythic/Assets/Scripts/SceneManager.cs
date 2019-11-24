@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour
 {
     public PersisableObjects persisableObject;
     public GameObject playerSelection;
-    private GameObject charChoice, gameMode;
+    private GameObject charChoice, gameMode, startButton, backButton;
     private string firstScene = "GameScene"; //modify this to start at a particular level
 
     private int totalPlayers = 0;
@@ -18,9 +18,12 @@ public class SceneManager : MonoBehaviour
         charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
         gameMode = GameObject.FindGameObjectWithTag("GameMode");
         playerSelection = GameObject.FindGameObjectWithTag("PlayerSelection");
+        startButton = GameObject.FindGameObjectWithTag("StartButton");
+        backButton = GameObject.FindGameObjectWithTag("BackButton");
         charChoice.SetActive(false);
         gameMode.SetActive(false);
         playerSelection.SetActive(false);
+        backButton.SetActive(false);
     }
 
     private void Update()
@@ -34,11 +37,22 @@ public class SceneManager : MonoBehaviour
     public void onClickStart()
     {
         gameMode.SetActive(true);
+        startButton.SetActive(false);
     }
 
     public void onClickRestart()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
+    }
+    public void onClickBack()
+    {
+        gameMode.SetActive(true);
+        charChoice.SetActive(false);
+        backButton.SetActive(false);
+        playerSelection.SetActive(false);
+        persisableObject.playerTypes.Clear();
+        playerNum = 0;
+        playerSelection.GetComponent<Text>().text = "Player 1";
     }
     public void onClickSinglePlayer()
     {
@@ -46,6 +60,7 @@ public class SceneManager : MonoBehaviour
         charChoice.SetActive(true);
         totalPlayers = 1;
         persisableObject.totalPlayers = 1;
+        backButton.SetActive(true);
     }
     public void onClickMultiPlayer()
     {
@@ -54,6 +69,7 @@ public class SceneManager : MonoBehaviour
         playerSelection.SetActive(true);
         totalPlayers = 2;
         persisableObject.totalPlayers = 2;
+        backButton.SetActive(true);
     }
     public void onClickPhonix()
     {

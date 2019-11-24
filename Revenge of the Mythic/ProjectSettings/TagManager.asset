@@ -29,6 +29,8 @@ TagManager:
   - P2Ability2CD
   - P2Ability3CD
   - Player2UI
+  - StartButton
+  - BackButton
   layers:
   - Default
   - TransparentFX
