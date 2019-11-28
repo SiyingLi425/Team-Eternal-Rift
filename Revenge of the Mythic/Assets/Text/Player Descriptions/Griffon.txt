@@ -1,0 +1,3 @@
+Griffon
+Melee Tank
+Specializes in absorbing damage. Use Battle Cry [Ability 2] to attract enemies, then bleed them with Peck [Ability 1]. Use Shield [Ability 3] to protect yourself from powerful attacks.

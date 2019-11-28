@@ -1,0 +1,3 @@
+Phoenix
+Ranged Damage
+Specializes in applying burns. Use Firewall [Ability 3] to protect yourself while using Fireball [Ability 1] to hit enemies from afar, its damage increasing when encountering Firewall. Use Erupt [Ability 2] to burn groups of enemies.

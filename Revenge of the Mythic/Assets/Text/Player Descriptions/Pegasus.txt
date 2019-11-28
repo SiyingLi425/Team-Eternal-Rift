@@ -1,0 +1,3 @@
+Pegasus
+Melee Damage
+Specializes in knockback. Use Kick [Ability 1] and Wing Buffet [Ability 3] to send foes flying, then chase them with Dash [Ability 2].
