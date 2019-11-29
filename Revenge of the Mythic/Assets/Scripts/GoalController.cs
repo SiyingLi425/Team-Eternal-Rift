@@ -40,7 +40,6 @@ public class GoalController : MonoBehaviour
     {
         if(other.tag=="Player" &&(playerCollider.IsTouching(goalCollider)))
         {
-            Debug.Log("Level: " + level);
             if (level < 3)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level" + (level + 1));

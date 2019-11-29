@@ -34,6 +34,7 @@ public abstract class PlayerController : MonoBehaviour
     private GameObject attackObject, basicAttack;
     private int basicAttackTimer = 0, basicAttackTimerReset = 25;
     private GameController gameController;
+    private int level;
     #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
     protected int aegisTimer = 0, aegisTimerReset = 250;
@@ -73,6 +74,9 @@ public abstract class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        
         #region Set Player-Based Axises
         GameController g = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         g.IndexPlayer();
@@ -102,7 +106,10 @@ public abstract class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
-        health = maximumHealth;
+        if (GoalController.level == 1)
+        {
+            health = maximumHealth;
+        }
     }
 
     // Update is called once per frame
@@ -295,8 +302,12 @@ public abstract class PlayerController : MonoBehaviour
             }
             #endregion
         }
+
         persisableObjects.player1hp = gameController.playerController1.Health;
-        persisableObjects.player2hp = gameController.playerController2.Health;
+        if (persisableObjects.totalPlayers == 2)
+        {
+            persisableObjects.player2hp = gameController.playerController2.Health;
+        }
     }
     public void Damage(int d, string dot)
     {
@@ -312,8 +323,11 @@ public abstract class PlayerController : MonoBehaviour
             }
             Damage(d);
         }
-        //persisableObjects.player1hp = gameController.playerController1.Health;
-        //persisableObjects.player2hp = gameController.playerController2.Health;
+        persisableObjects.player1hp = gameController.playerController1.Health;
+        if (persisableObjects.totalPlayers == 2)
+        {
+            persisableObjects.player2hp = gameController.playerController2.Health;
+        }
     }
     public void Heal(float percent)
     {
@@ -322,8 +336,11 @@ public abstract class PlayerController : MonoBehaviour
         {
             health = maximumHealth;
         }
-        //persisableObjects.player1hp = gameController.playerController1.Health;
-        //persisableObjects.player2hp = gameController.playerController2.Health;
+        persisableObjects.player1hp = gameController.playerController1.Health;
+        if (persisableObjects.totalPlayers == 2)
+        {
+            persisableObjects.player2hp = gameController.playerController2.Health;
+        }
     }
 }
 

@@ -12,6 +12,7 @@ public abstract class EnemyController : MonoBehaviour
     public int attackSpeed, attackDamage;
     public GameObject foodItem;
 
+
     private float speedX = 0, speedY = 0;
 
     ///private Animator enemyAnimator;
@@ -20,6 +21,7 @@ public abstract class EnemyController : MonoBehaviour
 
 
     protected Collider2D aggroRange, hitBox, playerCollider;
+    protected GameController gameController;
 
     private GameObject player1;
     private GameObject player2;
@@ -29,6 +31,7 @@ public abstract class EnemyController : MonoBehaviour
     public int attackCoolDown;
     protected Transform enemyTransform;
     private Transform playerTransform;
+    
     public GameObject AggroedPlayer { get { return aggroedPlayer; } }
     protected Text healthBar;
 
@@ -60,6 +63,7 @@ public abstract class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         aggroRange = GetComponent<CircleCollider2D>();
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();

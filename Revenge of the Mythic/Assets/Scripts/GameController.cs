@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     private PersisableObjects persisableObjects;
     private List<int> playerTypes;
     private GameObject player2UI;
+    private int bossCount = 0;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
@@ -80,6 +81,15 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+    }
+    public void Victory()
+    {
+        bossCount++;
+        if(bossCount == 2)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
+        }
+        
     }
 
     //This function makes the map according to the textfile that has been assigned

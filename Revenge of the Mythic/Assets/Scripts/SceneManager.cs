@@ -15,15 +15,19 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
-        gameMode = GameObject.FindGameObjectWithTag("GameMode");
-        playerSelection = GameObject.FindGameObjectWithTag("PlayerSelection");
-        startButton = GameObject.FindGameObjectWithTag("StartButton");
-        backButton = GameObject.FindGameObjectWithTag("BackButton");
-        charChoice.SetActive(false);
-        gameMode.SetActive(false);
-        playerSelection.SetActive(false);
-        backButton.SetActive(false);
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Victory")
+        {
+            charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
+            gameMode = GameObject.FindGameObjectWithTag("GameMode");
+            playerSelection = GameObject.FindGameObjectWithTag("PlayerSelection");
+            startButton = GameObject.FindGameObjectWithTag("StartButton");
+            backButton = GameObject.FindGameObjectWithTag("BackButton");
+            charChoice.SetActive(false);
+            gameMode.SetActive(false);
+            playerSelection.SetActive(false);
+            backButton.SetActive(false);
+        }
+
     }
 
     private void Update()

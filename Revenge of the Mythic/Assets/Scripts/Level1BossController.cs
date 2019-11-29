@@ -6,6 +6,7 @@ public class Level1BossController : MeleeEnemy
 {
     private int dashTimer = 5, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 50;
     private float speedIncrement = 3, xSpeed, ySpeed;
+
     private Vector3 dashTarget;
 
     void FixedUpdate()
@@ -46,6 +47,7 @@ public class Level1BossController : MeleeEnemy
                 #endregion
             }
         }
+        
     }
 
     protected override void attack()
@@ -55,7 +57,22 @@ public class Level1BossController : MeleeEnemy
             base.attack();
         }
     }
-
+    public override void Damage(int attackDamage)
+    {
+        base.Damage(attackDamage);
+        if(health <= 0)
+        {
+            gameController.Victory();
+        }
+    }
+    public override void Damage(int attackDamage, string s)
+    {
+        base.Damage( attackDamage, s);
+        if (health <= 0)
+        {
+            gameController.Victory();
+        }
+    }
     public override void moveEnemy(float speedX, float speedY)
     {
         if (dashTimer > 0)
