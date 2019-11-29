@@ -158,17 +158,17 @@ MonoBehaviour:
   direction: 2
   status: 
   bleedTimer: 0
-  bleedTime: 0
+  bleedTime: 200
   burnTimer: 0
-  burnTime: 0
+  burnTime: 200
   tauntTimer: 0
-  tauntTime: 0
+  tauntTime: 200
   fearTimer: 0
-  fearTime: 0
+  fearTime: 200
   silenceTimer: 0
-  silenceTime: 0
+  silenceTime: 200
   knockbackTimer: 0
-  knockbackTime: 0
+  knockbackTime: 100
   minDistanceAway: 3
   bullet: {fileID: 9069119562871470622, guid: 3a950b6cc6931cc498a742fb8fda7f99, type: 3}
   bulletSpawn: {fileID: 5102424632136824982}

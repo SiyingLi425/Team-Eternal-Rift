@@ -244,6 +244,14 @@ public abstract class EnemyController : MonoBehaviour
             moveEnemy(speedX, speedY);
 
         }
+        if(fearTimer > 0)
+        {
+            //0 is north, 1 is east, 2 is south, 3 is west. (Read: NESW)
+            if (direction == 0) direction = 2;
+            else if (direction == 1) direction = 3;
+            else if (direction == 2) direction = 0;
+            else if (direction == 3) direction = 1;
+        }
         
         animate = speedX != 0 || speedY != 0;
     }

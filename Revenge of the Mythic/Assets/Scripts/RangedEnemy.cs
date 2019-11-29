@@ -43,7 +43,7 @@ public class RangedEnemy : EnemyController
 
     public override void moveEnemy(float speedX, float speedY)
     {
-        if (TooClose == false)
+        if (TooClose == false || fearTimer > 0)
         {
             GetComponent<Rigidbody2D>().position += new Vector2(speedX, speedY);
           

@@ -51,7 +51,11 @@ public class GameController : MonoBehaviour
             ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<Text>();
             ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<Text>();
             ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
+            playerController2.Health = persisableObjects.player2hp;
         }
+        score = persisableObjects.score;
+        playerController1.Health = persisableObjects.player1hp;
+        scoreText.GetComponent<Text>().text = "Score: " + persisableObjects.score;
         #endregion
 
     }
@@ -63,7 +67,7 @@ public class GameController : MonoBehaviour
         ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? "Z" : $"{playerController1.AbilityCoolDown[0]/50}";
         ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? "X" : $"{playerController1.AbilityCoolDown[1] / 50}";
         ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? "C" : $"{playerController1.AbilityCoolDown[2] / 50}";
-
+        
         if(persisableObjects.totalPlayers == 2)
         {
             playerHealth2.text = "Health: " + playerController2.Health;
@@ -203,6 +207,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+        persisableObjects.score = score;
         coinSound.Play();
         scoreText.GetComponent<Text>().text = "Score: " + score;
     }
