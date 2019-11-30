@@ -35,6 +35,7 @@ public abstract class PlayerController : MonoBehaviour
     private int basicAttackTimer = 0, basicAttackTimerReset = 25;
     private GameController gameController;
     private int level;
+    private PersisableObjects persisableObjects;
     #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
     protected int aegisTimer = 0, aegisTimerReset = 250;
@@ -68,7 +69,7 @@ public abstract class PlayerController : MonoBehaviour
     public int Health { get { return health; } set { health = value; } }
     public int[] AbilityCoolDown { get { return abilityCooldown; } }
     public AudioSource BasicAttackSound;
-    private PersisableObjects persisableObjects;
+    
     #endregion
 
     // Start is called before the first frame update

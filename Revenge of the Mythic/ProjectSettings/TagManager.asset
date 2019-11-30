@@ -31,6 +31,10 @@ TagManager:
   - Player2UI
   - StartButton
   - BackButton
+  - GriffinDesc
+  - DragonDesc
+  - PegasusDesc
+  - PhoenixDesc
   layers:
   - Default
   - TransparentFX

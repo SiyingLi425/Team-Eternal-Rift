@@ -5,6 +5,8 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     private Collider2D goalCollider, playerCollider;
+    private PersisableObjects persisableObjects;
+    private GameController gameController;
     public static int level = 1;
     int timer = 0;
 
@@ -13,6 +15,8 @@ public class GoalController : MonoBehaviour
     {
         goalCollider = this.GetComponent<BoxCollider2D>();
         playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
+        persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
     
     // Update is called once per frame
@@ -38,7 +42,12 @@ public class GoalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag=="Player" &&(playerCollider.IsTouching(goalCollider)))
+        persisableObjects.player1hp = gameController.playerController1.Health;
+        if (persisableObjects.totalPlayers == 2)
+        {
+            persisableObjects.player2hp = gameController.playerController2.Health;
+        }
+        if (other.tag=="Player" &&(playerCollider.IsTouching(goalCollider)))
         {
             if (level < 3)
             {
