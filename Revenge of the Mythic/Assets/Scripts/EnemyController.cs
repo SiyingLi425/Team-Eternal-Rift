@@ -34,6 +34,7 @@ public abstract class EnemyController : MonoBehaviour
     
     public GameObject AggroedPlayer { get { return aggroedPlayer; } }
     protected Text healthBar;
+    public AudioSource enemyHit;
 
     [Header("Animation Variables")]
     [SerializeField]
@@ -265,6 +266,7 @@ public abstract class EnemyController : MonoBehaviour
     protected virtual void attack()
     {
         playerController.Damage(attackDamage);
+        enemyHit.Play();
         attackCoolDown = attackSpeed;
     }
 

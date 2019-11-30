@@ -53,6 +53,7 @@ public class RangedEnemy : EnemyController
     protected override void attack()
     {
         attackCoolDown = attackSpeed;
+        base.enemyHit.Play();
         Instantiate(bullet, bulletSpawn.position, rotate());
     }
 
