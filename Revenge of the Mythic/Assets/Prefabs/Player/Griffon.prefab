@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7638386112434316236}
   - component: {fileID: 5233395088416603025}
   - component: {fileID: 3193697413189636034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: -6417351172756731108}
   - component: {fileID: 4766407151241606223}
   - component: {fileID: -3672193104191395244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Griffon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -642,6 +642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340259960736656953, guid: 119af1a0f6d693e4c84de7a162409c5a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8388386553849650805, guid: 119af1a0f6d693e4c84de7a162409c5a,
         type: 3}

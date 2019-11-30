@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2808185963198687373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirewallSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 3805621828145093566}
   - component: {fileID: 3641631812726651768}
   - component: {fileID: 3707777800052996601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6916264641389775032}
   - component: {fileID: 456771709068530271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireballSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 6620357291313584762}
   - component: {fileID: 5473530491008614175}
   - component: {fileID: 3876792878375046863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Phoenix
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -728,6 +728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340259960736656953, guid: 119af1a0f6d693e4c84de7a162409c5a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8388386553849650805, guid: 119af1a0f6d693e4c84de7a162409c5a,
         type: 3}

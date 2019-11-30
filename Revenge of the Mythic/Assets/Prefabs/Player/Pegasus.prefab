@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8895346677917866729}
   - component: {fileID: 1307693971760565654}
   - component: {fileID: 5579234373291832185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pegasus
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6678007851804659053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dashLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 5539647945829842709}
   - component: {fileID: 872727827985658505}
   - component: {fileID: 827703119277643665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,6 +714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340259960736656953, guid: 119af1a0f6d693e4c84de7a162409c5a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8388386553849650805, guid: 119af1a0f6d693e4c84de7a162409c5a,
         type: 3}

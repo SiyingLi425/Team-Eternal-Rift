@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8169122581537495032}
   - component: {fileID: 94151119059478469}
   - component: {fileID: 5791597493831389785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dragon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 7663222014208048616}
   - component: {fileID: 8215616798400000937}
   - component: {fileID: 549211525379710225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6176362562619155119}
   - component: {fileID: 6974461904781893597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Conflagrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,6 +754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340259960736656953, guid: 119af1a0f6d693e4c84de7a162409c5a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8388386553849650805, guid: 119af1a0f6d693e4c84de7a162409c5a,
         type: 3}
