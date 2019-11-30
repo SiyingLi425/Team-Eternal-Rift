@@ -28,10 +28,12 @@ public class GameController : MonoBehaviour
     private List<int> playerTypes;
     private GameObject player2UI;
     private int bossCount = 0;
+    private GameObject npcDialogue;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
     {
+        npcDialogue = GameObject.FindGameObjectWithTag("NPC");
         persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
         playerTypes = persisableObjects.playerTypes;
         LoadRoom(map);
@@ -57,6 +59,10 @@ public class GameController : MonoBehaviour
         score = persisableObjects.score;
         playerController1.Health = persisableObjects.player1hp;
         scoreText.GetComponent<Text>().text = "Score: " + persisableObjects.score;
+        if (GoalController.level != 1)
+        {
+            npcDialogue.SetActive(false);
+        }
         #endregion
 
     }
