@@ -13,7 +13,7 @@ public class GoalController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goalCollider = this.GetComponent<BoxCollider2D>();
+        goalCollider = GetComponent<BoxCollider2D>();
         playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
         persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -47,7 +47,7 @@ public class GoalController : MonoBehaviour
         {
             persisableObjects.player2hp = gameController.playerController2.Health;
         }
-        if (other.tag=="Player" &&(playerCollider.IsTouching(goalCollider)))
+        if (other.tag=="Player" && playerCollider.IsTouching(goalCollider))
         {
             if (level < 3)
             {
