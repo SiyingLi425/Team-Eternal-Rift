@@ -42,7 +42,7 @@ public class GoalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        persisableObjects.player1hp = gameController.playerController1.Health;
+
         if (persisableObjects.totalPlayers == 2)
         {
             persisableObjects.player2hp = gameController.playerController2.Health;

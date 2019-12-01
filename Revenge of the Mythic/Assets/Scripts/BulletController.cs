@@ -36,20 +36,20 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (player.PrimaryCollider().IsTouching(bulletCollider))
-        {
-            playerController.Damage(attackDamange);
-            Destroy(gameObject);
-        }
-            ;
+        //if (player.PrimaryCollider().IsTouching(bulletCollider))
+        //{
+        //    playerController.Damage(attackDamange);
+        //    Destroy(gameObject);
+        //}
+            
     }
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if(other.tag == "Player")
-    //    {
-    //        playerController.Damage(attackDamange);
-    //         Destroy(this.gameObject);
-    //    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<PlayerController>().Damage(attackDamange);
+            Destroy(this.gameObject);
+        }
 
-    //}
+    }
 }

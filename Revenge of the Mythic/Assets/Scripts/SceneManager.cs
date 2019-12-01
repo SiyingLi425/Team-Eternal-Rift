@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
 
     private int totalPlayers = 0;
     private int playerNum = 0;
+    private int wait = 1;
 
     void Start()
     {
@@ -22,12 +23,18 @@ public class SceneManager : MonoBehaviour
             playerSelection = GameObject.FindGameObjectWithTag("PlayerSelection");
             startButton = GameObject.FindGameObjectWithTag("StartButton");
             backButton = GameObject.FindGameObjectWithTag("BackButton");
-            charChoice.SetActive(false);
+            
+        }
+        
+            
             gameMode.SetActive(false);
             playerSelection.SetActive(false);
             backButton.SetActive(false);
         }
 
+    IEnumerator WaitFor5Sec()
+    {
+        yield return new WaitForSeconds(50000000);
     }
 
     private void Update()
@@ -35,6 +42,15 @@ public class SceneManager : MonoBehaviour
         if(playerNum == 1)
         {
             playerSelection.GetComponent<Text>().text = "Player " + (playerNum + 1);
+        }
+        if(wait > 0)
+        {
+            wait--;
+        }
+        else if( wait == 0)
+        {
+         charChoice.SetActive(false);
+            wait = -1;
         }
         
     }

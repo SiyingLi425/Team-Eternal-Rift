@@ -21,12 +21,12 @@ public class MultipleTargetCamera : MonoBehaviour
         if(ran == false)
         {
             players = GameObject.FindGameObjectsWithTag("Player").ToList();
-            Debug.Log(players.Count());
+ 
             for (int i = 0; i < players.Count; i++)
             {
                 targets.Add(players[i].transform);
             }
-            Debug.Log(targets.Count());
+
             ran = true;
         }
         if(targets.Count == 0)

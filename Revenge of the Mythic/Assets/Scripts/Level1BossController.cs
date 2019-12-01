@@ -43,7 +43,7 @@ public class Level1BossController : MeleeEnemy
                 }
                 xSpeed = transform.position.x > t.x ? -xSpeed : xSpeed;
                 ySpeed = transform.position.y > t.y ? -ySpeed : ySpeed;
-                Debug.Log(xSpeed+", "+ySpeed);
+ 
                 #endregion
             }
         }

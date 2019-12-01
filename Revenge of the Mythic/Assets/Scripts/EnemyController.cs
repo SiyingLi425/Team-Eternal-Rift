@@ -87,10 +87,10 @@ public abstract class EnemyController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-
-
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
-        playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
+
+        //aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
+        //playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
 
         if (healthBar.IsActive() == true)
         {
@@ -114,7 +114,7 @@ public abstract class EnemyController : MonoBehaviour
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
-                if (aggroRange.IsTouching(playerCollider))
+                if (aggroRange.IsTouching(p.GetComponent<BoxCollider2D>()))
                 {
                     aggroedPlayer = p;
                     playerController = p.GetComponent<PlayerController>();
@@ -124,6 +124,7 @@ public abstract class EnemyController : MonoBehaviour
 
         playerPosition = aggroedPlayer.GetComponent<Transform>().position;
         playerTransform = aggroedPlayer.GetComponent<Transform>();
+        playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
 
 
         if (health <= 0)

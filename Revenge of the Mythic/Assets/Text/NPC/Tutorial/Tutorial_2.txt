@@ -1,2 +1,4 @@
 V for normal Attack,
+M for Player 2
 break these walls!
+
