@@ -29,6 +29,10 @@ public class GameController : MonoBehaviour
     private GameObject player2UI;
     private int bossCount = 0;
     private GameObject npcDialogue;
+
+    //hp flashing variables
+    private int p1Hp = -1, flashTimer, flashTime = 10;
+    private int p2Hp = -1, flashTimer2;
     public int PlayerNum { get { return playerNum; } }
     // Start is called before the first frame update
     void Start()
@@ -46,7 +50,9 @@ public class GameController : MonoBehaviour
         ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
         ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText");
-        if(persisableObjects.totalPlayers == 2)
+        playerController1.Health = persisableObjects.player1hp;
+
+        if (persisableObjects.totalPlayers == 2)
         {
             player2UI.SetActive(true);
             playerController2 = GameObject.FindGameObjectsWithTag("Player")[1].GetComponent<PlayerController>();
@@ -57,19 +63,88 @@ public class GameController : MonoBehaviour
             playerController2.Health = persisableObjects.player2hp;
         }
         score = persisableObjects.score;
-        playerController1.Health = persisableObjects.player1hp;
         scoreText.GetComponent<Text>().text = "Score: " + persisableObjects.score;
         if (GoalController.level != 1)
         {
-            npcDialogue.SetActive(false);
+            npcDialogue.SetActive(false); 
         }
-        #endregion
 
+        #endregion
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        #region Player1 HP Flashing
+        if (p1Hp == -1)
+        {
+            p1Hp = playerController1.Health;
+        }
+
+        if (p1Hp != playerController1.Health)
+        {
+
+            flashTimer = flashTime;
+
+        }
+        if (flashTimer > 0)
+        {
+            flashTimer--;
+            if (p1Hp > playerController1.Health)
+            {
+                GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>().color = Color.red;
+            }
+            if (p1Hp < playerController1.Health)
+            {
+                GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>().color = Color.green;
+            }
+            p1Hp = playerController1.Health;
+
+        }
+
+        if (flashTimer == 0)
+        {
+            GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>().color = Color.black;
+        }
+        #endregion
+        #region Player2 HP Flashing
+        if (persisableObjects.totalPlayers == 2)
+        {
+            if (p2Hp == -1)
+            {
+                p2Hp = playerController2.Health;
+            }
+
+            if (p2Hp != playerController2.Health)
+            {
+
+                flashTimer2 = flashTime;
+
+            }
+            if (flashTimer2 > 0)
+            {
+                flashTimer2--;
+                if (p2Hp > playerController2.Health)
+                {
+                    GameObject.FindGameObjectWithTag("Player2Health").GetComponent<Text>().color = Color.red;
+                }
+                if (p2Hp < playerController2.Health)
+                {
+                    GameObject.FindGameObjectWithTag("Player2Health").GetComponent<Text>().color = Color.green;
+                }
+                p2Hp = playerController2.Health;
+
+            }
+
+            if (flashTimer2 == 0)
+            {
+                GameObject.FindGameObjectWithTag("Player2Health").GetComponent<Text>().color = Color.black;
+            }
+        }
+        #endregion
+
+
         playerHealth1.text = "Health: " + playerController1.Health;
         ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? "Z" : $"{playerController1.AbilityCoolDown[0]/50}";
         ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? "X" : $"{playerController1.AbilityCoolDown[1] / 50}";
