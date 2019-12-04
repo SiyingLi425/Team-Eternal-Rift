@@ -42,7 +42,6 @@ public static class ExtensionMethods
         }
         else if (m is EnemyController e)
         {
-            Debug.Log("Status Attack");
             e.Damage(i, s);
         }
         else if (m is PlayerController p)

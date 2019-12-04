@@ -279,7 +279,7 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void Damage(int attackDamage, string s)
     {
-        Debug.Log("Damaged Status");
+
         health -= attackDamage;
         status = s; 
 

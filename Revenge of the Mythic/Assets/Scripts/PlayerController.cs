@@ -110,7 +110,13 @@ public abstract class PlayerController : MonoBehaviour
         if (GoalController.level == 1)
         {
             health = maximumHealth;
+            persisableObjects.player1hp = gameController.playerController1.Health;
+            if (persisableObjects.totalPlayers == 2)
+            {
+                persisableObjects.player2hp = gameController.playerController2.Health;
+            }
         }
+
     }
 
     // Update is called once per frame

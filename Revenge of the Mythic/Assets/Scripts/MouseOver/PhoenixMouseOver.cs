@@ -7,10 +7,9 @@ public class PhoenixMouseOver : OnMouseOverController
     protected GameObject phoenixDesc;
     public void Start()
     {
-
-
         phoenixDesc = GameObject.FindGameObjectWithTag("PhoenixDesc");
         phoenixDesc.SetActive(false);
+        timer = 200;
     }
     public override void OnMouseExit()
     {
@@ -19,6 +18,10 @@ public class PhoenixMouseOver : OnMouseOverController
 
     public override void OnMouseOver()
     {
-        phoenixDesc.SetActive(true);
+        GameObject charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
+        if (charChoice.GetComponent<CanvasGroup>().alpha == 1f && canDisplay == true)
+        {
+            phoenixDesc.SetActive(true);
+        }
     }
 }

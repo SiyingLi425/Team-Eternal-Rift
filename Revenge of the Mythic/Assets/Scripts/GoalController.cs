@@ -56,6 +56,7 @@ public class GoalController : MonoBehaviour
             }
             else if (level >= 4)
             {
+
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Victory");
             }
         }

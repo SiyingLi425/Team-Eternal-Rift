@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class GriffinMouseOver : OnMouseOverController
 {
+   
     protected GameObject griffinDesc;
 
     public void Start()
     {
         griffinDesc = GameObject.FindGameObjectWithTag("GriffinDesc");
         griffinDesc.SetActive(false);
+        timer = 200;
     }
 
     public override void OnMouseExit()
@@ -19,7 +21,12 @@ public class GriffinMouseOver : OnMouseOverController
 
     public override void OnMouseOver()
     {
-        griffinDesc.SetActive(true);
+        GameObject charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
+        if (charChoice.GetComponent<CanvasGroup>().alpha == 1f && canDisplay == true)
+        {
+            griffinDesc.SetActive(true);
+        }
+
     }
 }
 

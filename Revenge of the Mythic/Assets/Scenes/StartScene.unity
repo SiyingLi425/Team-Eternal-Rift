@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 234919961}
   - component: {fileID: 234919965}
   - component: {fileID: 234919964}
+  - component: {fileID: 234919966}
   m_Layer: 5
   m_Name: Phoenix
   m_TagString: Untagged
@@ -441,6 +442,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 158.17947, y: 31.004482}
   m_EdgeRadius: 0
+--- !u!225 &234919966
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234919959}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &241068819
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +468,7 @@ GameObject:
   - component: {fileID: 241068821}
   - component: {fileID: 241068825}
   - component: {fileID: 241068824}
+  - component: {fileID: 241068826}
   m_Layer: 5
   m_Name: Dragon
   m_TagString: Untagged
@@ -614,6 +628,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 159.77432, y: 29.878515}
   m_EdgeRadius: 0
+--- !u!225 &241068826
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241068819}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &242304382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1167,7 @@ GameObject:
   - component: {fileID: 633454143}
   - component: {fileID: 633454147}
   - component: {fileID: 633454146}
+  - component: {fileID: 633454148}
   m_Layer: 5
   m_Name: Griffin
   m_TagString: Untagged
@@ -1300,6 +1327,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 159.31479, y: 29.007183}
   m_EdgeRadius: 0
+--- !u!225 &633454148
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633454141}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &913289021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1294575523}
+  - component: {fileID: 1294575524}
   m_Layer: 5
   m_Name: Characters
   m_TagString: CharacterChoice
@@ -1765,6 +1805,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1294575524
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294575522}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1331488485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,6 +1989,7 @@ GameObject:
   - component: {fileID: 1522471468}
   - component: {fileID: 1522471472}
   - component: {fileID: 1522471471}
+  - component: {fileID: 1522471473}
   m_Layer: 5
   m_Name: Pegasus
   m_TagString: Untagged
@@ -2096,6 +2149,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 160.22314, y: 28.879885}
   m_EdgeRadius: 0
+--- !u!225 &1522471473
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522471466}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1539470280
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,8 @@ public class PegasusMouseOver : OnMouseOverController
 
     public void Start()
     {
-
         pegasusDesc = GameObject.FindGameObjectWithTag("PegasusDesc");
         pegasusDesc.SetActive(false);
-
 
     }
 
@@ -23,6 +21,10 @@ public class PegasusMouseOver : OnMouseOverController
 
     public override void OnMouseOver()
     {
-        pegasusDesc.SetActive(true);
+        GameObject charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
+        if (charChoice.GetComponent<CanvasGroup>().alpha == 1f)
+        {
+            pegasusDesc.SetActive(true);
+        }
     }
 }

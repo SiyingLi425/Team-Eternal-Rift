@@ -8,6 +8,7 @@ public class SceneManager : MonoBehaviour
     public PersisableObjects persisableObject;
     public GameObject playerSelection;
     private GameObject charChoice, gameMode, startButton, backButton;
+    private Text highscore;
     private string firstScene = "GameScene"; //modify this to start at a particular level
 
     private int totalPlayers = 0;
@@ -16,41 +17,52 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Victory")
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "StartScene")
         {
             charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
             gameMode = GameObject.FindGameObjectWithTag("GameMode");
             playerSelection = GameObject.FindGameObjectWithTag("PlayerSelection");
             startButton = GameObject.FindGameObjectWithTag("StartButton");
             backButton = GameObject.FindGameObjectWithTag("BackButton");
-            
+            backButton.SetActive(false);
+            if (PersisableObjects.isCreated == true)
+            {
+                persisableObject = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
+            }
+        }
+        else if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Victory" || UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "GameOver")
+        {
+            highscore = GameObject.FindGameObjectWithTag("HighScore").GetComponent<Text>();
+            persisableObject = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
+            highscore.text = "Highscore: "+ persisableObject.score;
         }
         
-            
-            gameMode.SetActive(false);
-            playerSelection.SetActive(false);
-            backButton.SetActive(false);
-        }
 
-    IEnumerator WaitFor5Sec()
-    {
-        yield return new WaitForSeconds(50000000);
     }
+
 
     private void Update()
     {
-        if(playerNum == 1)
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Victory" && UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "GameOver")
         {
-            playerSelection.GetComponent<Text>().text = "Player " + (playerNum + 1);
-        }
-        if(wait > 0)
-        {
-            wait--;
-        }
-        else if( wait == 0)
-        {
-         charChoice.SetActive(false);
-            wait = -1;
+            if (playerNum == 1)
+            {
+                playerSelection.GetComponent<Text>().text = "Player " + (playerNum + 1);
+            }
+            if (wait > 0)
+            {
+                wait--;
+            }
+            else if (wait == 0)
+            {
+                gameMode.SetActive(false);
+                playerSelection.SetActive(false);
+                charChoice.GetComponent<CanvasGroup>().alpha = 0f;
+                charChoice.GetComponent<CanvasGroup>().interactable = false;
+                charChoice.GetComponent<CanvasGroup>().blocksRaycasts = false;
+                //charChoice.SetActive(false);
+                wait = -1;
+            }
         }
         
     }
@@ -58,16 +70,23 @@ public class SceneManager : MonoBehaviour
     {
         gameMode.SetActive(true);
         startButton.SetActive(false);
+        persisableObject.playerTypes.Clear();
+        playerNum = 0;
+        playerSelection.GetComponent<Text>().text = "Player 1";
     }
 
     public void onClickRestart()
     {
+        persisableObject.clear();
         UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
     }
     public void onClickBack()
     {
         gameMode.SetActive(true);
-        charChoice.SetActive(false);
+        //charChoice.SetActive(false);
+        charChoice.GetComponent<CanvasGroup>().alpha = 0f;
+        charChoice.GetComponent<CanvasGroup>().interactable = false;
+        charChoice.GetComponent<CanvasGroup>().blocksRaycasts = false;
         backButton.SetActive(false);
         playerSelection.SetActive(false);
         persisableObject.playerTypes.Clear();
@@ -77,7 +96,10 @@ public class SceneManager : MonoBehaviour
     public void onClickSinglePlayer()
     {
         gameMode.SetActive(false);
-        charChoice.SetActive(true);
+        //charChoice.SetActive(true);
+        charChoice.GetComponent<CanvasGroup>().alpha = 1f;
+        charChoice.GetComponent<CanvasGroup>().interactable = true;
+        charChoice.GetComponent<CanvasGroup>().blocksRaycasts = true;
         totalPlayers = 1;
         persisableObject.totalPlayers = 1;
         backButton.SetActive(true);
@@ -85,7 +107,10 @@ public class SceneManager : MonoBehaviour
     public void onClickMultiPlayer()
     {
         gameMode.SetActive(false);
-        charChoice.SetActive(true);
+        //charChoice.SetActive(true);
+        charChoice.GetComponent<CanvasGroup>().alpha = 1f;
+        charChoice.GetComponent<CanvasGroup>().interactable = true;
+        charChoice.GetComponent<CanvasGroup>().blocksRaycasts = true;
         playerSelection.SetActive(true);
         totalPlayers = 2;
         persisableObject.totalPlayers = 2;
@@ -133,7 +158,12 @@ public class SceneManager : MonoBehaviour
     }
     public void LoadScene()
     {
-        DontDestroyOnLoad(persisableObject);
+        if(PersisableObjects.isCreated == false)
+        {
+            DontDestroyOnLoad(persisableObject);
+            PersisableObjects.isCreated = true;
+        }
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(firstScene);
     }
 

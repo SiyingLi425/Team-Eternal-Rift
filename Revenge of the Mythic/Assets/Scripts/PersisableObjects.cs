@@ -11,4 +11,17 @@ public class PersisableObjects : MonoBehaviour
     public int score;
     public int player1hp;
     public int player2hp;
+    public static bool isCreated = false;
+    public void clear()
+    {
+        totalPlayers = 0;
+        playerTypes.Clear();
+        playerType1 = 0;
+        playerType2 = 0;
+        player1hp = 0;
+        player2hp = 0;
+        score = 0;
+        
+
+    }
 }

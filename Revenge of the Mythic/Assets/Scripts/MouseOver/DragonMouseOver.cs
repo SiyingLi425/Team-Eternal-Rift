@@ -20,6 +20,10 @@ public class DragonMouseOver : OnMouseOverController
 
     public override void OnMouseOver()
     {
-        dragonDesc.SetActive(true);
+        GameObject charChoice = GameObject.FindGameObjectWithTag("CharacterChoice");
+        if (charChoice.GetComponent<CanvasGroup>().alpha == 1f)
+        {
+            dragonDesc.SetActive(true);
+        }
     }
 }

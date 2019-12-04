@@ -35,6 +35,7 @@ TagManager:
   - DragonDesc
   - PegasusDesc
   - PhoenixDesc
+  - HighScore
   layers:
   - Default
   - TransparentFX
