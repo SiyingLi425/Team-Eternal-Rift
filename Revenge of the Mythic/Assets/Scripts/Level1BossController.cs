@@ -16,6 +16,7 @@ public class Level1BossController : MeleeEnemy
             --dashTimer;
             if (dashTimer <= 0)
             {
+                Debug.Log("Charging up!");
                 chargeUpTimer = chargeUpTimerReset;
             }
         }
@@ -25,6 +26,7 @@ public class Level1BossController : MeleeEnemy
             --chargeUpTimer;
             if (chargeUpTimer <= 0)
             {
+                Debug.Log("Dashing!");
                 dashTarget = AggroedPlayer.transform.position;
                 #region Set Speed
                 Vector3 t = AggroedPlayer.transform.position;
@@ -87,6 +89,7 @@ public class Level1BossController : MeleeEnemy
             if (pastX && pastY)
             {
                 dashTimer = dashTimerReset;
+                Debug.Log("Dash Complete!");
             }
         }
     }
