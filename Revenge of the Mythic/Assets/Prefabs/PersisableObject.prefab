@@ -50,3 +50,4 @@ MonoBehaviour:
   score: 0
   player1hp: 0
   player2hp: 0
+  healthCode: 0

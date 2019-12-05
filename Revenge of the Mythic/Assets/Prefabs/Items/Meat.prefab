@@ -134,4 +134,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 6317656113553127682}
   gameController: {fileID: 0}
-  healPercentage: 10
+  healPercentage: 25

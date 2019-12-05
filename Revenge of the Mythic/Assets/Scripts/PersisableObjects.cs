@@ -12,6 +12,7 @@ public class PersisableObjects : MonoBehaviour
     public int player1hp;
     public int player2hp;
     public static bool isCreated = false;
+    public bool healthCode = false;
     public void clear()
     {
         totalPlayers = 0;
@@ -21,7 +22,7 @@ public class PersisableObjects : MonoBehaviour
         player1hp = 0;
         player2hp = 0;
         score = 0;
-        
+        healthCode = false;
 
     }
 }
