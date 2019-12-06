@@ -24,7 +24,7 @@ public static class ExtensionMethods
         }
         else if (m is BulletController b)
         {
-            b.gameObject.GetComponent<DestroyableController>().Damage(i);
+            b.gameObject.GetComponent<BulletController>().Damage(i);
         }
         else if (m is RangedAttack r)
         {
@@ -50,7 +50,7 @@ public static class ExtensionMethods
         }
         else if (m is BulletController b)
         {
-            b.gameObject.GetComponent<DestroyableController>().Damage(i, s);
+            b.gameObject.GetComponent<BulletController>().Damage(i, s);
         }
         else if (m is RangedAttack r)
         {
