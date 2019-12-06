@@ -1,2 +1,2 @@
-Animals and humans can be eaten
-To recover health!
+Animals and humans will drop food when killed.
+It can be eaten to recover health.
