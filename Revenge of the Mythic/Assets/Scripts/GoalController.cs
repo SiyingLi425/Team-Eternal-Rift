@@ -47,7 +47,7 @@ public class GoalController : MonoBehaviour
         {
             persisableObjects.player2hp = gameController.playerController2.Health;
         }
-        if (other.tag=="Player" && playerCollider.IsTouching(goalCollider))
+        if (other.tag=="Player")
         {
             if (level < 3)
             {
