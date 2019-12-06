@@ -5,7 +5,7 @@ using UnityEngine;
 public class Level1BossController : MeleeEnemy
 {
     private int dashTimer = 5, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 150;
-    private float speedIncrement = 3, xSpeed, ySpeed;
+    private float speedIncrement = 2.5f, xSpeed, ySpeed;
 
     private Vector3 dashTarget;
 
