@@ -28,5 +28,9 @@ public class GriffinMouseOver : OnMouseOverController
         }
 
     }
+    public void closeDesc()
+    {
+        griffinDesc.SetActive(false);
+    }
 }
 

@@ -26,4 +26,8 @@ public class DragonMouseOver : OnMouseOverController
             dragonDesc.SetActive(true);
         }
     }
+    public void closeDesc()
+    {
+        dragonDesc.SetActive(false);
+    }
 }

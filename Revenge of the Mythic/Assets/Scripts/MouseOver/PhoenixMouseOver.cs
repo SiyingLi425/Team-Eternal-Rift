@@ -11,6 +11,10 @@ public class PhoenixMouseOver : OnMouseOverController
         phoenixDesc.SetActive(false);
         timer = 200;
     }
+    public void closeDesc()
+    {
+        phoenixDesc.SetActive(false);
+    }
     public override void OnMouseExit()
     {
         phoenixDesc.SetActive(false);

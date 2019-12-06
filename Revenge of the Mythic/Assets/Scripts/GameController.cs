@@ -345,6 +345,7 @@ public class GameController : MonoBehaviour
         {
             player = pegasus;
         }
+
         Instantiate(player, new Vector2(x, y), transform.rotation);
 
     }
@@ -360,5 +361,9 @@ public class GameController : MonoBehaviour
         coinSound.Play();
         scoreText.GetComponent<Text>().text = "Score: " + score;
     }
+    //public void updatePlayerHP()
+    //{
+        
+    //}
 
 }

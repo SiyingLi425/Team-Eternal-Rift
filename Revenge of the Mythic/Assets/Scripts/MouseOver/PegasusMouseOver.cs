@@ -13,7 +13,10 @@ public class PegasusMouseOver : OnMouseOverController
         pegasusDesc.SetActive(false);
 
     }
-
+    public void closeDesc()
+    {
+        pegasusDesc.SetActive(false);
+    }
     public override void OnMouseExit()
     {
         pegasusDesc.SetActive(false);
