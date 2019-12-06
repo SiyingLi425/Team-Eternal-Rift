@@ -290,15 +290,7 @@ public class GameController : MonoBehaviour
         {
             player = pegasus;
         }
-        //if(i == 0)
-        //{
 
-        //}
-        if(GoalController.level == 1)
-        {
-            //persisableObjects.player1hp = player.GetComponent<PlayerController>().MaximumHealth;
-
-        }
         Instantiate(player, new Vector2(x, y), transform.rotation);
 
     }

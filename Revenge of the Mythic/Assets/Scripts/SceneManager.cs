@@ -122,8 +122,8 @@ public class SceneManager : MonoBehaviour
     {
         persisableObject.playerTypes.Add(1);
         playerNum++;
-        GameObject.FindGameObjectWithTag("PlayPhoenix").GetComponent<PhoenixMouseOver>().closeDesc();
-        GameObject.FindGameObjectWithTag("PlayPhoenix").SetActive(false);
+        //GameObject.FindGameObjectWithTag("PlayPhoenix").GetComponent<PhoenixMouseOver>().closeDesc();
+        //GameObject.FindGameObjectWithTag("PlayPhoenix").SetActive(false);
         if(playerNum == totalPlayers)
         {
             LoadScene();
