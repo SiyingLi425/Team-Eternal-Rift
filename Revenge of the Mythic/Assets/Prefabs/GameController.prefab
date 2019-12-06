@@ -74,11 +74,7 @@ MonoBehaviour:
   chimera: {fileID: 7979489706375343177, guid: ff8e7b783844942469ba486acd7f3592, type: 3}
   scientist: {fileID: 4835673521968624626, guid: 5dd196652ff5a5744ad29ac547e2b4b9,
     type: 3}
-<<<<<<< HEAD
-  light: {fileID: 0}
-=======
   light: {fileID: 4817323822384657719, guid: 933f2ffd3bede864c8ce681826c2f568, type: 3}
->>>>>>> master
   gridSize: 1
   playerHealth1: {fileID: 0}
   ability1CD1: {fileID: 0}
