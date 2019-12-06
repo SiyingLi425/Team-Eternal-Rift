@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     //Public variables
     public TextAsset map;
-    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist, light;
     public float gridSize = 1;
     public Text playerHealth1, ability1CD1, ability2CD1, ability3CD1, playerHealth2, ability1CD2, ability2CD2, ability3CD2;
     public PlayerController playerController1, playerController2;
@@ -253,6 +253,9 @@ public class GameController : MonoBehaviour
                         break;
                     case "I":
                         Instantiate(scientist, new Vector2(xAxis, yAxis), transform.rotation);
+                        break;
+                    case "Y":
+                        Instantiate(light, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                 }
             }
