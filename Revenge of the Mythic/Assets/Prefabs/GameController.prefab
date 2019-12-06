@@ -74,6 +74,7 @@ MonoBehaviour:
   chimera: {fileID: 7979489706375343177, guid: ff8e7b783844942469ba486acd7f3592, type: 3}
   scientist: {fileID: 4835673521968624626, guid: 5dd196652ff5a5744ad29ac547e2b4b9,
     type: 3}
+  light: {fileID: 0}
   gridSize: 1
   playerHealth1: {fileID: 0}
   ability1CD1: {fileID: 0}
@@ -83,6 +84,9 @@ MonoBehaviour:
   ability1CD2: {fileID: 0}
   ability2CD2: {fileID: 0}
   ability3CD2: {fileID: 0}
+  Ability1Icon: {fileID: 0}
+  Ability2Icon: {fileID: 0}
+  AbilityIcon: {fileID: 0}
   playerController1: {fileID: 0}
   playerController2: {fileID: 0}
   tutorialText:
@@ -97,6 +101,22 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   breakSound: {fileID: 5462860255890750481}
   coinSound: {fileID: -973523547949644673}
+  pheonixAbilityIcon:
+  - {fileID: 21300000, guid: 86a1ebf53d86e1d478d249ca2b5509fa, type: 3}
+  - {fileID: 21300000, guid: 7c2841da2aed19a4ba83f0f995f7be72, type: 3}
+  - {fileID: 21300000, guid: 67f0cce4995bd7547b4c507f56ab9e59, type: 3}
+  griffinAbilityIcon:
+  - {fileID: 21300000, guid: 1ac31338ede332f448b1ab10f8ccc0da, type: 3}
+  - {fileID: 21300000, guid: 3f270dde0783ed8439f676dbe86138ba, type: 3}
+  - {fileID: 21300000, guid: f34530465c2fbf7408e09c3e49a87071, type: 3}
+  dragonAbilityIcon:
+  - {fileID: 21300000, guid: 3ff952a180caab5418a3d7ef5e597154, type: 3}
+  - {fileID: 21300000, guid: 0b290c8bb9bfe5b439f104e2bad275ba, type: 3}
+  - {fileID: 21300000, guid: beee220b638c12340aa36242bc3e5953, type: 3}
+  pegasusAbilityIcon:
+  - {fileID: 21300000, guid: b972ee1c453975b4d87b30599bd26418, type: 3}
+  - {fileID: 21300000, guid: 4a6bbd722b07ed3449784b04db169023, type: 3}
+  - {fileID: 21300000, guid: 8c6cd68620002034c8c96d93ce5280fa, type: 3}
 --- !u!82 &2135751082
 AudioSource:
   m_ObjectHideFlags: 0

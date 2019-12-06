@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist, light;
     public float gridSize = 1;
     public Text playerHealth1, ability1CD1, ability2CD1, ability3CD1, playerHealth2, ability1CD2, ability2CD2, ability3CD2;
+    public Image Ability1Icon, Ability2Icon, AbilityIcon;
     public PlayerController playerController1, playerController2;
     public TextAsset[] tutorialText = new TextAsset[9];
 
@@ -30,6 +31,13 @@ public class GameController : MonoBehaviour
     private int bossCount = 0;
     private GameObject npcDialogue;
 
+    [Header("UI Controller")]
+    public List<Sprite> pheonixAbilityIcon;
+    public List<Sprite> griffinAbilityIcon;
+    public List<Sprite> dragonAbilityIcon;
+    public List<Sprite> pegasusAbilityIcon;
+
+
     //hp flashing variables
     private int p1Hp = -1, flashTimer, flashTime = 10;
     private int p2Hp = -1, flashTimer2;
@@ -46,6 +54,29 @@ public class GameController : MonoBehaviour
         player2UI.SetActive(false);
         playerController1 = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
         playerHealth1 = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
+        switch(persisableObjects.playerType1)
+        {
+            case 1:
+                Ability1Icon.sprite = pheonixAbilityIcon[0];
+                Ability1Icon.sprite = pheonixAbilityIcon[1];
+                Ability1Icon.sprite = pheonixAbilityIcon[2];
+                break;
+            case 2:
+                Ability1Icon.sprite = griffinAbilityIcon[0];
+                Ability1Icon.sprite = griffinAbilityIcon[1];
+                Ability1Icon.sprite = griffinAbilityIcon[2];
+                break;
+            case 3:
+                Ability1Icon.sprite = dragonAbilityIcon[0];
+                Ability1Icon.sprite = dragonAbilityIcon[1];
+                Ability1Icon.sprite = dragonAbilityIcon[2];
+                break;
+            case 4:
+                Ability1Icon.sprite = pegasusAbilityIcon[0];
+                Ability1Icon.sprite = pegasusAbilityIcon[1];
+                Ability1Icon.sprite = pegasusAbilityIcon[2];
+                break;
+        }
         ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
         ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
         ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
@@ -57,6 +88,29 @@ public class GameController : MonoBehaviour
             player2UI.SetActive(true);
             playerController2 = GameObject.FindGameObjectsWithTag("Player")[1].GetComponent<PlayerController>();
             playerHealth2 = GameObject.FindGameObjectWithTag("Player2Health").GetComponent<Text>();
+            switch (persisableObjects.playerType2)
+            {
+                case 1:
+                    Ability1Icon.sprite = pheonixAbilityIcon[0];
+                    Ability1Icon.sprite = pheonixAbilityIcon[1];
+                    Ability1Icon.sprite = pheonixAbilityIcon[2];
+                    break;
+                case 2:
+                    Ability1Icon.sprite = griffinAbilityIcon[0];
+                    Ability1Icon.sprite = griffinAbilityIcon[1];
+                    Ability1Icon.sprite = griffinAbilityIcon[2];
+                    break;
+                case 3:
+                    Ability1Icon.sprite = dragonAbilityIcon[0];
+                    Ability1Icon.sprite = dragonAbilityIcon[1];
+                    Ability1Icon.sprite = dragonAbilityIcon[2];
+                    break;
+                case 4:
+                    Ability1Icon.sprite = pegasusAbilityIcon[0];
+                    Ability1Icon.sprite = pegasusAbilityIcon[1];
+                    Ability1Icon.sprite = pegasusAbilityIcon[2];
+                    break;
+            }
             ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<Text>();
             ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<Text>();
             ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
@@ -278,7 +332,8 @@ public class GameController : MonoBehaviour
         if (playerTypes[i] == 1)
         {
             player = phoenix;
-        }else if(playerTypes[i] == 2)
+        }
+        else if(playerTypes[i] == 2)
         {
             player = griffon;
         }
