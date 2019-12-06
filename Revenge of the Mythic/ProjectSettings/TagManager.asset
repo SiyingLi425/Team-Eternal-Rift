@@ -40,6 +40,12 @@ TagManager:
   - PlayPhoenix
   - PlayPegasus
   - PlayDragon
+  - P1Ability1Icon
+  - P1Ability2Icon
+  - P1Ability3Icon
+  - P2Ability1Icon
+  - P2Ability2Icon
+  - P2Ability3Icon
   layers:
   - Default
   - TransparentFX

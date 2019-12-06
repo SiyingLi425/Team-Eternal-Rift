@@ -7,10 +7,10 @@ public class GameController : MonoBehaviour
 {
     //Public variables
     public TextAsset map;
-    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, bonusRabbit, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist, light;
+    public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, lifeGem, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist, light;
     public float gridSize = 1;
     public Text playerHealth1, ability1CD1, ability2CD1, ability3CD1, playerHealth2, ability1CD2, ability2CD2, ability3CD2;
-    public Image Ability1Icon, Ability2Icon, AbilityIcon;
+    public Image Ability1Icon, Ability2Icon, Ability3Icon;
     public PlayerController playerController1, playerController2;
     public TextAsset[] tutorialText = new TextAsset[9];
 
@@ -32,10 +32,10 @@ public class GameController : MonoBehaviour
     private GameObject npcDialogue;
 
     [Header("UI Controller")]
-    public List<Sprite> pheonixAbilityIcon;
-    public List<Sprite> griffinAbilityIcon;
-    public List<Sprite> dragonAbilityIcon;
-    public List<Sprite> pegasusAbilityIcon;
+    public List<Sprite> pheonixAbilityIcons;
+    public List<Sprite> griffinAbilityIcons;
+    public List<Sprite> dragonAbilityIcons;
+    public List<Sprite> pegasusAbilityIcons;
 
 
     //hp flashing variables
@@ -54,67 +54,74 @@ public class GameController : MonoBehaviour
         player2UI.SetActive(false);
         playerController1 = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
         playerHealth1 = GameObject.FindGameObjectWithTag("Player1Health").GetComponent<Text>();
-        switch(persisableObjects.playerType1)
-        {
-            case 1:
-                Ability1Icon.sprite = pheonixAbilityIcon[0];
-                Ability1Icon.sprite = pheonixAbilityIcon[1];
-                Ability1Icon.sprite = pheonixAbilityIcon[2];
-                break;
-            case 2:
-                Ability1Icon.sprite = griffinAbilityIcon[0];
-                Ability1Icon.sprite = griffinAbilityIcon[1];
-                Ability1Icon.sprite = griffinAbilityIcon[2];
-                break;
-            case 3:
-                Ability1Icon.sprite = dragonAbilityIcon[0];
-                Ability1Icon.sprite = dragonAbilityIcon[1];
-                Ability1Icon.sprite = dragonAbilityIcon[2];
-                break;
-            case 4:
-                Ability1Icon.sprite = pegasusAbilityIcon[0];
-                Ability1Icon.sprite = pegasusAbilityIcon[1];
-                Ability1Icon.sprite = pegasusAbilityIcon[2];
-                break;
-        }
+        Ability1Icon = GameObject.FindGameObjectWithTag("P1Ability1Icon").GetComponent<Image>();
+        Ability2Icon = GameObject.FindGameObjectWithTag("P1Ability2Icon").GetComponent<Image>();
+        Ability3Icon = GameObject.FindGameObjectWithTag("P1Ability3Icon").GetComponent<Image>();
         ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
         ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
         ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText");
         playerController1.Health = persisableObjects.player1hp;
+        //switch (playerTypes.Count)
+        //{
+        //    case 1:
+        //        Ability1Icon.sprite = pheonixAbilityIcons[0];
+        //        Ability2Icon.sprite = pheonixAbilityIcons[1];
+        //        Ability3Icon.sprite = pheonixAbilityIcons[2];
+        //        break;
+        //    case 2:
+        //        Ability1Icon.sprite = griffinAbilityIcons[0];
+        //        Ability2Icon.sprite = griffinAbilityIcons[1];
+        //        Ability3Icon.sprite = griffinAbilityIcons[2];
+        //        break;
+        //    case 3:
+        //        Ability1Icon.sprite = dragonAbilityIcons[0];
+        //        Ability2Icon.sprite = dragonAbilityIcons[1];
+        //        Ability3Icon.sprite = dragonAbilityIcons[2];
+        //        break;
+        //    case 4:
+        //        Ability1Icon.sprite = pegasusAbilityIcons[0];
+        //        Ability2Icon.sprite = pegasusAbilityIcons[1];
+        //        Ability3Icon.sprite = pegasusAbilityIcons[2];
+        //        break;
+        //}
 
         if (persisableObjects.totalPlayers == 2)
         {
             player2UI.SetActive(true);
             playerController2 = GameObject.FindGameObjectsWithTag("Player")[1].GetComponent<PlayerController>();
             playerHealth2 = GameObject.FindGameObjectWithTag("Player2Health").GetComponent<Text>();
-            switch (persisableObjects.playerType2)
-            {
-                case 1:
-                    Ability1Icon.sprite = pheonixAbilityIcon[0];
-                    Ability1Icon.sprite = pheonixAbilityIcon[1];
-                    Ability1Icon.sprite = pheonixAbilityIcon[2];
-                    break;
-                case 2:
-                    Ability1Icon.sprite = griffinAbilityIcon[0];
-                    Ability1Icon.sprite = griffinAbilityIcon[1];
-                    Ability1Icon.sprite = griffinAbilityIcon[2];
-                    break;
-                case 3:
-                    Ability1Icon.sprite = dragonAbilityIcon[0];
-                    Ability1Icon.sprite = dragonAbilityIcon[1];
-                    Ability1Icon.sprite = dragonAbilityIcon[2];
-                    break;
-                case 4:
-                    Ability1Icon.sprite = pegasusAbilityIcon[0];
-                    Ability1Icon.sprite = pegasusAbilityIcon[1];
-                    Ability1Icon.sprite = pegasusAbilityIcon[2];
-                    break;
-            }
+            Ability1Icon = GameObject.FindGameObjectWithTag("P2Ability1Icon").GetComponent<Image>();
+            Ability2Icon = GameObject.FindGameObjectWithTag("P2Ability2Icon").GetComponent<Image>();
+            Ability3Icon = GameObject.FindGameObjectWithTag("P2Ability3Icon").GetComponent<Image>();
             ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<Text>();
             ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<Text>();
             ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
             playerController2.Health = persisableObjects.player2hp;
+
+            //switch (playerTypes[1])
+            //{
+            //    case 1:
+            //        Ability1Icon.sprite = pheonixAbilityIcons[0];
+            //        Ability2Icon.sprite = pheonixAbilityIcons[1];
+            //        Ability3Icon.sprite = pheonixAbilityIcons[2];
+            //        break;
+            //    case 2:
+            //        Ability1Icon.sprite = griffinAbilityIcons[0];
+            //        Ability2Icon.sprite = griffinAbilityIcons[1];
+            //        Ability3Icon.sprite = griffinAbilityIcons[2];
+            //        break;
+            //    case 3:
+            //        Ability1Icon.sprite = dragonAbilityIcons[0];
+            //        Ability2Icon.sprite = dragonAbilityIcons[1];
+            //        Ability3Icon.sprite = dragonAbilityIcons[2];
+            //        break;
+            //    case 4:
+            //        Ability1Icon.sprite = pegasusAbilityIcons[0];
+            //        Ability2Icon.sprite = pegasusAbilityIcons[1];
+            //        Ability3Icon.sprite = pegasusAbilityIcons[2];
+            //        break;
+            //}
         }
         score = persisableObjects.score;
         scoreText.GetComponent<Text>().text = "Score: " + persisableObjects.score;
@@ -285,7 +292,7 @@ public class GameController : MonoBehaviour
                         Instantiate(gas, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "H":
-                        Instantiate(bonusRabbit, new Vector2(xAxis, yAxis), transform.rotation);
+                        Instantiate(lifeGem, new Vector2(xAxis, yAxis), transform.rotation);
                         break;
                     case "D":
                         Instantiate(door, new Vector2(xAxis, yAxis), transform.rotation);

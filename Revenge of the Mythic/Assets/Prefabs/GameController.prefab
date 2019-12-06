@@ -59,8 +59,7 @@ MonoBehaviour:
   rangedEnemy: {fileID: 2942909966416675120, guid: 6d749aad3c56db742a33b312718a04a9,
     type: 3}
   gas: {fileID: 8327816948575138475, guid: e8b9ded594957404f89b5488fb7f83a3, type: 3}
-  bonusRabbit: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04,
-    type: 3}
+  lifeGem: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04, type: 3}
   door: {fileID: 9147779268845948142, guid: 6faf5d07009884f4399f3e62e1abb5de, type: 3}
   griffon: {fileID: 4833405778416478741, guid: f499b99853452ec48b61b9c7598cc308, type: 3}
   phoenix: {fileID: 7541204883019173752, guid: e65d78811d476d54295bc2535a8e5bea, type: 3}
@@ -86,7 +85,7 @@ MonoBehaviour:
   ability3CD2: {fileID: 0}
   Ability1Icon: {fileID: 0}
   Ability2Icon: {fileID: 0}
-  AbilityIcon: {fileID: 0}
+  Ability3Icon: {fileID: 0}
   playerController1: {fileID: 0}
   playerController2: {fileID: 0}
   tutorialText:
@@ -101,22 +100,10 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   breakSound: {fileID: 5462860255890750481}
   coinSound: {fileID: -973523547949644673}
-  pheonixAbilityIcon:
-  - {fileID: 21300000, guid: 86a1ebf53d86e1d478d249ca2b5509fa, type: 3}
-  - {fileID: 21300000, guid: 7c2841da2aed19a4ba83f0f995f7be72, type: 3}
-  - {fileID: 21300000, guid: 67f0cce4995bd7547b4c507f56ab9e59, type: 3}
-  griffinAbilityIcon:
-  - {fileID: 21300000, guid: 1ac31338ede332f448b1ab10f8ccc0da, type: 3}
-  - {fileID: 21300000, guid: 3f270dde0783ed8439f676dbe86138ba, type: 3}
-  - {fileID: 21300000, guid: f34530465c2fbf7408e09c3e49a87071, type: 3}
-  dragonAbilityIcon:
-  - {fileID: 21300000, guid: 3ff952a180caab5418a3d7ef5e597154, type: 3}
-  - {fileID: 21300000, guid: 0b290c8bb9bfe5b439f104e2bad275ba, type: 3}
-  - {fileID: 21300000, guid: beee220b638c12340aa36242bc3e5953, type: 3}
-  pegasusAbilityIcon:
-  - {fileID: 21300000, guid: b972ee1c453975b4d87b30599bd26418, type: 3}
-  - {fileID: 21300000, guid: 4a6bbd722b07ed3449784b04db169023, type: 3}
-  - {fileID: 21300000, guid: 8c6cd68620002034c8c96d93ce5280fa, type: 3}
+  pheonixAbilityIcons: []
+  griffinAbilityIcons: []
+  dragonAbilityIcons: []
+  pegasusAbilityIcons: []
 --- !u!82 &2135751082
 AudioSource:
   m_ObjectHideFlags: 0
