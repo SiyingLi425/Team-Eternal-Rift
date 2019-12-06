@@ -142,6 +142,10 @@ MonoBehaviour:
   - {fileID: 196355874785145769, guid: a1bc3abb94e782e48a32bb264fca1eac, type: 3}
   attackObject: {fileID: 758274916148384618}
   basicAttack: {fileID: 9101080926864538567}
+  cooldownSprites:
+  - {fileID: 21300000, guid: 1ac31338ede332f448b1ab10f8ccc0da, type: 3}
+  - {fileID: 21300000, guid: 3f270dde0783ed8439f676dbe86138ba, type: 3}
+  - {fileID: 21300000, guid: f34530465c2fbf7408e09c3e49a87071, type: 3}
   abilityCooldownReset: 2c01000090010000f4010000
   BasicAttackSound: {fileID: -3672193104191395244}
   gasSound: {fileID: 902860714859022069}
