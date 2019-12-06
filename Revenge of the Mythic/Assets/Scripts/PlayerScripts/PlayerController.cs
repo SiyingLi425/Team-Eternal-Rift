@@ -72,6 +72,7 @@ public abstract class PlayerController : MonoBehaviour
     public int Health { get { return health; } set { health = value; } }
     public int[] AbilityCoolDown { get { return abilityCooldown; } }
     public bool HealthCode { get { return healthCode; } set { HealthCode h = gameController.gameObject.GetComponent<HealthCode>(); if (h.Health == h.HealthCodeLength) { persisableObjects.healthCode = true; healthCode = value; } } }
+    public Sprite[] CooldownSprites { get { return cooldownSprites; } }
 
     public AudioSource BasicAttackSound;
     public AudioSource gasSound;
