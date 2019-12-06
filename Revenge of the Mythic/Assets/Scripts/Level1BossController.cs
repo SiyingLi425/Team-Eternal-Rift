@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level1BossController : MeleeEnemy
 {
-    private int dashTimer = 5, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 50;
+    private int dashTimer = 5, dashTimerReset = 250, chargeUpTimer = 0, chargeUpTimerReset = 150;
     private float speedIncrement = 3, xSpeed, ySpeed;
 
     private Vector3 dashTarget;
@@ -83,9 +83,9 @@ public class Level1BossController : MeleeEnemy
         }
         else if (chargeUpTimer <= 0)
         {
-            base.moveEnemy(speedX, speedY);
-            bool pastX = (transform.position.x >= dashTarget.x && speedX >= 0) || (transform.position.x <= dashTarget.x && speedX <= 0);
-            bool pastY = (transform.position.y >= dashTarget.y && speedY >= 0) || (transform.position.y <= dashTarget.y && speedY <= 0);
+            base.moveEnemy(xSpeed, ySpeed);
+            bool pastX = (transform.position.x >= dashTarget.x && xSpeed >= 0) || (transform.position.x <= dashTarget.x && xSpeed <= 0);
+            bool pastY = (transform.position.y >= dashTarget.y && ySpeed >= 0) || (transform.position.y <= dashTarget.y && ySpeed <= 0);
             if (pastX && pastY)
             {
                 dashTimer = dashTimerReset;
