@@ -72,7 +72,11 @@ public abstract class PlayerController : MonoBehaviour
     public bool HealthCode { get { return healthCode; } set { HealthCode h = gameController.gameObject.GetComponent<HealthCode>(); if (h.Health == h.HealthCodeLength) { persisableObjects.healthCode = true; healthCode = value; } } }
 
     public AudioSource BasicAttackSound;
-    
+    public AudioSource gasSound;
+    public AudioSource foodSound;
+    public AudioSource damageSound;
+
+
     #endregion
 
     // Start is called before the first frame update
@@ -285,6 +289,7 @@ public abstract class PlayerController : MonoBehaviour
     #endregion
     private void RealDamage (int d)
     {
+        damageSound.Play();
         health -= d;
         #region Death Commands
             if (health <= 0)
@@ -341,6 +346,7 @@ public abstract class PlayerController : MonoBehaviour
         {
             if (dot.ToLower().Contains("slow"))
             {
+                gasSound.Play();
                 slowTimer = slowTimerReset;
             }
             Damage(d);
@@ -348,6 +354,7 @@ public abstract class PlayerController : MonoBehaviour
     }
     public void Heal(float percent)
     {
+        foodSound.Play();
         health += (int)(maximumHealth * (percent/100));
         if (health >= maximumHealth)
         {
