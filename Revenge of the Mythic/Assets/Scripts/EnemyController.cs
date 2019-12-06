@@ -310,10 +310,14 @@ public abstract class EnemyController : MonoBehaviour
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
-                if (p.GetComponent<CircleCollider2D>().IsTouching(hitBox))
+                if(p.GetComponent<Griffon>())
                 {
-                    aggroedPlayer = p;
+                    if (p.GetComponent<CircleCollider2D>().IsTouching(hitBox))
+                    {
+                        aggroedPlayer = p;
+                    }
                 }
+
             }
             target = aggroedPlayer.GetComponent<Transform>().position;
             tauntTimer = tauntTime;

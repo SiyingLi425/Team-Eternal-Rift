@@ -36,6 +36,10 @@ TagManager:
   - PegasusDesc
   - PhoenixDesc
   - HighScore
+  - PlayGriffin
+  - PlayPhoenix
+  - PlayPegasus
+  - PlayDragon
   layers:
   - Default
   - TransparentFX

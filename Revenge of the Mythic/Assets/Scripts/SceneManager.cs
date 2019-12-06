@@ -73,11 +73,13 @@ public class SceneManager : MonoBehaviour
         persisableObject.playerTypes.Clear();
         playerNum = 0;
         playerSelection.GetComponent<Text>().text = "Player 1";
+        GoalController.level = 1;
     }
 
     public void onClickRestart()
     {
         persisableObject.clear();
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
     }
     public void onClickBack()
@@ -118,9 +120,10 @@ public class SceneManager : MonoBehaviour
     }
     public void onClickPhonix()
     {
-
         persisableObject.playerTypes.Add(1);
         playerNum++;
+        GameObject.FindGameObjectWithTag("PlayPhoenix").GetComponent<PhoenixMouseOver>().closeDesc();
+        GameObject.FindGameObjectWithTag("PlayPhoenix").SetActive(false);
         if(playerNum == totalPlayers)
         {
             LoadScene();
@@ -132,6 +135,9 @@ public class SceneManager : MonoBehaviour
     {
         persisableObject.playerTypes.Add(2);
         playerNum++;
+        GameObject.FindGameObjectWithTag("PlayGriffin").GetComponent<GriffinMouseOver>().closeDesc();
+        GameObject.FindGameObjectWithTag("PlayGriffin").SetActive(false);
+
         if (playerNum == totalPlayers)
         {
             LoadScene();
@@ -142,6 +148,8 @@ public class SceneManager : MonoBehaviour
     {
         persisableObject.playerTypes.Add(3);
         playerNum++;
+        GameObject.FindGameObjectWithTag("PlayDragon").GetComponent<DragonMouseOver>().closeDesc();
+        GameObject.FindGameObjectWithTag("PlayDragon").SetActive(false);
         if (playerNum == totalPlayers)
         {
             LoadScene();
@@ -151,6 +159,8 @@ public class SceneManager : MonoBehaviour
     {
         persisableObject.playerTypes.Add(4);
         playerNum++;
+        GameObject.FindGameObjectWithTag("PlayPegasus").GetComponent<PegasusMouseOver>().closeDesc();
+        GameObject.FindGameObjectWithTag("PlayPegasus").SetActive(false);
         if (playerNum == totalPlayers)
         {
             LoadScene();

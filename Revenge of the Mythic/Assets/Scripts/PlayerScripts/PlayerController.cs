@@ -114,10 +114,10 @@ public abstract class PlayerController : MonoBehaviour
         if (GoalController.level == 1)
         {
             health = maximumHealth;
-            persisableObjects.player1hp = gameController.playerController1.Health;
+            persisableObjects.player1hp = gameController.playerController1.MaximumHealth;
             if (persisableObjects.totalPlayers == 2)
             {
-                persisableObjects.player2hp = gameController.playerController2.Health;
+                persisableObjects.player2hp = gameController.playerController2.MaximumHealth;
             }
         }
         else
