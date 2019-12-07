@@ -154,7 +154,7 @@ public abstract class EnemyController : MonoBehaviour
             }
         }
         #endregion
-        if (gotTaunt)
+        if (gotTaunt != true)
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {

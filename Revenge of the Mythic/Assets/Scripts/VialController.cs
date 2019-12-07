@@ -35,7 +35,7 @@ public class VialController : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("vial touches something");
+
         if (other.tag == "Player")
         {
             Instantiate(poison, this.transform.position, this.transform.rotation);
