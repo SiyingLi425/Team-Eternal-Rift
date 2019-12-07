@@ -106,19 +106,27 @@ public abstract class EnemyController : MonoBehaviour
     {
         if(spriteList.Count == 0)
         {
-            status1.GetComponent<Image>().sprite = null;
+            status1.GetComponent<CanvasGroup>().alpha = 0f;
+            status2.GetComponent<CanvasGroup>().alpha = 0f;
+            status3.GetComponent<CanvasGroup>().alpha = 0f;
         }
         if (spriteList.Count == 1)
         {
+            status1.GetComponent<CanvasGroup>().alpha = 1f;
             status1.GetComponent<Image>().sprite = spriteList[0];
+            status2.GetComponent<CanvasGroup>().alpha = 0f;
+            status3.GetComponent<CanvasGroup>().alpha = 0f;
         }
         if (spriteList.Count == 2)
         {
             status2.GetComponent<Image>().sprite = spriteList[1];
+            status2.GetComponent<CanvasGroup>().alpha = 1f;
+            status3.GetComponent<CanvasGroup>().alpha = 0f;
         }
         if (spriteList.Count == 3)
         {
             status3.GetComponent<Image>().sprite = spriteList[2];
+            status3.GetComponent<CanvasGroup>().alpha = 1f;
         }
 
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
