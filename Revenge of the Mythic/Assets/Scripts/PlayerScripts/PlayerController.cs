@@ -39,8 +39,8 @@ public abstract class PlayerController : MonoBehaviour
     private PersisableObjects persisableObjects;
     [SerializeField]
     private Sprite[] cooldownSprites = new Sprite[3];
-    private string[,] instanceKeys = new string[2, 3];
-    private KeyCode[,] instanceKeyCodes = new KeyCode[2, 3];
+    private string[,] instanceKeys = new string[3, 2];
+    private KeyCode[,] instanceKeyCodes = new KeyCode[3, 2];
     #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
     protected int aegisTimer = 0, aegisTimerReset = 250;
