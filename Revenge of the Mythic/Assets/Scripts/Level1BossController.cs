@@ -99,17 +99,13 @@ public class Level1BossController : MeleeEnemy
         }
     }
 
-    /*
+    
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Wall")
+        if (col.gameObject.tag == "Wall" || col.gameObject.tag == "Destroyable")
         {
             dashTimer = dashTimerReset;
         }
-        else if (col.gameObject.tag == "Destroyable")
-        {
-            col.gameObject.PrimaryController().Damage(attackDamage);
-        }
     }
-    */
+    
 }

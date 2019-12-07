@@ -217,13 +217,67 @@ public class GameController : MonoBehaviour
         ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? resetKeys[0, 0] : $"{playerController1.AbilityCoolDown[0] / 50}";
         ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? resetKeys[0, 1] : $"{playerController1.AbilityCoolDown[1] / 50}";
         ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? resetKeys[0, 2] : $"{playerController1.AbilityCoolDown[2] / 50}";
-        
-        if(persisableObjects.totalPlayers == 2)
+
+        if (playerController1.AbilityCoolDown[0] != 0)
+        {
+            GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+        if (playerController1.AbilityCoolDown[1] != 0)
+        {
+            GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+        if (playerController1.AbilityCoolDown[2] != 0)
+        {
+            GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+        }
+
+
+
+        if (persisableObjects.totalPlayers == 2)
         {
             playerHealth2.text = "Health: " + playerController2.Health;
             ability1CD2.text = playerController2.AbilityCoolDown[0] == 0 ? resetKeys[1, 0] : $"{playerController2.AbilityCoolDown[0] / 50}";
             ability2CD2.text = playerController2.AbilityCoolDown[1] == 0 ? resetKeys[1, 1] : $"{playerController2.AbilityCoolDown[1] / 50}";
             ability3CD2.text = playerController2.AbilityCoolDown[2] == 0 ? resetKeys[1, 2] : $"{playerController2.AbilityCoolDown[2] / 50}";
+        }
+        if (persisableObjects.totalPlayers == 2)
+        {
+            if (playerController2.AbilityCoolDown[0] != 0)
+            {
+                GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+            }
+            if (playerController2.AbilityCoolDown[1] != 0)
+            {
+                GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+            }
+            if (playerController2.AbilityCoolDown[2] != 0)
+            {
+                GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+            }
         }
     }
 
