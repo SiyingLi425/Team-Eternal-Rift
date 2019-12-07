@@ -152,7 +152,7 @@ public abstract class EnemyController : MonoBehaviour
             }
         }
         #endregion
-        if (status != "Taunt")
+        if (gotTaunt)
         {
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
@@ -257,6 +257,7 @@ public abstract class EnemyController : MonoBehaviour
                 gotTaunt = false;
             }
         }
+        
         if (fearTimer > 0)
         {
             fearTimer--;
@@ -374,7 +375,7 @@ public abstract class EnemyController : MonoBehaviour
             burnTimer = burnTime;
             burnSlot = spriteList.Count;
             gotBurn = true;
-            spriteList.Add(taunt);
+            spriteList.Add(burn);
         }
         if(status == "Fear")
         {
