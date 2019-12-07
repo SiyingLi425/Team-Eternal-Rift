@@ -39,6 +39,8 @@ public abstract class PlayerController : MonoBehaviour
     private PersisableObjects persisableObjects;
     [SerializeField]
     private Sprite[] cooldownSprites = new Sprite[3];
+    private string[,] instanceKeys = new string[2, 3];
+    private KeyCode[,] instanceKeyCodes = new KeyCode[2, 3];
     #region Status Effects
     private int slowTimer = 0, slowTimerReset = 100;
     protected int aegisTimer = 0, aegisTimerReset = 250;
@@ -95,6 +97,36 @@ public abstract class PlayerController : MonoBehaviour
         attackAxis[0] = "P" + instance + "BasicAttack";
         for (int z = 1; z < 4; ++z) {
             attackAxis[z] = "P" + instance + "Ability" + z;
+        }
+        if (instance == 1)
+        {
+            instanceKeys[0, 0] = "Z";
+            instanceKeys[0, 1] = "R";
+            instanceKeys[1, 0] = "X";
+            instanceKeys[1, 1] = "T";
+            instanceKeys[2, 0] = "C";
+            instanceKeys[2, 1] = "Y";
+            instanceKeyCodes[0, 0] = KeyCode.Z;
+            instanceKeyCodes[0, 1] = KeyCode.R;
+            instanceKeyCodes[1, 0] = KeyCode.X;
+            instanceKeyCodes[1, 1] = KeyCode.T;
+            instanceKeyCodes[2, 0] = KeyCode.C;
+            instanceKeyCodes[2, 1] = KeyCode.Y;
+        }
+        else
+        {
+            instanceKeys[0, 0] = ",";
+            instanceKeys[0, 1] = "U";
+            instanceKeys[1, 0] = ".";
+            instanceKeys[1, 1] = "I";
+            instanceKeys[2, 0] = "/";
+            instanceKeys[2, 1] = "O";
+            instanceKeyCodes[0, 0] = KeyCode.Comma;
+            instanceKeyCodes[0, 1] = KeyCode.U;
+            instanceKeyCodes[1, 0] = KeyCode.Period;
+            instanceKeyCodes[1, 1] = KeyCode.I;
+            instanceKeyCodes[2, 0] = KeyCode.Slash;
+            instanceKeyCodes[2, 1] = KeyCode.O;
         }
         #endregion
         #region Colliders
@@ -175,6 +207,10 @@ public abstract class PlayerController : MonoBehaviour
                 {
                     if (Input.GetAxis(attackAxis[z]) > 0 && ((z > 0 && abilityCooldown[z - 1] == 0) || z == 0))
                     {
+                        if (z > 0)
+                        {
+                            gameController.ChangeResetKey(instance, z-1, Input.GetKeyDown(instanceKeyCodes[z-1, 0]) ? instanceKeys[z-1, 0] : instanceKeys[z-1, 1]);
+                        }
                         attack(z);
                     }
                 }
