@@ -7,14 +7,16 @@ public class LightController : MonoBehaviour
     private SpriteRenderer sr;
     [SerializeField]
     private Sprite on;
+    private bool ranStart = false;
     public void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         CircleCollider2D c = GetComponent<CircleCollider2D>();
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Wall"))
         {
-            if (c.IsTouching(g.PrimaryCollider()))
+            if (!ranStart && c.IsTouching(g.PrimaryCollider()))
             {
+                ranStart = true;
                 if (g.transform.position.x == transform.position.x)
                 {
                     if (g.transform.position.y > transform.position.y)
@@ -41,6 +43,14 @@ public class LightController : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void Update()
+    {
+        if (!ranStart)
+        {
+            Start();
         }
     }
 
