@@ -86,6 +86,7 @@ public abstract class EnemyController : MonoBehaviour
         status2 = this.gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetChild(1).gameObject;
         status3 = this.gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetChild(2).gameObject;
         spriteList = new List <Sprite>();
+        
         //enemyAnimator = GetComponent<Animator>();
         #region Set Sprites
         for (int z = 0; z < 3; ++z)
@@ -130,6 +131,7 @@ public abstract class EnemyController : MonoBehaviour
         }
 
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
+        playerController = aggroedPlayer.GetComponent<PlayerController>();
 
         //aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
         //playerCollider = aggroedPlayer.GetComponent<BoxCollider2D>();
