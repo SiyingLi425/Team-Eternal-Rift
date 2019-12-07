@@ -44,6 +44,11 @@ public class GameController : MonoBehaviour
     private int p1Hp = -1, flashTimer, flashTime = 10;
     private int p2Hp = -1, flashTimer2;
     public int PlayerNum { get { return playerNum; } }
+
+    //ability cooldown reset keys
+    private string[,] resetKeys = { {"Z", "X", "C" }, {",", ".", "/" } };
+    public string[,] ResetKeys { get { return resetKeys; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -209,16 +214,16 @@ public class GameController : MonoBehaviour
 
 
         playerHealth1.text = "Health: " + playerController1.Health;
-        ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? "Z" : $"{playerController1.AbilityCoolDown[0]/50}";
-        ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? "X" : $"{playerController1.AbilityCoolDown[1] / 50}";
-        ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? "C" : $"{playerController1.AbilityCoolDown[2] / 50}";
+        ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? resetKeys[0, 0] : $"{playerController1.AbilityCoolDown[0] / 50}";
+        ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? resetKeys[0, 1] : $"{playerController1.AbilityCoolDown[1] / 50}";
+        ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? resetKeys[0, 2] : $"{playerController1.AbilityCoolDown[2] / 50}";
         
         if(persisableObjects.totalPlayers == 2)
         {
             playerHealth2.text = "Health: " + playerController2.Health;
-            ability1CD2.text = playerController2.AbilityCoolDown[0] == 0 ? "," : $"{playerController2.AbilityCoolDown[0] / 50}";
-            ability2CD2.text = playerController2.AbilityCoolDown[1] == 0 ? "." : $"{playerController2.AbilityCoolDown[1] / 50}";
-            ability3CD2.text = playerController2.AbilityCoolDown[2] == 0 ? "/" : $"{playerController2.AbilityCoolDown[2] / 50}";
+            ability1CD2.text = playerController2.AbilityCoolDown[0] == 0 ? resetKeys[1, 0] : $"{playerController2.AbilityCoolDown[0] / 50}";
+            ability2CD2.text = playerController2.AbilityCoolDown[1] == 0 ? resetKeys[1, 1] : $"{playerController2.AbilityCoolDown[1] / 50}";
+            ability3CD2.text = playerController2.AbilityCoolDown[2] == 0 ? resetKeys[1, 2] : $"{playerController2.AbilityCoolDown[2] / 50}";
         }
     }
 
@@ -333,6 +338,10 @@ public class GameController : MonoBehaviour
             }
            
         }
+    }
+    public void ChangeResetKey (int player, int key, string value)
+    {
+        resetKeys[player, key] = value;
     }
     public void AddPlayer(float x, float y)
     {
