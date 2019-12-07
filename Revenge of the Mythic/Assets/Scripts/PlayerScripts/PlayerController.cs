@@ -81,6 +81,10 @@ public abstract class PlayerController : MonoBehaviour
     public AudioSource foodSound;
     public AudioSource damageSound;
 
+    [Header("Status Bar")]
+    public Sprite slow;
+    private GameObject status1;
+
 
     #endregion
 
@@ -146,6 +150,8 @@ public abstract class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         persisableObjects = GameObject.FindGameObjectWithTag("PersisableObject").GetComponent<PersisableObjects>();
+        status1 = this.gameObject.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject;
+        status1.GetComponent<CanvasGroup>().alpha = 0f;
         if (GoalController.level == 1)
         {
             health = maximumHealth;
@@ -279,6 +285,11 @@ public abstract class PlayerController : MonoBehaviour
         if (slowTimer > 0)
         {
             --slowTimer;
+
+        }
+        if(slowTimer == 0)
+        {
+            status1.GetComponent<CanvasGroup>().alpha = 0f;
         }
         if (aegisTimer > 0)
         {
@@ -387,6 +398,8 @@ public abstract class PlayerController : MonoBehaviour
             {
                 gasSound.Play();
                 slowTimer = slowTimerReset;
+                status1.GetComponent<Image>().sprite = slow;
+                status1.GetComponent<CanvasGroup>().alpha = 1f;
             }
             Damage(d);
         }
