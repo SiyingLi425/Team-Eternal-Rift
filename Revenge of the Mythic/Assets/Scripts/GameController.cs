@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,8 @@ public class GameController : MonoBehaviour
     public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, lifeGem, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist, light;
     public float gridSize = 1;
-    public Text playerHealth1, ability1CD1, ability2CD1, ability3CD1, playerHealth2, ability1CD2, ability2CD2, ability3CD2;
+    public Text playerHealth1, playerHealth2;
+    public TextMeshProUGUI ability1CD1, ability2CD1, ability3CD1, ability1CD2, ability2CD2, ability3CD2;
     public Image Ability1Icon, Ability2Icon, Ability3Icon;
     public PlayerController playerController1, playerController2;
     public TextAsset[] tutorialText = new TextAsset[9];
@@ -57,9 +59,9 @@ public class GameController : MonoBehaviour
         Ability1Icon = GameObject.FindGameObjectWithTag("P1Ability1Icon").GetComponent<Image>();
         Ability2Icon = GameObject.FindGameObjectWithTag("P1Ability2Icon").GetComponent<Image>();
         Ability3Icon = GameObject.FindGameObjectWithTag("P1Ability3Icon").GetComponent<Image>();
-        ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
-        ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
-        ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
+        ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<TextMeshProUGUI>();
+        ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<TextMeshProUGUI>();
+        ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<TextMeshProUGUI>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText");
         playerController1.Health = persisableObjects.player1hp;
         switch (playerTypes[0])
@@ -94,9 +96,9 @@ public class GameController : MonoBehaviour
             Ability1Icon = GameObject.FindGameObjectWithTag("P2Ability1Icon").GetComponent<Image>();
             Ability2Icon = GameObject.FindGameObjectWithTag("P2Ability2Icon").GetComponent<Image>();
             Ability3Icon = GameObject.FindGameObjectWithTag("P2Ability3Icon").GetComponent<Image>();
-            ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<Text>();
-            ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<Text>();
-            ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
+            ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>();
+            ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<TextMeshProUGUI>();
+            ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<TextMeshProUGUI>();
             playerController2.Health = persisableObjects.player2hp;
 
             switch (playerTypes[1])
