@@ -344,23 +344,24 @@ public abstract class PlayerController : MonoBehaviour
         #region Death Commands
             if (health <= 0)
             {
-                dead = true;
-                health = 0;
-                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-                bool allDead = false;
-                if (players.Length == 2)
-                {
-                    if (players[0].GetComponent<PlayerController>().Dead && players[1].GetComponent<PlayerController>().Dead)
-                    {
-                        allDead = true;
-                    }
-                }
-                if (players.Length == 1 || allDead)
-                {
-                    GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
-                }
-            }
-            #endregion
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
+            //dead = true;
+            //    health = 0;
+            //    GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            //    bool allDead = false;
+            //    if (players.Length == 2)
+            //    {
+            //        if (players[0].GetComponent<PlayerController>().Dead && players[1].GetComponent<PlayerController>().Dead)
+            //        {
+            //            allDead = true;
+            //        }
+            //    }
+            //    if (players.Length == 1 || allDead)
+            //    {
+
+            //    }
+        }
+        #endregion
     }
     private void FakeDamage(int d)
     {
