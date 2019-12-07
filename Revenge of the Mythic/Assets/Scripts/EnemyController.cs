@@ -404,13 +404,10 @@ public abstract class EnemyController : MonoBehaviour
             {
                 if(p.GetComponent<Griffon>())
                 {
-                    if (p.GetComponent<CircleCollider2D>().IsTouching(hitBox))
-                    {
-                        aggroedPlayer = p;
-                        tauntSlot = spriteList.Count;
-                        gotTaunt = true;
-                        spriteList.Add(taunt);
-                    }
+                    aggroedPlayer = p;
+                    tauntSlot = spriteList.Count;
+                    gotTaunt = true;
+                    spriteList.Add(taunt);
                 }
 
             }
