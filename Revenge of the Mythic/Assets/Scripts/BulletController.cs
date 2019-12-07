@@ -50,6 +50,11 @@ public class BulletController : MonoBehaviour
             other.GetComponent<PlayerController>().Damage(attackDamange);
             Destroy(this.gameObject);
         }
+        else if (other.tag == ("Wall") || other.tag == ("Destroyable"))
+        {
+
+            Destroy(this.gameObject);
+        }
 
     }
 }

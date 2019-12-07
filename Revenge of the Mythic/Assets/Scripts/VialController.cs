@@ -41,7 +41,14 @@ public class VialController : MonoBehaviour
             Instantiate(poison, this.transform.position, this.transform.rotation);
             crashSound.Play();
             Destroy(this.gameObject);
+        } else if (other.tag == ("Wall") || other.tag == ("Destroyable"))
+        {
+            Instantiate(poison, this.transform.position, this.transform.rotation);
+            crashSound.Play();
+            Destroy(this.gameObject);
         }
+
+        
         
     }
 }
