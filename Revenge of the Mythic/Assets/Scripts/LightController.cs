@@ -19,28 +19,25 @@ public class LightController : MonoBehaviour
                 {
                     if (g.transform.position.y > transform.position.y)
                     {
-                        transform.position += new Vector3(0, 0.315f);
+                        transform.position += new Vector3(0, 0.375f);
                         transform.Rotate(0, 0, 270);
                     }
                     else
                     {
-                        transform.position += new Vector3(0, -0.315f);
+                        transform.position += new Vector3(0, -0.375f);
                         transform.Rotate(0, 0, 90);
                     }
                 }
-                else if (g.transform.position.y == transform.position.y)
+                else
                 {
                     if (g.transform.position.x > transform.position.x)
                     {
-                        if (g.transform.position.x > transform.position.x)
-                        {
-                            transform.position += new Vector3(0.375f, 0);
-                            transform.Rotate(0, 0, 180);
-                        }
-                        else
-                        {
-                            transform.position += new Vector3(-0.375f, 0);
-                        }
+                        transform.position += new Vector3(0.375f, 0);
+                        transform.Rotate(0, 0, 180);
+                    }
+                    else
+                    {
+                        transform.position += new Vector3(-0.375f, 0);
                     }
                 }
             }

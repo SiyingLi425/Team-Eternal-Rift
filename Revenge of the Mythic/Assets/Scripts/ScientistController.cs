@@ -10,6 +10,6 @@ public class ScientistController : RangedEnemy
     {
         attackCoolDown = attackSpeed;
         base.enemyHit.Play();
-        Instantiate(poisonPotion, playerPosition, rotate());
+        Instantiate(poisonPotion, this.transform.position, rotate());
     }
 }

@@ -58,7 +58,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &4835673521534787926
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   bullet: {fileID: 0}
   bulletSpawn: {fileID: 0}
   TooClose: 0
-  poisonPotion: {fileID: 5095137018457033097, guid: aea96a76dde20194eb9622dc4a5875d9,
+  poisonPotion: {fileID: 6452343884699059276, guid: 4cd59b50aba72f5468321774988c738b,
     type: 3}
 --- !u!50 &4835673521968624630
 Rigidbody2D:
@@ -445,7 +445,7 @@ RectTransform:
   m_GameObject: {fileID: 4835673522829994549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0080856485, y: 0.011491928, z: 0.011491928}
+  m_LocalScale: {x: 0.0107142925, y: 0.015227954, z: 0.015227954}
   m_Children: []
   m_Father: {fileID: 4835673521534787924}
   m_RootOrder: 0
