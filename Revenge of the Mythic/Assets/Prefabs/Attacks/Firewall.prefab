@@ -168,10 +168,9 @@ MonoBehaviour:
   damage: 1
   destroyOnHit: 0
   targets:
-  - EnemyRanged
+  - Enemy
   - PlayerRanged
   - Destroyable
-  - Enemy
   Collider: {fileID: 1229814936398331183}
   dots: Burn
   globalCooldownReset: 50
