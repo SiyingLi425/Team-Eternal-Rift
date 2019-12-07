@@ -116,17 +116,17 @@ public abstract class PlayerController : MonoBehaviour
         else
         {
             instanceKeys[0, 0] = ",";
-            instanceKeys[0, 1] = "U";
+            instanceKeys[0, 1] = "[";
             instanceKeys[1, 0] = ".";
-            instanceKeys[1, 1] = "I";
+            instanceKeys[1, 1] = "]";
             instanceKeys[2, 0] = "/";
-            instanceKeys[2, 1] = "O";
+            instanceKeys[2, 1] = "\\";
             instanceKeyCodes[0, 0] = KeyCode.Comma;
-            instanceKeyCodes[0, 1] = KeyCode.U;
+            instanceKeyCodes[0, 1] = KeyCode.LeftBracket;
             instanceKeyCodes[1, 0] = KeyCode.Period;
-            instanceKeyCodes[1, 1] = KeyCode.I;
+            instanceKeyCodes[1, 1] = KeyCode.RightBracket;
             instanceKeyCodes[2, 0] = KeyCode.Slash;
-            instanceKeyCodes[2, 1] = KeyCode.O;
+            instanceKeyCodes[2, 1] = KeyCode.Backslash;
         }
         #endregion
         #region Colliders
