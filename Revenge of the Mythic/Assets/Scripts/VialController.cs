@@ -12,6 +12,7 @@ public class VialController : MonoBehaviour
     public float speed = 0.02f;
     private Rigidbody2D rBody;
     public int attackDamange = 1;
+    public AudioSource crashSound;
 
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class VialController : MonoBehaviour
         if (other.tag == "Player")
         {
             Instantiate(poison, this.transform.position, this.transform.rotation);
+            crashSound.Play();
             Destroy(this.gameObject);
         }
         

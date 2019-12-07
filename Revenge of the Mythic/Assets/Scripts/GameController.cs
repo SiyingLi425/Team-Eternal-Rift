@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,8 @@ public class GameController : MonoBehaviour
     public TextAsset map;
     public GameObject wall, floor, destroyableObj, undestroyableObj, meleeEnemy, rangedEnemy, gas, lifeGem, door, griffon, phoenix, tutorialBird, gold, silver, boss, dragon, pegasus, chimera, scientist, light;
     public float gridSize = 1;
-    public Text playerHealth1, ability1CD1, ability2CD1, ability3CD1, playerHealth2, ability1CD2, ability2CD2, ability3CD2;
+    public Text playerHealth1, playerHealth2;
+    public TextMeshProUGUI ability1CD1, ability2CD1, ability3CD1, ability1CD2, ability2CD2, ability3CD2;
     public Image Ability1Icon, Ability2Icon, Ability3Icon;
     public PlayerController playerController1, playerController2;
     public TextAsset[] tutorialText = new TextAsset[9];
@@ -42,6 +44,11 @@ public class GameController : MonoBehaviour
     private int p1Hp = -1, flashTimer, flashTime = 10;
     private int p2Hp = -1, flashTimer2;
     public int PlayerNum { get { return playerNum; } }
+
+    //ability cooldown reset keys
+    private string[,] resetKeys = { {"Z", "X", "C" }, {",", ".", "/" } };
+    public string[,] ResetKeys { get { return resetKeys; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,9 +64,9 @@ public class GameController : MonoBehaviour
         Ability1Icon = GameObject.FindGameObjectWithTag("P1Ability1Icon").GetComponent<Image>();
         Ability2Icon = GameObject.FindGameObjectWithTag("P1Ability2Icon").GetComponent<Image>();
         Ability3Icon = GameObject.FindGameObjectWithTag("P1Ability3Icon").GetComponent<Image>();
-        ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<Text>();
-        ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<Text>();
-        ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
+        ability1CD1 = GameObject.FindGameObjectWithTag("P1Ability1CD").GetComponent<TextMeshProUGUI>();
+        ability2CD1 = GameObject.FindGameObjectWithTag("P1Ability2CD").GetComponent<TextMeshProUGUI>();
+        ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<TextMeshProUGUI>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText");
         playerController1.Health = persisableObjects.player1hp;
         switch (playerTypes[0])
@@ -94,9 +101,9 @@ public class GameController : MonoBehaviour
             Ability1Icon = GameObject.FindGameObjectWithTag("P2Ability1Icon").GetComponent<Image>();
             Ability2Icon = GameObject.FindGameObjectWithTag("P2Ability2Icon").GetComponent<Image>();
             Ability3Icon = GameObject.FindGameObjectWithTag("P2Ability3Icon").GetComponent<Image>();
-            ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<Text>();
-            ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<Text>();
-            ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
+            ability1CD2 = GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>();
+            ability2CD2 = GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<TextMeshProUGUI>();
+            ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<TextMeshProUGUI>();
             playerController2.Health = persisableObjects.player2hp;
 
             switch (playerTypes[1])
@@ -207,16 +214,16 @@ public class GameController : MonoBehaviour
 
 
         playerHealth1.text = "Health: " + playerController1.Health;
-        ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? "Z" : $"{playerController1.AbilityCoolDown[0]/50}";
-        ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? "X" : $"{playerController1.AbilityCoolDown[1] / 50}";
-        ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? "C" : $"{playerController1.AbilityCoolDown[2] / 50}";
+        ability1CD1.text = playerController1.AbilityCoolDown[0] == 0 ? resetKeys[0, 0] : $"{playerController1.AbilityCoolDown[0] / 50}";
+        ability2CD1.text = playerController1.AbilityCoolDown[1] == 0 ? resetKeys[0, 1] : $"{playerController1.AbilityCoolDown[1] / 50}";
+        ability3CD1.text = playerController1.AbilityCoolDown[2] == 0 ? resetKeys[0, 2] : $"{playerController1.AbilityCoolDown[2] / 50}";
         
         if(persisableObjects.totalPlayers == 2)
         {
             playerHealth2.text = "Health: " + playerController2.Health;
-            ability1CD2.text = playerController2.AbilityCoolDown[0] == 0 ? "," : $"{playerController2.AbilityCoolDown[0] / 50}";
-            ability2CD2.text = playerController2.AbilityCoolDown[1] == 0 ? "." : $"{playerController2.AbilityCoolDown[1] / 50}";
-            ability3CD2.text = playerController2.AbilityCoolDown[2] == 0 ? "/" : $"{playerController2.AbilityCoolDown[2] / 50}";
+            ability1CD2.text = playerController2.AbilityCoolDown[0] == 0 ? resetKeys[1, 0] : $"{playerController2.AbilityCoolDown[0] / 50}";
+            ability2CD2.text = playerController2.AbilityCoolDown[1] == 0 ? resetKeys[1, 1] : $"{playerController2.AbilityCoolDown[1] / 50}";
+            ability3CD2.text = playerController2.AbilityCoolDown[2] == 0 ? resetKeys[1, 2] : $"{playerController2.AbilityCoolDown[2] / 50}";
         }
     }
 
@@ -331,6 +338,10 @@ public class GameController : MonoBehaviour
             }
            
         }
+    }
+    public void ChangeResetKey (int player, int key, string value)
+    {
+        resetKeys[player, key] = value;
     }
     public void AddPlayer(float x, float y)
     {
