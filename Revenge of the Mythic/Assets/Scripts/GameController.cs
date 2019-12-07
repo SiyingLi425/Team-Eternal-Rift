@@ -260,11 +260,11 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+                GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<TextMeshProUGUI>().color = Color.green;
             }
             if (playerController2.AbilityCoolDown[1] != 0)
             {
-                GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+                GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<TextMeshProUGUI>().color = Color.red;
             }
             else
             {
@@ -272,11 +272,11 @@ public class GameController : MonoBehaviour
             }
             if (playerController2.AbilityCoolDown[2] != 0)
             {
-                GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<TextMeshProUGUI>().color = Color.red;
+                GameObject.FindGameObjectWithTag("P2Ability2CD").GetComponent<TextMeshProUGUI>().color = Color.red;
             }
             else
             {
-                GameObject.FindGameObjectWithTag("P2Ability1CD").GetComponent<TextMeshProUGUI>().color = Color.green;
+                GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<TextMeshProUGUI>().color = Color.green;
             }
         }
     }
