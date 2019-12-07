@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,15 +18,17 @@ public abstract class ItemController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-    
-        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        try
         {
-            if (p.PrimaryCollider().IsTouching(collider))
+            foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
             {
-                effect(p.GetComponent<PlayerController>());
-                Destroy(gameObject);
+                if (p.PrimaryCollider().IsTouching(collider))
+                {
+                    effect(p.GetComponent<PlayerController>());
+                    Destroy(gameObject);
+                }
             }
-        }
+        } catch (Exception) { }
     }
 
     protected abstract void effect(PlayerController p);

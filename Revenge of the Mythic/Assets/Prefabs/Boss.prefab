@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  walkSpeed: 0.05
+  walkSpeed: 0.04
   attackSpeed: 25
   attackDamage: 1
   foodItem: {fileID: 6497438418472983639, guid: e46cc40df6bf72e4a8ccbdf2d1f0cf04,
