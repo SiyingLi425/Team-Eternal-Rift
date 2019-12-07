@@ -1,3 +1,3 @@
 Try Moving Around and follow me!
 Player 1: WASD
-Player 2: OKL
+Player 2: OKL; or arrow keys

@@ -1,5 +1,5 @@
 Use Normal Attack to break these walls!
-Player 1: V
-Player 2: M
+Player 1: V or F
+Player 2: M or Enter
 
 
