@@ -60,6 +60,18 @@ public abstract class EnemyController : MonoBehaviour
     public float silenceTimer, silenceTime;
     public float knockbackTimer, knockbackTime;
 
+    [Header("Status Bar")]
+    public Sprite burn;
+    public Sprite taunt;
+    public Sprite fear;
+    public Sprite bleed;
+    public Sprite silence;
+    public Sprite slow;
+    private int burnSlot, tauntSlot, fearSlot, bleedSlot, silenceSlot, slowSlot;
+    private bool gotBurn, gotTaunt, gotFear, gotBleed, gotSilence, gotSlow;
+    private GameObject status1, status2, status3;
+    private List<Sprite> spriteList;
+
     public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
     protected virtual void Start()
@@ -69,6 +81,8 @@ public abstract class EnemyController : MonoBehaviour
         hitBox = GetComponent<BoxCollider2D>();
         enemyTransform = GetComponent<Transform>();
         healthBar = this.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Text>();
+        status1 = this.gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).gameObject;
+        spriteList = new List <Sprite>();
         //enemyAnimator = GetComponent<Animator>();
         #region Set Sprites
         for (int z = 0; z < 3; ++z)
@@ -87,6 +101,19 @@ public abstract class EnemyController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        if (spriteList.Count == 1)
+        {
+            status1.GetComponent<Image>().sprite = spriteList[0];
+        }
+        if (spriteList.Count == 2)
+        {
+            status2.GetComponent<Image>().sprite = spriteList[1];
+        }
+        if (spriteList.Count == 3)
+        {
+            status3.GetComponent<Image>().sprite = spriteList[2];
+        }
+
         aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
 
         //aggroedPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -188,6 +215,11 @@ public abstract class EnemyController : MonoBehaviour
         {
             fearTimer--;
         }
+        if (gotFear) {
+            if (fearTimer == 0) {
+                spriteList.RemoveAt(fearSlot);
+                gotFear = false;
+            } }
         if (knockbackTimer > 0)
         {
             knockbackTimer--;
@@ -285,20 +317,25 @@ public abstract class EnemyController : MonoBehaviour
 
         if (status == "Bleed")
         {
-            Debug.Log("Bleeding");
             bleedTimer = bleedTime;
+           spriteList.Add(bleed);
         }
         if(status == "Burn")
         {
             burnTimer = burnTime;
+            spriteList.Add(taunt);
         }
         if(status == "Fear")
         {
             fearTimer = fearTime;
+            fearSlot = spriteList.Count;
+            spriteList.Add(fear);
+            gotFear = true;
         }
         if(status == "Silence")
         {
             silenceTimer = silenceTime;
+            spriteList.Add(silence);
         }
         if(status == "Knockback")
         {

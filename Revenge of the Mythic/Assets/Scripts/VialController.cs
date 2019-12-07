@@ -38,7 +38,8 @@ public class VialController : MonoBehaviour
         if (other.tag == "Player")
         {
             Instantiate(poison, this.transform.position, this.transform.rotation);
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject, 5.0f);
+        
     }
 }
