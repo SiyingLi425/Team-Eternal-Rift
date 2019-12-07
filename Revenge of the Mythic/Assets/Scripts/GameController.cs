@@ -328,6 +328,10 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Light"))
+        {
+            g.GetComponent<LightController>().Start();
+        }
         GameObject[] NPCs = GameObject.FindGameObjectsWithTag("Tutorial");
         for (int z = 0, o = 0, r = 0, w = 0; z < NPCs.Length; ++z)
         {

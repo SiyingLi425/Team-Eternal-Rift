@@ -7,7 +7,7 @@ public class LightController : MonoBehaviour
     private SpriteRenderer sr;
     [SerializeField]
     private Sprite on;
-    void Start()
+    public void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         CircleCollider2D c = GetComponent<CircleCollider2D>();

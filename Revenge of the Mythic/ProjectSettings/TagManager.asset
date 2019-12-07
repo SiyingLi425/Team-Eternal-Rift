@@ -46,6 +46,7 @@ TagManager:
   - P2Ability1Icon
   - P2Ability2Icon
   - P2Ability3Icon
+  - Light
   layers:
   - Default
   - TransparentFX
