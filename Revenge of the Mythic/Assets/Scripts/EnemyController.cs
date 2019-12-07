@@ -67,11 +67,11 @@ public abstract class EnemyController : MonoBehaviour
     public Sprite fear;
     public Sprite bleed;
     public Sprite silence;
-    public Sprite slow;
-    private int burnSlot, tauntSlot, fearSlot, bleedSlot, silenceSlot, slowSlot;
-    private bool gotBurn, gotTaunt, gotFear, gotBleed, gotSilence, gotSlow;
+
+    private int burnSlot, tauntSlot, fearSlot, bleedSlot, silenceSlot;
+    private bool gotBurn, gotTaunt, gotFear, gotBleed, gotSilence;
     private GameObject status1, status2, status3;
-    private List<Sprite> spriteList;
+    public List <Sprite> spriteList;
 
     public Collider2D HitBox { get { return hitBox; } }
     // Start is called before the first frame update
@@ -83,6 +83,8 @@ public abstract class EnemyController : MonoBehaviour
         enemyTransform = GetComponent<Transform>();
         healthBar = this.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Text>();
         status1 = this.gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).gameObject;
+        status2 = this.gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetChild(1).gameObject;
+        status3 = this.gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetChild(2).gameObject;
         spriteList = new List <Sprite>();
         //enemyAnimator = GetComponent<Animator>();
         #region Set Sprites
@@ -102,6 +104,10 @@ public abstract class EnemyController : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        if(spriteList.Count == 0)
+        {
+            status1.GetComponent<Image>().sprite = null;
+        }
         if (spriteList.Count == 1)
         {
             status1.GetComponent<Image>().sprite = spriteList[0];
@@ -198,19 +204,50 @@ public abstract class EnemyController : MonoBehaviour
         {
             Damage(1);
         }
-
+        if (gotSilence)
+        {
+            if (silenceTimer == 0)
+            {
+                spriteList.Remove(silence);
+                gotSilence = false;
+            }
+        }
         if (bleedTimer > 0)
         {
             bleedTimer--;
+        }
+        if (gotBleed)
+        {
+            if (bleedTimer == 0)
+            {
+                spriteList.Remove(bleed);
+                gotBleed = false;
+            }
         }
         if (burnTimer > 0)
         {
             burnTimer--;
         }
+        if (gotBurn)
+        {
+            if (burnTimer == 0)
+            {
+                spriteList.Remove(burn);
+                gotBurn = false;
+            }
+        }
 
         if (tauntTimer > 0)
         {
             tauntTime--;
+        }
+        if (gotTaunt)
+        {
+            if (tauntTimer == 0)
+            {
+                spriteList.Remove(taunt);
+                gotTaunt = false;
+            }
         }
         if (fearTimer > 0)
         {
@@ -218,7 +255,7 @@ public abstract class EnemyController : MonoBehaviour
         }
         if (gotFear) {
             if (fearTimer == 0) {
-                spriteList.RemoveAt(fearSlot);
+                spriteList.Remove(fear);
                 gotFear = false;
             } }
         if (knockbackTimer > 0)
@@ -320,23 +357,30 @@ public abstract class EnemyController : MonoBehaviour
         if (status == "Bleed")
         {
             bleedTimer = bleedTime;
-           spriteList.Add(bleed);
+            bleedSlot = spriteList.Count;
+            gotBleed = true;
+            spriteList.Add(bleed);
         }
         if(status == "Burn")
         {
             burnTimer = burnTime;
+            burnSlot = spriteList.Count;
+            gotBurn = true;
             spriteList.Add(taunt);
         }
         if(status == "Fear")
         {
             fearTimer = fearTime;
             fearSlot = spriteList.Count;
-            spriteList.Add(fear);
             gotFear = true;
+            spriteList.Add(fear);
+            
         }
         if(status == "Silence")
         {
             silenceTimer = silenceTime;
+            silenceSlot = spriteList.Count;
+            gotSilence = true;
             spriteList.Add(silence);
         }
         if(status == "Knockback")
@@ -354,6 +398,9 @@ public abstract class EnemyController : MonoBehaviour
                     if (p.GetComponent<CircleCollider2D>().IsTouching(hitBox))
                     {
                         aggroedPlayer = p;
+                        tauntSlot = spriteList.Count;
+                        gotTaunt = true;
+                        spriteList.Add(taunt);
                     }
                 }
 
