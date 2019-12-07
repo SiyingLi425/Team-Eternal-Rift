@@ -209,7 +209,7 @@ public abstract class PlayerController : MonoBehaviour
                     {
                         if (z > 0)
                         {
-                            gameController.ChangeResetKey(instance, z-1, Input.GetKeyDown(instanceKeyCodes[z-1, 0]) ? instanceKeys[z-1, 0] : instanceKeys[z-1, 1]);
+                            gameController.ChangeResetKey(instance-1, z-1, Input.GetKeyDown(instanceKeyCodes[z-1, 0]) ? instanceKeys[z-1, 0] : instanceKeys[z-1, 1]);
                         }
                         attack(z);
                     }
