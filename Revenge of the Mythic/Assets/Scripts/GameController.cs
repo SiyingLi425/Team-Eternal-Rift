@@ -62,29 +62,29 @@ public class GameController : MonoBehaviour
         ability3CD1 = GameObject.FindGameObjectWithTag("P1Ability3CD").GetComponent<Text>();
         scoreText = GameObject.FindGameObjectWithTag("ScoreText");
         playerController1.Health = persisableObjects.player1hp;
-        //switch (playerTypes.Count)
-        //{
-        //    case 1:
-        //        Ability1Icon.sprite = pheonixAbilityIcons[0];
-        //        Ability2Icon.sprite = pheonixAbilityIcons[1];
-        //        Ability3Icon.sprite = pheonixAbilityIcons[2];
-        //        break;
-        //    case 2:
-        //        Ability1Icon.sprite = griffinAbilityIcons[0];
-        //        Ability2Icon.sprite = griffinAbilityIcons[1];
-        //        Ability3Icon.sprite = griffinAbilityIcons[2];
-        //        break;
-        //    case 3:
-        //        Ability1Icon.sprite = dragonAbilityIcons[0];
-        //        Ability2Icon.sprite = dragonAbilityIcons[1];
-        //        Ability3Icon.sprite = dragonAbilityIcons[2];
-        //        break;
-        //    case 4:
-        //        Ability1Icon.sprite = pegasusAbilityIcons[0];
-        //        Ability2Icon.sprite = pegasusAbilityIcons[1];
-        //        Ability3Icon.sprite = pegasusAbilityIcons[2];
-        //        break;
-        //}
+        switch (playerTypes[0])
+        {
+            case 1:
+                Ability1Icon.sprite = pheonixAbilityIcons[0];
+                Ability2Icon.sprite = pheonixAbilityIcons[1];
+                Ability3Icon.sprite = pheonixAbilityIcons[2];
+                break;
+            case 2:
+                Ability1Icon.sprite = griffinAbilityIcons[0];
+                Ability2Icon.sprite = griffinAbilityIcons[1];
+                Ability3Icon.sprite = griffinAbilityIcons[2];
+                break;
+            case 3:
+                Ability1Icon.sprite = dragonAbilityIcons[0];
+                Ability2Icon.sprite = dragonAbilityIcons[1];
+                Ability3Icon.sprite = dragonAbilityIcons[2];
+                break;
+            case 4:
+                Ability1Icon.sprite = pegasusAbilityIcons[0];
+                Ability2Icon.sprite = pegasusAbilityIcons[1];
+                Ability3Icon.sprite = pegasusAbilityIcons[2];
+                break;
+        }
 
         if (persisableObjects.totalPlayers == 2)
         {
@@ -99,29 +99,29 @@ public class GameController : MonoBehaviour
             ability3CD2 = GameObject.FindGameObjectWithTag("P2Ability3CD").GetComponent<Text>();
             playerController2.Health = persisableObjects.player2hp;
 
-            //switch (playerTypes[1])
-            //{
-            //    case 1:
-            //        Ability1Icon.sprite = pheonixAbilityIcons[0];
-            //        Ability2Icon.sprite = pheonixAbilityIcons[1];
-            //        Ability3Icon.sprite = pheonixAbilityIcons[2];
-            //        break;
-            //    case 2:
-            //        Ability1Icon.sprite = griffinAbilityIcons[0];
-            //        Ability2Icon.sprite = griffinAbilityIcons[1];
-            //        Ability3Icon.sprite = griffinAbilityIcons[2];
-            //        break;
-            //    case 3:
-            //        Ability1Icon.sprite = dragonAbilityIcons[0];
-            //        Ability2Icon.sprite = dragonAbilityIcons[1];
-            //        Ability3Icon.sprite = dragonAbilityIcons[2];
-            //        break;
-            //    case 4:
-            //        Ability1Icon.sprite = pegasusAbilityIcons[0];
-            //        Ability2Icon.sprite = pegasusAbilityIcons[1];
-            //        Ability3Icon.sprite = pegasusAbilityIcons[2];
-            //        break;
-            //}
+            switch (playerTypes[1])
+            {
+                case 1:
+                    Ability1Icon.sprite = pheonixAbilityIcons[0];
+                    Ability2Icon.sprite = pheonixAbilityIcons[1];
+                    Ability3Icon.sprite = pheonixAbilityIcons[2];
+                    break;
+                case 2:
+                    Ability1Icon.sprite = griffinAbilityIcons[0];
+                    Ability2Icon.sprite = griffinAbilityIcons[1];
+                    Ability3Icon.sprite = griffinAbilityIcons[2];
+                    break;
+                case 3:
+                    Ability1Icon.sprite = dragonAbilityIcons[0];
+                    Ability2Icon.sprite = dragonAbilityIcons[1];
+                    Ability3Icon.sprite = dragonAbilityIcons[2];
+                    break;
+                case 4:
+                    Ability1Icon.sprite = pegasusAbilityIcons[0];
+                    Ability2Icon.sprite = pegasusAbilityIcons[1];
+                    Ability3Icon.sprite = pegasusAbilityIcons[2];
+                    break;
+            }
         }
         score = persisableObjects.score;
         scoreText.GetComponent<Text>().text = "Score: " + persisableObjects.score;
